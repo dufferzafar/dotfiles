@@ -1,0 +1,11 @@
+#!/bin/bash
+date=`date +%d`
+month=`date +%b`
+
+mkdir -p ~/.net/$month/down
+mkdir -p ~/.net/$month/up
+
+# cat /sys/class/net/ppp0/statistics/rx_bytes >> ~/.net/$month/down/$date
+# cat /sys/class/net/ppp0/statistics/tx_bytes >> ~/.net/$month/up/$date
+echo $(cat /sys/class/net/ppp0/statistics/rx_bytes)";"$(date +%s) >> ~/.net/$month/down/$date
+echo $(cat /sys/class/net/ppp0/statistics/tx_bytes)";"$(date +%s) >> ~/.net/$month/up/$date
