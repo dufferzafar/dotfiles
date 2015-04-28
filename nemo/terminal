@@ -1,0 +1,3 @@
+#!/bin/bash
+cd $NEMO_SCRIPT_CURRENT_URI
+exec terminator

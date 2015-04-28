@@ -3,8 +3,15 @@
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
 # Git
-ln -s $DIR/git/.gitconfig ~/.gitconfig
-ln -s $DIR/git/.gitignore ~/.gitignore
+ln -sf $DIR/git/.gitconfig ~/.gitconfig
+ln -sf $DIR/git/.gitignore ~/.gitignore
+
+# Nemo
+mkdir -p ~/.gnome2/accels
+mkdir -p ~/.gnome2/nemo-scripts
+
+ln -sf $DIR/nemo/nemo ~/.gnome2/accels/nemo
+ln -sf $DIR/nemo/terminal ~/.gnome2/nemo-scripts/terminal
 
 exit
 ########################################### The End
@@ -12,4 +19,4 @@ exit
 # Zsh (I've started using Fish now)
 wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - | sh
 rm ~/.zshrc
-ln -s $DIR/zsh/.zshrc ~/.zshrc
+ln -sf $DIR/zsh/.zshrc ~/.zshrc
