@@ -1,0 +1,16 @@
+# These folders contain miscellaneous material
+# for each project.
+_Help/
+
+# Nemo <3 .hidden files
+.hidden
+
+# I <3 Sublime
+*.sublime-project
+*.sublime-workspace
+
+# I usually create these files for testing and debugging purposes
+*.ignore
+
+# Windows Based Stuff
+desktop.ini

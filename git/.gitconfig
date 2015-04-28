@@ -1,0 +1,28 @@
+[color]
+    ui = on
+[user]
+	email = dufferzafar0@gmail.com
+	name = Shadab Zafar
+[core]
+	excludesfile = ~/.gitignore
+	editor = vim
+	autocrlf = input
+	pager = less -+$LESS -R
+[credential]
+	helper = /usr/share/doc/git/contrib/credential/gnome-keyring/git-credential-gnome-keyring
+[push]
+	default = simple
+[cola]
+	fontdiff = Consolas,11,-1,5,50,0,0,0,0,0
+	tabwidth = 4
+[gui]
+	editor = sublime
+	historybrowser = gitk
+[merge]
+	tool = meld
+[diff]
+	tool = meld
+	algorithm = patience
+[alias]
+	pr = "!f() { git fetch -fu ${2:-origin} refs/pull/$1/head:pr/$1 && git checkout pr/$1; }; f"
+	pr-clean = "!git for-each-ref refs/heads/pr/* --format=\"%(refname)\" | while read ref ; do branch=${ref#refs/heads/} ; git branch -D $branch ; done"
