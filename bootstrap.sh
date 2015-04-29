@@ -6,6 +6,12 @@ DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 ln -sf $DIR/git/.gitconfig ~/.gitconfig
 ln -sf $DIR/git/.gitignore ~/.gitignore
 
+# Ranger
+mkdir -p ~/.config/ranger
+for file in $DIR/ranger/*; do
+    ln -sf $file ~/.config/ranger/${file##*/}
+done
+
 # Nemo
 mkdir -p ~/.gnome2/accels
 mkdir -p ~/.gnome2/nemo-scripts
