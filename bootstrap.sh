@@ -13,6 +13,10 @@ mkdir -p ~/.gnome2/nemo-scripts
 ln -sf $DIR/nemo/nemo ~/.gnome2/accels/nemo
 ln -sf $DIR/nemo/terminal ~/.gnome2/nemo-scripts/terminal
 
+# pip
+mkdir -p ~/.pip
+ln -sf $DIR/pip/pip.conf ~/.pip/pip.conf
+
 exit
 ########################################### The End
 
