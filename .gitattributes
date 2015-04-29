@@ -1,3 +1,8 @@
 #pattern  filter=crypt diff=crypt
+
+# Pidgin
 pidgin/accounts.xml  filter=crypt diff=crypt
 pidgin/blist.xml  filter=crypt diff=crypt
+
+# Screencloud
+screencloud/ScreenCloud.conf  filter=crypt diff=crypt
