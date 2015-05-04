@@ -20,9 +20,14 @@ ln -sf $DIR/nemo/nemo ~/.gnome2/accels/nemo
 ln -sf $DIR/nemo/terminal ~/.gnome2/nemo-scripts/terminal
 
 # Screencloud
-# Bug: My imgur access token will be out in the open!
 mkdir -p ~/.config/screencloud
 ln -sf $DIR/screencloud/ScreenCloud.conf ~/.config/screencloud/ScreenCloud.conf
+
+# Pidgin
+mkdir -p ~/.purple
+for file in $DIR/pidgin/*; do
+    ln -sf $file ~/.purple/${file##*/}
+done
 
 # pip
 mkdir -p ~/.pip
