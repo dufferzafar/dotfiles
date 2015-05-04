@@ -1,0 +1,3 @@
+#pattern  filter=crypt diff=crypt
+pidgin/accounts.xml  filter=crypt diff=crypt
+pidgin/blist.xml  filter=crypt diff=crypt
