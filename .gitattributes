@@ -6,3 +6,6 @@ pidgin/blist.xml  filter=crypt diff=crypt
 
 # Screencloud
 screencloud/ScreenCloud.conf  filter=crypt diff=crypt
+
+# ZNC
+znc/**  filter=crypt diff=crypt
