@@ -33,6 +33,9 @@ done
 mkdir -p ~/.pip
 ln -sf $DIR/pip/pip.conf ~/.pip/pip.conf
 
+# cheat
+ln -sf $DIR/cheat/.cheatrc ~/.cheatrc
+
 exit
 ########################################### The End
 
