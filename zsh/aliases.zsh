@@ -27,8 +27,6 @@ alias gg="git grep"
 # alias gl="git log --date=short --pretty=format:'%C(bold blue)%h%C(reset) %<|(35)%ar %<(70,mtrunc) %s %d'" -n 20
 alias gl="git --no-pager log --date=short --pretty=format:'%C(red)%h%C(reset) - %C(green)%<|(22,mtrunc)%ar%C(reset)  -   %C(white)%<(80,mtrunc)%s%C(reset) %C(yellow)%<(30,trunc)%d%C(reset)' -n 20"
 
-
-
 alias gla="git log --date=short --pretty=format:'%C(auto) %<(18,trunc) %an %<|(35) %ar %<(70,mtrunc) %s %d' -n 20"
 alias glc="git log --format=%B "
 alias gll="git log --date=short --pretty=format:\"%C(auto) %h %ad %<|(35)%ar %<(70,mtrunc) %s %d\""
@@ -83,6 +81,13 @@ alias ted="youtube-dl -c -i -w --no-mtime -f medium --restrict-filenames -o '~/V
 alias o="xdg-open"
 alias r="ranger"
 
-# My homemade cheat!
-alias cs="cheat show"
-# alias cc="cheat show $1"
+# cheat!
+ce() {
+    ( cd /mnt/Work/Github/cheat && cheat edit $1 )
+}
+cs() {
+    ( cd /mnt/Work/Github/cheat && cheat show $1 | less )
+}
+cc() {
+    ( cd /mnt/Work/Github/cheat && cheat show $1 --copy $2 )
+}
