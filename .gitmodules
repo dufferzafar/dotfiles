@@ -1,0 +1,3 @@
+[submodule "apps/fpp"]
+	path = apps/fpp
+	url = https://github.com/facebook/pathpicker/
