@@ -16,11 +16,11 @@ packages=$(comm -12 <(comm -23 <(echo "$current") <(echo "$pre")) <(echo "$manua
 
 for pack in $packages; do
     packname=$(echo $pack | cut -f 1 -d ":")
-    desc=$(apt-cache search "^$packname$" | sed -E 's/.* - (.*)/\1/')
+    desc=$(apt-cache search "^$packname$" | head -n 1 | sed -E 's/[^ - ]* - (.*)/\1/')
     date=$(date -r /var/lib/dpkg/info/$pack.list)
 
     echo "# $desc"
     echo "# $date"
-    echo "sudo apt-get install $pack"
+    echo "apt-get install $pack"
     echo -e ""
 done
