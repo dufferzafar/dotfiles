@@ -15,6 +15,11 @@ alias gchm="git checkout master"
 alias gcm="git commit --amend"
 alias gcount="git rev-list HEAD --count"
 
+alias gcl="git clone"
+alias gcld="git clone --depth 1"
+
+alias gcpk="git cherry-pick -n"
+
 alias gd="git diff -w "
 alias gdc="git diff -w --cached"
 alias gdf="git diff -w --full-index"
@@ -22,7 +27,7 @@ alias gdf="git diff -w --full-index"
 alias gf="git fetch "
 # gfu="git fetch upstream $T git rebase upstream/master"
 
-alias gg="git grep"
+alias gg="git grep --break --heading --line-number"
 
 # alias gl="git log --date=short --pretty=format:'%C(bold blue)%h%C(reset) %<|(35)%ar %<(70,mtrunc) %s %d'" -n 20
 alias gl="git --no-pager log --date=short --pretty=format:'%C(red)%h%C(reset) - %C(green)%<|(22,mtrunc)%ar%C(reset)  -   %C(white)%<(80,mtrunc)%s%C(reset) %C(yellow)%<(30,trunc)%d%C(reset)' -n 20"
