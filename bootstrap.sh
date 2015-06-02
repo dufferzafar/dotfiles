@@ -5,6 +5,7 @@ DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 # Git
 ln -sf $DIR/git/.gitconfig ~/.gitconfig
 ln -sf $DIR/git/.gitignore ~/.gitignore
+ln -sf $DIR/git/.gitattributes ~/.gitattributes
 
 # Ranger
 mkdir -p ~/.config/ranger

@@ -5,6 +5,7 @@
 	name = Shadab Zafar
 [core]
 	excludesfile = ~/.gitignore
+	attributesfile = ~/.gitattributes
 	editor = vim
 	autocrlf = input
 	pager = less -+$LESS -R
