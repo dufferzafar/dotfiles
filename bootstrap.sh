@@ -37,6 +37,9 @@ ln -sf $DIR/pip/pip.conf ~/.pip/pip.conf
 # cheat
 ln -sf $DIR/cheat/.cheatrc ~/.cheatrc
 
+# Vim
+ln -sf $DIR/vim/.vimrc ~/.vimrc
+
 exit
 ########################################### The End
 
