@@ -39,6 +39,8 @@ ln -sf $DIR/cheat/.cheatrc ~/.cheatrc
 
 # Vim
 ln -sf $DIR/vim/.vimrc ~/.vimrc
+mkdir -p ~/.vim/colors
+ln -sf $DIR/vim/monokai.vim ~/.vim/colors/monokai.vim
 
 exit
 ########################################### The End
