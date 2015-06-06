@@ -15,20 +15,22 @@ plugins=(git pip node npm pep8 python pylint pyenv terminator colored-man zsh-sy
 # Core Zsh file
 source $ZSH/oh-my-zsh.sh
 
+local dot=~/.dotfiles/zsh
+
 # Copies text to clipboard
-source ~/.dotfiles/zsh/cb.zsh
+source $dot/cb.zsh
 
 # Rupa's Z
-source ~/.dotfiles/zsh/z.sh
+source $dot/z.sh
 
 # Silly hacks
-source ~/.dotfiles/zsh/hacks.zsh
+source $dot/hacks.zsh
 
 # Cool functions
-source ~/.dotfiles/zsh/functions.zsh
+source $dot/functions.zsh
 
 # Custom Aliases
-source ~/.dotfiles/zsh/aliases.zsh
+source $dot/aliases*.zsh
 
 # RVM
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
