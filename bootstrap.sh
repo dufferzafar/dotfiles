@@ -51,4 +51,7 @@ exit
 # Zsh
 # wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - | sh
 rm ~/.zshrc
-ln -sf $DIR/zsh/.zshrc ~/.zshrc
+ln -sf "$DIR/zsh/.zshrc" ~/.zshrc
+
+# Neobundle
+curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh
