@@ -13,28 +13,29 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 plugins=(git pip node npm pep8 python pylint pyenv terminator colored-man zsh-syntax-highlighting)
 
 # Core Zsh file
-source $ZSH/oh-my-zsh.sh
+source "$ZSH/oh-my-zsh.sh"
 
-local dot=~/.dotfiles/zsh
+local dot=~/.dotfiles
 
 # Copies text to clipboard
-source $dot/cb.zsh
+source $dot/zsh/cb.zsh
 
 # Rupa's Z
-source $dot/z.sh
+source $dot/zsh/z.sh
 
 # Silly hacks
-source $dot/hacks.zsh
+source $dot/zsh/hacks.zsh
 
 # Cool functions
-source $dot/functions.zsh
+source $dot/zsh/functions.zsh
 
 # Custom Aliases
-source $dot/aliases*.zsh
+source $dot/zsh/aliases.zsh
+source $dot/zsh/aliases.git.zsh
 
 # RVM
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-source $HOME/.rvm/scripts/rvm
+source "$HOME/.rvm/scripts/rvm"
 
 
 # Paths
