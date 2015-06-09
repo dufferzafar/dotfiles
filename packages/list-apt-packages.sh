@@ -21,6 +21,6 @@ for pack in $packages; do
 
     echo "# $desc"
     echo "# $date"
-    echo "apt-get install $pack"
+    echo "apt-get -y install $pack"
     echo -e ""
 done

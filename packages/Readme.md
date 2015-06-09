@@ -1,5 +1,5 @@
 
-# list-installed-packages.sh
+# list-apt-packages.sh
 
 Script that lists currently installed packages along with their description and install date.
 
@@ -56,3 +56,8 @@ apt-get install chm2pdf
 * Improve speed
 
   Currently takes `46.27s user 7.65s system 100% cpu 53.446 total`
+
+
+# list-npm-packages.sh
+
+List all the globally installed npm packages.
