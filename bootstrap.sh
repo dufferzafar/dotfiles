@@ -45,6 +45,9 @@ ln -sf "$DIR/vim/monokai.vim" ~/.vim/colors/monokai.vim
 # Wget
 ln -sf "$DIR/wget/.wgetrc" ~/.wgetrc
 
+# Screen
+ln -sf "$DIR/screen/.screenrc" ~/.screenrc
+
 exit
 ########################################### The End
 

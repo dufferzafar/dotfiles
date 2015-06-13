@@ -42,16 +42,16 @@ if [[ $TERM == "screen" ]]; then
   function preexec()
   {
     local -a cmd; cmd=(${(z)1}) # the command string
-    eval "tab_title=$TAB_TITLE_PREFIX$TAB_TITLE_EXEC"
-    eval "tab_hardstatus=$TAB_HARDSTATUS_PREFIX$TAB_HARDSTATUS_EXEC"
+    eval "tab_title=$TAB_TITLE_EXEC"
+    eval "tab_hardstatus=$TAB_HARDSTATUS_EXEC"
     screen_set $tab_title $tab_hardstatus
   }
 
   # called by zsh before showing the prompt
   function precmd()
   {
-    eval "tab_title=$TAB_TITLE_PREFIX$TAB_TITLE_PROMPT"
-    eval "tab_hardstatus=$TAB_HARDSTATUS_PREFIX$TAB_HARDSTATUS_PROMPT"
+    eval "tab_title=$TAB_TITLE_PROMPT"
+    eval "tab_hardstatus=$TAB_HARDSTATUS_PROMPT"
     screen_set $tab_title $tab_hardstatus
   }
 fi
