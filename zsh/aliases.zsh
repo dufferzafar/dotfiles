@@ -27,13 +27,13 @@ alias pysrv="python3 -m http.server "
 
 # cheat!
 ce() {
-    ( cd /mnt/Work/Github/cheat && cheat edit $1 )
+    ( cd /mnt/Work/Github/cheat && cheat edit "$1" )
 }
 cs() {
-    ( cd /mnt/Work/Github/cheat && cheat show $1 | less )
+    ( cd /mnt/Work/Github/cheat && cheat show "$1" | less )
 }
 cc() {
-    ( cd /mnt/Work/Github/cheat && cheat show $1 --copy $2 )
+    ( cd /mnt/Work/Github/cheat && cheat show "$1" --copy "$2" )
 }
 
 # Quick Ping!

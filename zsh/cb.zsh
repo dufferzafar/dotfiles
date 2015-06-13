@@ -26,19 +26,25 @@ cb() {
       # Copy input to clipboard
       echo -n "$input" | xclip -selection c
       # Truncate text for status
-      if [ ${#input} -gt 80 ]; then input="$(echo $input | cut -c1-80)$_trn_col...\e[0m"; fi
+      if [ ${#input} -gt 80 ]; then input="$(echo "$input" | cut -c1-80)$_trn_col...\e[0m"; fi
       # Print status.
       echo -e "$_scs_col""Copied to clipboard:\e[0m $input"
     fi
   fi
 }
+
 # Aliases / functions leveraging the cb() function
 # ------------------------------------------------
+
 # Copy contents of a file
 function cbf() { cat "$1" | cb; }
+
 # Copy SSH public key
 alias cbssh="cbf ~/.ssh/id_rsa.pub"
+
 # Copy current working directory
 alias cbwd="pwd | cb"
+
 # Copy most recent command in bash history
 alias cbhs="cat $HISTFILE | tail -n 1 | cb"
+# function cbhs() { history | awk 'NR==$1 {print;exit}' | sed -E 's/\s+[0-9]+\s+(.*)/\1/' | cb; }

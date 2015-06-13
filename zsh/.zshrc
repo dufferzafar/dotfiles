@@ -37,7 +37,9 @@ source $dot/zsh/screen.zsh
 
 # RVM
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-source "$HOME/.rvm/scripts/rvm"
+if [[ -f "$HOME/.rvm/scripts/rvm" ]]; then
+    source "$HOME/.rvm/scripts/rvm"
+fi
 
 
 # Paths
@@ -55,4 +57,7 @@ export PIP_DOWNLOAD_CACHE=$HOME/.cache/pip/
 # export MANPATH=$MANPATH:/home/dufferzafar/Apps/manpages
 # export MANPATH="/usr/local/man:$MANPATH"
 
-export FPP_EDITOR=sublime
+export FPP_EDITOR=subl
+
+# I <3 256 bits colors
+export TERM=xterm-256color
