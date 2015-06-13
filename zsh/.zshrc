@@ -33,6 +33,8 @@ source $dot/zsh/functions.zsh
 source $dot/zsh/aliases.zsh
 source $dot/zsh/aliases.git.zsh
 
+source $dot/zsh/screen.zsh
+
 # RVM
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 source "$HOME/.rvm/scripts/rvm"

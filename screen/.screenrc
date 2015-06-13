@@ -1,0 +1,46 @@
+# Load ~/.zshrc
+shell "/usr/bin/zsh"
+
+# Change the command character to Ctrl + F
+# as Ctrl + a is used as HOME key
+escape ^Ff
+
+# autodetach on
+
+altscreen on
+
+# Hide the initial message
+startup_message off
+
+# Tab-completion flash in the heading bar
+vbell off
+
+# Tell screen how to set colors. AB = background, AF=foreground
+termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+
+# Enables use of shift-PgUp and shift-PgDn
+termcapinfo xterm|xterms|xs|rxvt ti@:te@
+
+# Erase background with current bg color
+# defbce "on"
+
+# Enable 256 color term
+# term xterm-256color
+
+# Cache n lines for scroll back
+defscrollback 5000
+
+################################################## Status Line
+
+# Don't use the hardstatus line for system messages, use reverse video instead
+hardstatus off
+hardstatus alwayslastline
+
+hardstatus string "%{= kK} %-Lw%{=b kR}%n%f %t%{-}%+Lw %=%{= dd} %{b kw}%H %{r}%1` %{w}| %{g}%c %{w}| %{y}%d.%m.%Y %{w}"
+
+################################################## Keybindings
+
+# Quick Screen Cycle
+bindkey "^[[1;5C" next  # Ctrl-Right
+bindkey "^[[1;5D" prev  # Ctrl-Left
+
