@@ -1,6 +1,5 @@
-alias ga="git add -A"
-# alias gac="git add -A :/ $T git commit -e
-# alias gacm="git add -A :/ $T git commit -m
+alias ga="git add "
+alias gap="git add -p"
 alias gau="git add -u"
 
 alias gb="git branch -v"
@@ -10,10 +9,10 @@ alias gbg="git bisect good"
 alias gbr="git bisect reset"
 
 alias gc="git commit "
+alias gcm="git commit --amend"
+
 alias gch="git checkout "
 alias gchm="git checkout master"
-alias gcm="git commit --amend"
-alias gcount="git rev-list HEAD --count"
 
 alias gcl="git clone"
 alias gcld="git clone --depth 1"
@@ -36,30 +35,31 @@ alias gla="git log --date=short --pretty=format:'%C(auto) %<(18,trunc) %an %<|(3
 alias glc="git log --format=%B "
 alias gll="git log --date=short --pretty=format:\"%C(auto) %h %ad %<|(35)%ar %<(70,mtrunc) %s %d\""
 alias glu="git log --graph --abbrev-commit --decorate --date=relative --format=format:\"%C(blue)%h%C(reset) - %C(green)%ar%C(reset) - %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(yellow)%d%C(reset)\" --all"
+
 alias gm="git merge --squash "
 
 alias gp="git push"
 alias gpl="git pull"
-
 gpb() {
-    git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD 2>/dev/null)
+    git push --set-upstream origin "$(git rev-parse --abbrev-ref HEAD 2>/dev/null)"
 }
-
-alias gpm="git push origin master"
-alias gps="git push origin source"
 
 alias gr="git reset HEAD"
 alias grb="git rebase master"
 alias grbi="git rebase -i master"
 alias grbc="git rebase --continue"
 alias grbs="git rebase --skip"
+
 alias gru="git remote update"
 
 alias gs="git status"
-alias gsa="git stash apply"
+
 alias gsl="git shortlog -n -s"
-alias gsp="git stash pop"
+
 alias gst="git stash "
+alias gsa="git stash apply"
+alias gsp="git stash pop"
 alias gstl="git stash list"
+
 
 alias gwhat="git whatchanged --oneline"

@@ -3,6 +3,8 @@
 [user]
 	email = dufferzafar0@gmail.com
 	name = Shadab Zafar
+[github]
+	user = dufferzafar
 [core]
 	excludesfile = ~/.gitignore
 	attributesfile = ~/.gitattributes
@@ -13,6 +15,12 @@
 	helper = /usr/share/doc/git/contrib/credential/gnome-keyring/git-credential-gnome-keyring
 [push]
 	default = simple
+[color]
+  ui = 1
+[color "status"]
+  added = green
+  changed = red
+  untracked = normal dim
 [cola]
 	fontdiff = Consolas,11,-1,5,50,0,0,0,0,0
 	tabwidth = 4
