@@ -39,15 +39,15 @@ apt-get install chm2pdf
 
 1. Get a list of all packages:
 
-  `bash list-installed-packages.sh > packages.sh`
+  `bash list-apt-packages.sh > apt-packages.sh`
 
 2. Open the file, and comment packages that you don't want:
 
-  `vim packages.sh`
+  `vim apt-packages.sh`
 
 3. Install:
 
-  `sudo bash packages.sh`
+  `sudo bash apt-packages.sh`
 
 ## Todo
 
