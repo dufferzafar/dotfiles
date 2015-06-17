@@ -1,20 +1,20 @@
 [color]
     ui = on
 [user]
-	email = dufferzafar0@gmail.com
-	name = Shadab Zafar
+  email = dufferzafar0@gmail.com
+  name = Shadab Zafar
 [github]
-	user = dufferzafar
+  user = dufferzafar
 [core]
-	excludesfile = ~/.gitignore
-	attributesfile = ~/.gitattributes
-	editor = vim
-	autocrlf = input
-	pager = less -+$LESS -R
+  excludesfile = ~/.gitignore
+  attributesfile = ~/.gitattributes
+  editor = vim
+  autocrlf = input
+  pager = less -+$LESS -R
 [credential]
-	helper = /usr/share/doc/git/contrib/credential/gnome-keyring/git-credential-gnome-keyring
+  helper = /usr/share/doc/git/contrib/credential/gnome-keyring/git-credential-gnome-keyring
 [push]
-	default = simple
+  default = simple
 [color]
   ui = 1
 [color "status"]
@@ -22,16 +22,16 @@
   changed = red
   untracked = normal dim
 [cola]
-	fontdiff = Consolas,11,-1,5,50,0,0,0,0,0
-	tabwidth = 4
+  fontdiff = Consolas,11,-1,5,50,0,0,0,0,0
+  tabwidth = 4
 [gui]
-	editor = sublime
-	historybrowser = gitk
+  editor = sublime
+  historybrowser = gitk
 [merge]
 	tool = meld
 [diff]
 	tool = meld
 	algorithm = patience
 [alias]
-	pr = "!f() { git fetch -fu ${2:-origin} refs/pull/$1/head:pr/$1 && git checkout pr/$1; }; f"
-	pr-clean = "!git for-each-ref refs/heads/pr/* --format=\"%(refname)\" | while read ref ; do branch=${ref#refs/heads/} ; git branch -D $branch ; done"
+  pr = "!f() { git fetch -fu ${2:-origin} refs/pull/$1/head:pr/$1 && git checkout pr/$1; }; f"
+  pr-clean = "!git for-each-ref refs/heads/pr/* --format=\"%(refname)\" | while read ref ; do branch=${ref#refs/heads/} ; git branch -D $branch ; done"
