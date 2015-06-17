@@ -21,6 +21,15 @@
   added = green
   changed = red
   untracked = normal dim
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+[color "diff"]
+  meta = yellow
+  frag = magenta
+  old = red
+  new = green
 [cola]
   fontdiff = Consolas,11,-1,5,50,0,0,0,0,0
   tabwidth = 4
@@ -28,10 +37,14 @@
   editor = sublime
   historybrowser = gitk
 [merge]
-	tool = meld
+  tool = meld
 [diff]
-	tool = meld
-	algorithm = patience
+  tool = meld
+  algorithm = patience
+[difftool]
+  prompt = false
+[difftool "bc4"]
+  cmd = /usr/bin/bcompare $LOCAL $REMOTE
 [alias]
   pr = "!f() { git fetch -fu ${2:-origin} refs/pull/$1/head:pr/$1 && git checkout pr/$1; }; f"
   pr-clean = "!git for-each-ref refs/heads/pr/* --format=\"%(refname)\" | while read ref ; do branch=${ref#refs/heads/} ; git branch -D $branch ; done"
