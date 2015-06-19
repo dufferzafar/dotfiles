@@ -1,0 +1,11 @@
+#!/bin/bash
+if [ "$NAUTILUS_SCRIPT_CURRENT_URI" == "x-nautilus-desktop:///" ]; then
+        DIR=$HOME"/Desktop"
+else
+        DIR=$(echo "$NAUTILUS_SCRIPT_CURRENT_URI" | sed 's/^file:\/\///' | sed 's/%20/ /g')
+fi
+
+notify-send -t 1 "Path is" "$DIR"
+
+exec terminator --maximise --new-tab --working-directory="$DIR"
+exit 0

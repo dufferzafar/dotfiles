@@ -13,12 +13,13 @@ for file in $DIR/ranger/*; do
     ln -sf "$file" ~/.config/ranger/${file##*/}
 done
 
-# Nemo
-mkdir -p ~/.gnome2/accels
-mkdir -p ~/.gnome2/nemo-scripts
+# Nautilus
+mkdir -p ~/.config/nautilus
+mkdir -p ~/.local/share/nautilus/scripts
 
-ln -sf "$DIR/nemo/nemo" ~/.gnome2/accels/nemo
-ln -sf "$DIR/nemo/terminal" ~/.gnome2/nemo-scripts/terminal
+ln -sf "$DIR/nautilus/accels" ~/.config/nautilus/accels
+ln -sf "$DIR/nautilus/open-terminal" ~/.local/share/nautilus/scripts/open-terminal
+chmod +x ~/.local/share/nautilus/scripts/open-terminal
 
 # Screencloud
 mkdir -p ~/.config/screencloud
