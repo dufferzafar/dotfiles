@@ -2,8 +2,8 @@
     "highlight": true,
     "linewrap": 79,
     "cheatdirs": [
-        "cheatsheets",
-        "/home/dufferzafar/.dotfiles/cheat/cheatsheets"
+        "/mnt/Work/Github/cheat/_Help/chris/cheat/cheatsheets",
+        "cheatsheets"
     ],
     "editor": "vim"
 }
