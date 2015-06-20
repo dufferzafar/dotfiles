@@ -61,5 +61,23 @@ alias gsa="git stash apply"
 alias gsp="git stash pop"
 alias gstl="git stash list"
 
-
 alias gwhat="git whatchanged --oneline"
+
+# Set the git date environment to any date
+# then make any ammends to change time!
+#
+# Usage:
+#
+# gdate `date --date='2 days ago'`
+# gdate reset
+function gdate {
+    if [[ $1 = "reset" ]]; then
+        unset GIT_AUTHOR_DATE
+        unset GIT_COMMITTER_DATE
+        echo "Git date environment reset."
+    else
+        export GIT_AUTHOR_DATE="$*"
+        export GIT_COMMITTER_DATE="$*"
+        echo "Git date environment set to:" "$*"
+    fi
+}
