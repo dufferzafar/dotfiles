@@ -53,3 +53,17 @@ magic-enter () {
 }
 zle -N magic-enter
 bindkey "^M" magic-enter
+
+# Open the current folder in user's preferred
+# file browser
+# Todo: Find a way of focussing the browser too!
+ctrl-enter () {
+  if [[ -z $BUFFER ]]; then
+    xdg-open .
+  else
+    xdg-open "$BUFFER"
+    zle redisplay
+  fi
+}
+zle -N ctrl-enter
+bindkey "^J" ctrl-enter
