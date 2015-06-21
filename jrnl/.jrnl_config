@@ -1,0 +1,17 @@
+{
+  "default_hour": 9,
+  "linewrap": 79,
+  "encrypt": false,
+  "default_minute": 0,
+  "tagsymbols": "@",
+  "editor": "vim",
+  "timeformat": "%Y-%m-%d %H:%M",
+  "highlight": true,
+  "journals": {
+    "default": "/mnt/Work/Documents/Journal/life.jrnl",
+    "life": "/mnt/Work/Documents/Journal/life.jrnl",
+    "work": "/mnt/Work/Documents/Journal/work.jrnl",
+    "code": "/mnt/Work/Documents/Journal/code.jrnl",
+    "idea": "/mnt/Work/Documents/Journal/idea.jrnl"
+  }
+}

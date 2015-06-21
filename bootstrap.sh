@@ -51,6 +51,10 @@ ln -sf "$DIR/wget/.wgetrc" ~/.wgetrc
 # Screen
 ln -sf "$DIR/screen/.screenrc" ~/.screenrc
 
+# jrnl
+ln -sf "$DIR/jrnl/.jrnl_config" ~/.jrnl_config
+
+
 exit
 ########################################### The End
 
