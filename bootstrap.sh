@@ -19,7 +19,9 @@ mkdir -p ~/.local/share/nautilus/scripts
 
 ln -sf "$DIR/nautilus/accels" ~/.config/nautilus/accels
 ln -sf "$DIR/nautilus/open-terminal" ~/.local/share/nautilus/scripts/open-terminal
+ln -sf "$DIR/nautilus/hide" ~/.local/share/nautilus/scripts/hide
 chmod +x ~/.local/share/nautilus/scripts/open-terminal
+chmod +x ~/.local/share/nautilus/scripts/hide
 
 # Screencloud
 mkdir -p ~/.config/screencloud

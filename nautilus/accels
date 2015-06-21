@@ -140,6 +140,7 @@
 ; (gtk_accel_path "<Actions>/DirViewActions/Self Stop Volume" "")
 ; (gtk_accel_path "<Actions>/ShellActions/About Nautilus" "")
 ; (gtk_accel_path "<Actions>/CanvasViewActions/Sort by Name" "")
+(gtk_accel_path "<Actions>/ScriptsGroup/script_file:\\s\\s\\shome\\sdufferzafar\\s.local\\sshare\\snautilus\\sscripts\\shide" "<Primary><Shift>h")
 ; (gtk_accel_path "<Actions>/DirViewActions/Self Unmount Volume" "")
 ; (gtk_accel_path "<Actions>/DirViewActions/Self Mount Volume" "")
 ; (gtk_accel_path "<Actions>/DirViewActions/LocationOpenAlternate" "")

@@ -1,0 +1,11 @@
+#!/bin/bash
+IFS=$'\n\t'
+
+# Iterate over each passed file
+for arg do
+    basename "$arg" >> .hidden
+done
+
+# This keeps the .hidden file sorted
+# with redundant entries remove
+sort -u .hidden -o .hidden
