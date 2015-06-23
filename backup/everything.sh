@@ -42,3 +42,11 @@ tar -cf $dir/home-config.tar -C / $hom/.config
 
 # Backup all 1 level files whose names start with '.'
 tar -cf $dir/home-files.tar "$(find "$HOME" -maxdepth 1 -type f -name "\.*")"
+
+############################################################# Unknown
+
+# .local/share
+
+# apps, scripts
+
+# git credential store helper
