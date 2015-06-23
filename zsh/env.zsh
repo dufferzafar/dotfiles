@@ -10,8 +10,6 @@ export PATH=$PATH:$GOPATH/bin
 
 export PATH=$PATH:$HOME/.dotfiles/bin
 
-export PIP_DOWNLOAD_CACHE=$HOME/.cache/pip/
-
 # export PATH=$PATH:/home/dufferzafar/apps/utils
 # export MANPATH=$MANPATH:/home/dufferzafar/Apps/manpages
 # export MANPATH="/usr/local/man:$MANPATH"
