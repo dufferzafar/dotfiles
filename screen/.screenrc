@@ -5,9 +5,11 @@ shell "/usr/bin/zsh"
 # as Ctrl + a is used as HOME key
 escape ^Ff
 
-# autodetach on
+# Detach on hangup
+autodetach on
 
-altscreen on
+# emulate .logout message
+pow_detach_msg "Screen session of \$LOGNAME \$:cr:\$:nl:ended."
 
 # Hide the initial message
 startup_message off
@@ -15,17 +17,12 @@ startup_message off
 # Tab-completion flash in the heading bar
 vbell off
 
-# Tell screen how to set colors. AB = background, AF=foreground
-termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+# Use Alternate screen
+#altscreen on
 
-# Enables use of shift-PgUp and shift-PgDn
-termcapinfo xterm|xterms|xs|rxvt ti@:te@
-
-# Erase background with current bg color
-# defbce "on"
-
-# Enable 256 color term
-# term xterm-256color
+# Bug: Only one of altscreen & scroll can be used
+# Easy scrolling by mouse or Shift-PgUp/PgDn
+termcapinfo xterm* ti@:te@
 
 # Cache n lines for scroll back
 defscrollback 5000
