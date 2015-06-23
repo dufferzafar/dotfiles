@@ -9,3 +9,14 @@ done
 # This keeps the .hidden file sorted
 # with redundant entries remove
 sort -u .hidden -o .hidden
+
+# Simulate the pressing of the F5 key to refresh
+# the window to bring our changes into effect.
+xte "key F5"
+
+# Todo:
+#
+# Remove files that don't exist from the .hidden file
+#
+# Add toggle functionality, if the selected file already
+# exists in .hidden, remove it.
