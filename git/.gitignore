@@ -17,3 +17,9 @@ desktop.ini
 
 # The silver searcher ignores
 .agignore
+
+# PyCharm
+.idea/
+
+# I'm don't even know why I use bower
+bower_components
