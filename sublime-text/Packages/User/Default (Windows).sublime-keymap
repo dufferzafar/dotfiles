@@ -1,0 +1,69 @@
+[
+  // Remapped comment hotkeys as Ctrl+Q is easily reachable via left-hand :)
+	{ "keys": ["ctrl+q"], "command": "toggle_comment", "args": { "block": false } },
+	// { "keys": ["ctrl+shift+q"], "command": "toggle_comment", "args": { "block": true } },
+
+  // Every other application creates a new tab with Ctrl + T
+  { "keys": ["ctrl+t"], "command": "new_file" },
+
+	// { "keys": ["ctrl+/"], "command": "toggle_record_macro" },
+	// { "keys": ["ctrl+shift+/"], "command": "run_macro" },
+
+  // Open currently opened file's folder
+  { "keys": ["ctrl+alt+z"], "command": "open_folder" },
+
+  // Plugin: Goto Documentation
+  // { "keys": ["ctrl+shift+h"], "command": "goto_documentation" },
+
+  // Plugin: DevDocs
+  // { "keys": ["alt+ctrl+d"], "command": "dev_docs" },
+
+  // Plugin: Show Todos
+  // { "keys": ["ctrl+shift+l"], "command": "todo" },
+
+  // Plugin: Markdwon Preview
+  { "keys": ["alt+m"], "command": "markdown_preview", "args": {"target": "browser", "parser":"markdown"} },
+
+  // Plugin: TextPastry
+  // { "keys": ["ctrl+alt+n"], "command": "text_pastry_show_command_line", "args": { "text": "" } },
+  { "keys": ["ctrl+alt+t"], "command": "text_pastry_show_menu" },
+
+  // Plugin: Clickable URLs
+  { "keys": ["ctrl+alt+enter"], "command": "open_url" },
+
+  { "keys": ["ctrl+alt+'"], "command": "cursor", "args": {"action": "add"}},
+  { "keys": ["ctrl+alt+;"], "command": "cursor", "args": {"action": "remove"}},
+  { "keys": ["ctrl+alt+/"], "command": "cursor", "args": {"action": "show"}},
+  { "keys": ["ctrl+alt+."], "command": "cursor", "args": {"action": "clear"}},
+
+  // PyLinter
+  { "keys": ["ctrl+alt+l"], "command": "pylinter"},
+  // { "keys": ["ctrl+alt+x"], "command": "pylinter", "args": {"action": "toggle"} },
+  // { "keys": ["ctrl+alt+c"], "command": "pylinter", "args": {"action": "list"} },
+  // { "keys": ["ctrl+alt+i"], "command": "pylinter", "args": {"action": "ignore"} }
+
+  // Enter opens the 'File' in Find Results
+  { "keys": ["enter"], "command": "next_result", "context": [{"key": "selector", "operator": "equal", "operand": "text.find-in-files" }]},
+
+  // Todo Review
+  {"keys": [ "ctrl+k", "ctrl+t" ], "command": "todo_review", "args": { "paths": [], "open_files": true }},
+
+  // Emmet Decrements. I use Ctrl + Up/Down to control system audio volume.
+  {"keys": [ "alt+up" ], "args": {"action": "increment_number_by_1"}, "command": "run_emmet_action", "context": [{"key": "emmet_action_enabled.increment_number_by_1"} ] },
+
+  {"keys": [ "alt+down" ], "args": {"action": "decrement_number_by_1"}, "command": "run_emmet_action", "context": [{"key": "emmet_action_enabled.decrement_number_by_1"} ] },
+
+  // Random Everything
+  // {"keys": [ "ctrl+r", "ctrl+w" ], "command": "random_word"},
+  // {"keys": [ "ctrl+r", "ctrl+t" ], "command": "random_text"},
+  // {"keys": [ "ctrl+r", "ctrl+i" ], "command": "random_uuid"},
+  // {"keys": [ "ctrl+r", "ctrl+f" ], "command": "random_first_name"},
+  // {"keys": [ "ctrl+r", "ctrl+l" ], "command": "random_last_name"},
+  // {"keys": [ "ctrl+r", "ctrl+n" ], "command": "random_full_name"},
+  // {"keys": [ "ctrl+r", "ctrl+e" ], "command": "random_email"},
+  // {"keys": [ "ctrl+r", "ctrl+u" ], "command": "random_url"}
+
+  // Fold Python Docstrings
+  {"keys": ["ctrl+alt+["], "command": "fold_python_docstrings"},
+  {"keys": ["ctrl+alt+]"], "command": "unfold_python_docstrings"}
+]
