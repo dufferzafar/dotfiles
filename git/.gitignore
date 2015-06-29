@@ -23,3 +23,6 @@ desktop.ini
 
 # I'm don't even know why I use bower
 bower_components
+
+# Python Virtualenv
+env/

@@ -1,4 +1,5 @@
 alias ga="git add "
+alias gai="git add --intent-to-add"
 alias gap="git add -p"
 alias gau="git add -u"
 
@@ -8,8 +9,8 @@ alias gbb="git bisect bad"
 alias gbg="git bisect good"
 alias gbr="git bisect reset"
 
-alias gc="git commit "
-alias gcm="git commit --amend"
+alias gc="git commit -v"
+alias gcm="git commit -v --amend"
 
 alias gch="git checkout "
 alias gchm="git checkout master"
@@ -19,9 +20,9 @@ alias gcld="git clone --depth 1"
 
 alias gcpk="git cherry-pick -n"
 
-alias gd="git diff "
-alias gdc="git diff --cached"
-alias gdf="git diff --full-index"
+alias gd="git diff ."
+alias gdc="git diff --cached ."
+alias gdf="git diff --full-index ."
 
 alias gf="git fetch "
 alias gfu="git fetch upstream && git rebase upstream/master"
@@ -52,7 +53,7 @@ alias grbs="git rebase --skip"
 
 alias gru="git remote update"
 
-alias gs="git status"
+alias gs="git status -u"
 
 alias gsl="git shortlog -n -s"
 
