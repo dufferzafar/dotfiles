@@ -12,9 +12,13 @@ DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 # Makes a soft link from src to dest in sublime's config
 # but first makes sure that the target directory exists.
 link() {
-    mkdir -p "$(dirname ~/.config/sublime-text-3/"$2")"
-    ln -sf "$DIR/$1" ~/.config/sublime-text-3/"$2"
+    mkdir -p "$(dirname ~/.config/sublime-text-3/"$1")"
+    ln -sf "$DIR/$1" ~/.config/sublime-text-3/"$1"
 }
 
-# Batch File
-link "Packages/Batch File" "Packages/Batch File"
+# Comment character for Batch File
+link "Packages/Batch File/Comments.tmPreferences"
+
+# My Keymaps
+link "Packages/User/Default (Linux).sublime-keymap"
+link "Packages/User/Default (Windows).sublime-keymap"
