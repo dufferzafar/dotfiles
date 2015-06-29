@@ -19,6 +19,7 @@ NeoBundle 'rking/ag.vim'
 NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-commentary'
+NeoBundle 'altercation/vim-colors-solarized'
 
 " New Syntaxes
 NeoBundle 'groenewege/vim-less'

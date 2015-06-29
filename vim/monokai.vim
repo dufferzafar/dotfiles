@@ -46,7 +46,7 @@ hi Operator ctermfg=197 ctermbg=NONE cterm=NONE
 hi Pmenu ctermfg=NONE ctermbg=NONE cterm=NONE
 hi PmenuSel ctermfg=NONE ctermbg=59 cterm=NONE
 hi PreProc ctermfg=197 ctermbg=NONE cterm=NONE
-hi Search ctermfg=NONE ctermbg=NONE cterm=underline
+hi Search ctermfg=000 ctermbg=221 cterm=NONE
 hi Special ctermfg=231 ctermbg=NONE cterm=NONE
 hi SpecialKey ctermfg=59 ctermbg=237 cterm=NONE
 hi Statement ctermfg=197 ctermbg=NONE cterm=NONE
@@ -64,21 +64,23 @@ hi Visual ctermfg=NONE ctermbg=59 cterm=NONE
 hi WarningMsg ctermfg=197 ctermbg=None cterm=NONE
 
 " Diffs
-hi DiffAdded ctermfg=112 ctermbg=None cterm=NONE
-hi DiffRemoved ctermfg=196 ctermbg=None cterm=NONE
+hi DiffAdded ctermfg=002 ctermbg=None cterm=NONE
+hi DiffRemoved ctermfg=001 ctermbg=None cterm=NONE
+hi DiffFile ctermfg=226 ctermbg=None cterm=NONE
 
 " Git Commit
-hi gitcommitFirstLine ctermfg=185 ctermbg=None cterm=None
-hi gitcommitSummary ctermfg=230 ctermbg=None cterm=None
+hi gitcommitHeader ctermfg=255 ctermbg=None cterm=None
 
 hi gitcommitOnBranch ctermfg=186 ctermbg=None cterm=None
 hi gitcommitBranch ctermfg=141 ctermbg=None cterm=None
 
 hi gitcommitWarning ctermfg=170 ctermbg=None cterm=None
 
-hi gitcommitSelectedFile ctermfg=112 ctermbg=None cterm=None
-
-hi gitcommitDiscardedFile ctermfg=196 ctermbg=None cterm=None
+hi gitcommitSelectedFile ctermfg=002 ctermbg=None cterm=None
+hi gitcommitDiscardedFile ctermfg=001 ctermbg=None cterm=None
 
 hi def link gitcommitType                 Comment
 hi def link gitcommitUntrackedFile        Comment
+
+" The spellchecker
+hi SpellBad ctermfg=196 ctermbg=None cterm=underline
