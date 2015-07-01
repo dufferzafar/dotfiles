@@ -55,6 +55,10 @@ ln -sf "$DIR/screen/.screenrc" ~/.screenrc
 ln -sf "$DIR/jrnl/.jrnl_config" ~/.jrnl_config
 
 
+# ptpython
+mkdir -p ~/.ptpython
+ln -sf "$DIR/python/ptpython.py" ~/.ptpython/config.py
+
 exit
 ########################################### The End
 
