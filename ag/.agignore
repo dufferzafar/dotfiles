@@ -1,0 +1,21 @@
+# Don't remember why
+styles.css
+
+# Folder I create for project based stuff
+_Help/
+
+*.svg
+
+# I <3 Sublime
+*.sublime-project
+*.sublime-workspace
+
+# I usually create these files for testing and debugging purposes
+*.ignore
+
+# min files
+*.min.js
+*.min.css
+
+# Python Virtualenv
+env/

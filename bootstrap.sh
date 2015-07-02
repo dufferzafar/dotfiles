@@ -54,6 +54,8 @@ ln -sf "$DIR/screen/.screenrc" ~/.screenrc
 # jrnl
 ln -sf "$DIR/jrnl/.jrnl_config" ~/.jrnl_config
 
+# the silver searcher
+ln -sf "$DIR/ag/.agignore" ~/.agignore
 
 # ptpython
 mkdir -p ~/.ptpython
