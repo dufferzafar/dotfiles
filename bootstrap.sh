@@ -10,7 +10,7 @@ ln -sf "$DIR/git/.gitattributes" ~/.gitattributes
 # Ranger
 mkdir -p ~/.config/ranger
 for file in $DIR/ranger/*; do
-    ln -sf "$file" ~/.config/ranger/${file##*/}
+    ln -sf "$file" ~/.config/ranger/"${file##*/}"
 done
 
 # Nautilus
@@ -30,7 +30,7 @@ ln -sf "$DIR/screencloud/ScreenCloud.conf" ~/.config/screencloud/ScreenCloud.con
 # Pidgin
 mkdir -p ~/.purple
 for file in $DIR/pidgin/*; do
-    ln -sf $file ~/.purple/${file##*/}
+    ln -sf "$file" ~/.purple/"${file##*/}"
 done
 
 # pip

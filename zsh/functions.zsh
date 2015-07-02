@@ -42,7 +42,7 @@ magic-enter () {
   if [[ -z $BUFFER ]]; then
     echo ""
     if git rev-parse --is-inside-work-tree &>/dev/null; then
-      git status .
+      git status -u .
     else
       ls -CF
     fi

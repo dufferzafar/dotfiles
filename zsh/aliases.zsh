@@ -16,8 +16,8 @@ alias gbld="go build"
 alias beet="~/.apps/appy/2/bin/beet"
 alias sub="~/.apps/appy/2/bin/subliminal -l en -- "
 
-alias ytb="youtube-dl -c -i -w --no-mtime -f 18 --restrict-filenames -o '~/Videos/%(title)s.%(ext)s'"
-alias ted="youtube-dl -c -i -w --no-mtime -f medium --restrict-filenames -o '~/Videos/%(title)s.%(ext)s'"
+alias ytb="youtube-dl -ciw --no-mtime -f 18 --restrict-filenames -o '~/Videos/%(title)s.%(ext)s'"
+alias ted="youtube-dl -ciw --no-mtime -f medium --restrict-filenames -o '~/Videos/%(title)s.%(ext)s'"
 
 alias o="xdg-open"
 alias r="ranger"
@@ -44,3 +44,8 @@ alias pingu="ping 8.8.8.8"
 bored() {
     cowsay -f $(ls /usr/share/cowsay/cows | shuf -n 1 | cut -d. -f1) $(whatis $(ls /bin) 2>/dev/null | shuf -n 1)
 }
+
+# jrnl
+alias jl="jrnl life"
+alias ji="jrnl idea"
+alias jw="jrnl work"

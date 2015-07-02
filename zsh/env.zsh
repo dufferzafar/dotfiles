@@ -10,6 +10,9 @@ export PATH=$PATH:$GOPATH/bin
 
 export PATH=$PATH:$HOME/.dotfiles/bin
 
+# Used by pipsi
+export PATH=$PATH:$HOME/.local/bin
+
 # export PATH=$PATH:/home/dufferzafar/apps/utils
 # export MANPATH=$MANPATH:/home/dufferzafar/Apps/manpages
 # export MANPATH="/usr/local/man:$MANPATH"
