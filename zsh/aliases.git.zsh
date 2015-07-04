@@ -20,9 +20,12 @@ alias gcld="git clone --depth 1"
 
 alias gcpk="git cherry-pick -n"
 
-alias gd="git diff ."
+# If a param is passed, diff that, else diff the current folder
+function gd {
+    ! [ -z "$1" ] && git diff "$1" || git diff .
+}
+
 alias gdc="git diff --cached ."
-alias gdf="git diff --full-index ."
 
 alias gf="git fetch "
 alias gfu="git fetch upstream && git rebase upstream/master"
