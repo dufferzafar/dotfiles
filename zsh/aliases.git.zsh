@@ -1,7 +1,7 @@
 alias ga="git add "
 alias gai="git add --intent-to-add"
 alias gap="git add -p"
-alias gau="git add -u"
+alias gau="git add -u ."
 
 alias gb="git branch -v"
 
@@ -61,6 +61,7 @@ alias gs="git status -u"
 alias gsl="git shortlog -n -s"
 
 alias gst="git stash "
+alias gsts="git stash save"
 alias gsa="git stash apply"
 alias gsp="git stash pop"
 alias gstl="git stash list"
@@ -75,7 +76,9 @@ alias gwhat="git whatchanged --oneline"
 # gdate `date --date='2 days ago'`
 # gdate reset
 function gdate {
-    if [[ $1 = "reset" ]]; then
+    if [[ -z $1 ]]; then
+        echo "Git date environment: " "$GIT_AUTHOR_DATE"
+    elif [[ $1 = "reset" ]]; then
         unset GIT_AUTHOR_DATE
         unset GIT_COMMITTER_DATE
         echo "Git date environment reset."
