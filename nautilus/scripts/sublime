@@ -1,0 +1,5 @@
+#!/bin/bash
+IFS=$'\n\t'
+
+# Bug: Handle multiple selections
+/usr/bin/subl "$1"

@@ -34,3 +34,4 @@ ln -sf "$DIR/nautilus/accels" $CONFIG_DIR/accels
 link terminal as "Open Terminal"
 link hide as "Hide File"
 link subtitle as "Download Subtitle"
+link sublime  as "Open With Sublime"
