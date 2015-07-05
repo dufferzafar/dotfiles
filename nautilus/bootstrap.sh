@@ -32,6 +32,7 @@ ln -sf "$DIR/nautilus/accels" $CONFIG_DIR/accels
 
 # The word 'as' is just to make the sentence look cool :)
 link terminal as "Open Terminal"
-link hide as "Hide File"
+link hide     as "Hide File"
 link subtitle as "Download Subtitle"
+link action   as "Perform action"
 link sublime  as "Open With Sublime"
