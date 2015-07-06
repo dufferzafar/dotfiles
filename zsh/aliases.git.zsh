@@ -35,6 +35,9 @@ alias gg="git grep --break --heading --line-number"
 # alias gl="git log --date=short --pretty=format:'%C(bold blue)%h%C(reset) %<|(35)%ar %<(70,mtrunc) %s %d'" -n 20
 alias gl="git --no-pager log --date=short --pretty=format:'%C(red)%h%C(reset) - %C(green)%<|(22,mtrunc)%ar%C(reset)  -   %C(white)%<(80,mtrunc)%s%C(reset) %C(yellow)%<(30,trunc)%d%C(reset)' -n 20"
 
+# View commits that are not on master (pull request commits!)
+alias glp="git --no-pager log master...  --no-merges --date=short --pretty=format:'%C(red)%h%C(reset) - %C(green)%<|(22,mtrunc)%ar%C(reset)  -   %C(white)%<(80,mtrunc)%s%C(reset) %C(yellow)%<(30,trunc)%d%C(reset)'"
+
 alias gla="git log --date=short --pretty=format:'%C(auto) %<(18,trunc) %an %<|(35) %ar %<(70,mtrunc) %s %d' -n 20"
 alias glc="git log --format=%B "
 alias gll="git log --date=short --pretty=format:\"%C(auto) %h %ad %<|(35)%ar %<(70,mtrunc) %s %d\""
@@ -88,3 +91,9 @@ function gdate {
         echo "Git date environment set to:" "$*"
     fi
 }
+
+# Go to the root directory of a git project
+function groot {
+    cd "$(git rev-parse --show-toplevel)"
+}
+
