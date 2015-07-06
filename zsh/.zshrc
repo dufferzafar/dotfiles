@@ -38,3 +38,5 @@ source $dot/zsh/env.zsh
 if [[ -f "$HOME/.rvm/scripts/rvm" ]]; then
     source "$HOME/.rvm/scripts/rvm"
 fi
+
+setopt nosharehistory
