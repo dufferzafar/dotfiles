@@ -5,7 +5,7 @@ export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="af-magic"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-plugins=(git pip node npm pep8 python pylint pyenv terminator colored-man zsh-syntax-highlighting)
+plugins=(pip node npm pep8 python pylint pyenv terminator colored-man zsh-syntax-highlighting history-substring-search command-not-found)
 
 # Core Zsh file
 source "$ZSH/oh-my-zsh.sh"
