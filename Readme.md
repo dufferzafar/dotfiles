@@ -3,6 +3,19 @@
 
 My current Ubuntu 14.04 configuration.
 
+## Usage
+
+```bash
+
+cd ~
+git clone http://github.com/dufferzafar/dotfiles .dotfiles
+
+cd .dotfiles
+git submodule update --init --recursive
+
+sudo bash bootstrap.sh
+```
+
 ## Todo
 
 * [nbeaver/lesskey](https://github.com/nbeaver/lesskey)
