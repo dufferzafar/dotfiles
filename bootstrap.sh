@@ -13,9 +13,6 @@ for file in $DIR/ranger/*; do
     ln -sf "$file" ~/.config/ranger/"${file##*/}"
 done
 
-# Nautilus
-source "$DIR/nautilus/bootstrap.sh"
-
 # Screencloud
 mkdir -p ~/.config/screencloud
 ln -sf "$DIR/screencloud/ScreenCloud.conf" ~/.config/screencloud/ScreenCloud.conf
@@ -55,6 +52,14 @@ mkdir -p ~/.ptpython
 ln -sf "$DIR/python/ptpython.py" ~/.ptpython/config.py
 
 exit
+########################################### Delegate
+
+# sublime text
+source "$DIR/sublime-text/bootstrap.sh"
+
+# Nautilus
+source "$DIR/nautilus/bootstrap.sh"
+
 ########################################### The End
 
 # Zsh
