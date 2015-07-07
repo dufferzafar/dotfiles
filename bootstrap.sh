@@ -51,6 +51,9 @@ ln -sf "$DIR/ag/.agignore" ~/.agignore
 mkdir -p ~/.ptpython
 ln -sf "$DIR/python/ptpython.py" ~/.ptpython/config.py
 
+# Setup stuff contained in the apps/ directory
+source "$DIR/apps.sh"
+
 exit
 ########################################### Delegate
 
