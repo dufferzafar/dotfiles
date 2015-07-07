@@ -1,3 +1,6 @@
 [submodule "apps/fpp"]
 	path = apps/fpp
 	url = https://github.com/facebook/pathpicker/
+[submodule "apps/nginx_ensite"]
+	path = apps/nginx_ensite
+	url = https://github.com/perusio/nginx_ensite
