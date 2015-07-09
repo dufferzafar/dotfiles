@@ -26,7 +26,7 @@ cb() {
       # Copy input to clipboard
       echo -n "$input" | xclip -selection c
       # Truncate text for status
-      if [ ${#input} -gt 80 ]; then input="$(echo "$input" | cut -c1-80)$_trn_col...\e[0m"; fi
+      if [ ${#input} -gt 80 ]; then input="$(echo "$input" | head -n 1 | cut -c1-80)$_trn_col...\e[0m"; fi
       # Print status.
       echo -e "$_scs_col""Copied to clipboard:\e[0m $input"
     fi
