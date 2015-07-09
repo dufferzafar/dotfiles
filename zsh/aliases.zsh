@@ -49,3 +49,12 @@ bored() {
 alias jl="jrnl life"
 alias ji="jrnl idea"
 alias jw="jrnl work"
+alias jc="jrnl code"
+
+# apt-get
+alias aptg='sudo apt-get'
+alias apti='sudo apt-get install'
+alias aptp='sudo apt-get purge'
+alias aptr='sudo apt-get remove'
+alias aptrp='sudo apt-get autoremove --purge'
+alias apts='apt-cache show'
