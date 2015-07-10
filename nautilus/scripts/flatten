@@ -1,0 +1,28 @@
+#!/bin/bash
+IFS=$'\n\t'
+
+urldecode() {
+    perl -MURI::Escape -e 'print uri_unescape($ARGV[0])' "$1"
+}
+
+# Extract path to directory
+if [ "$NAUTILUS_SCRIPT_CURRENT_URI" == "x-nautilus-desktop:///" ]; then
+     DIR=$HOME"/Desktop"
+else
+     DIR=$(urldecode "${NAUTILUS_SCRIPT_CURRENT_URI//file:\/\//}")
+fi
+
+# Find all files in the directory
+for arg
+do
+    if [[ -d $arg ]]; then
+        find $arg -type f | while read file; do
+            mv -n "$file" "$DIR/$(basename "$file")"
+        done
+
+        # Remove if the directory is empty
+        rmdir --ignore-fail-on-non-empty $arg
+    fi
+done
+
+notify-send -i info "Flatten Completed" "Moved all files to $DIR"
