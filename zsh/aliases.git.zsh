@@ -1,4 +1,7 @@
-alias ga="git add "
+# If a param is passed, add that, else add the current folder
+function ga {
+    ! [ -z "$1" ] && git add "$1" || git add .
+}
 alias gai="git add --intent-to-add"
 alias gap="git add -p"
 alias gau="git add -u ."

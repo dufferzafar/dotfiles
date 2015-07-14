@@ -14,7 +14,7 @@ alias gbld="go build"
 
 # Python Tools (living in a virtual environment)
 alias beet="~/.apps/appy/2/bin/beet"
-alias sub="~/.apps/appy/2/bin/subliminal -l en -- "
+alias sub="subliminal -l en -- "
 
 alias ytb="youtube-dl -ciw --no-mtime -f 18 --restrict-filenames -o '~/Videos/%(title)s.%(ext)s'"
 alias ted="youtube-dl -ciw --no-mtime -f medium --restrict-filenames -o '~/Videos/%(title)s.%(ext)s'"

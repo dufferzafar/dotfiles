@@ -2,7 +2,7 @@
 export PATH="$PATH:$HOME/.rvm/bin"
 
 # Paths
-export PATH="/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games"
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/usr/bin:/bin:/sbin:/usr/games"
 
 export GOPATH=$HOME/.go
 export GOROOT=/usr/lib/go
@@ -21,3 +21,10 @@ export FPP_EDITOR=subl
 
 # I <3 256 bits colors
 export TERM=xterm-256color
+
+# mitmproxy requires this
+export LANG=en_US.UTF-8
+
+# asciinema wants this
+export LC_ALL=en_IN.UTF-8
+export SHELL=/usr/bin/zsh
