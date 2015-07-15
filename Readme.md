@@ -26,3 +26,9 @@ sudo bash bootstrap.sh
 * [olivierverdier/zsh-git-prompt](https://github.com/olivierverdier/zsh-git-prompt)
 * [cxreg/smartcd](https://github.com/cxreg/smartcd)
 * [kennethreitz/autoenv](https://github.com/kennethreitz/autoenv)
+* [sindresorhus/pure](https://github.com/sindresorhus/pure)
+
+## Issues
+
+* The server doesn't have a gnome-keyring-handler
+* It doesn't even need sublime, nautilus stuff!
