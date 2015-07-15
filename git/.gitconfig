@@ -50,3 +50,5 @@
   pr-clean = "!git for-each-ref refs/heads/pr/* --format=\"%(refname)\" | while read ref ; do branch=${ref#refs/heads/} ; git branch -D $branch ; done"
   stash-show = "!f() { git stash show stash^{/$*} -p; }; f"
   stash-apply = "!f() { git stash apply stash^{/$*}; }; f"
+  exec = "!exec "
+  week = "!f() { git log --all --since=6.days.ago --author-date-order --author=dufferzafar --decorate; }; f"
