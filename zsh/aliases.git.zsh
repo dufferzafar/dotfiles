@@ -12,7 +12,25 @@ alias gbb="git bisect bad"
 alias gbg="git bisect good"
 alias gbr="git bisect reset"
 
-alias gc="git commit -v"
+# Alert when git date environment has been set.
+function gc {
+    if ! [ -z $GIT_COMMITTER_DATE ]; then
+        read "response?Git date environment set to: $GIT_COMMITTER_DATE. Continue? [y/Y/n] "
+        if [[ $response =~ ^[y]$ ]]; then
+            git commit -v
+        elif [[ $response =~ ^[Y]$ ]]; then
+            unset GIT_AUTHOR_DATE
+            unset GIT_COMMITTER_DATE
+            git commit -v
+        else
+            echo "Commit aborted."
+        fi
+    else
+        git commit -v
+    fi
+}
+
+# Todo: Add date check to this too?
 alias gcm="git commit -v --amend"
 
 alias gch="git checkout "
