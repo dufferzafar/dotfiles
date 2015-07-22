@@ -16,9 +16,17 @@ link() {
     ln -sf "$DIR/$1" ~/.config/sublime-text-3/"$1"
 }
 
-# Comment character for Batch File
-link "Packages/Batch File/Comments.tmPreferences"
+######################################################### Core Preferences
 
-# My Keymaps
+link "Packages/User/Preferences.sublime-settings"
+link "Packages/User/Package Control.sublime-settings"
+
+########################################################## Key & Mousemaps
+
 link "Packages/User/Default (Linux).sublime-keymap"
 link "Packages/User/Default (Windows).sublime-keymap"
+
+################################################################ Languages
+
+# Comment character for Batch File
+link "Packages/Batch File/Comments.tmPreferences"
