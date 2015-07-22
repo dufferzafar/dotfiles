@@ -21,6 +21,8 @@ link() {
 link "Packages/User/Preferences.sublime-settings"
 link "Packages/User/Package Control.sublime-settings"
 
+link "Packages/User/Monokai Extended Dark.tmTheme"
+
 ########################################################## Key & Mousemaps
 
 link "Packages/User/Default (Linux).sublime-keymap"
