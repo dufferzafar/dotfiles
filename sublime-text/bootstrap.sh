@@ -28,7 +28,12 @@ link "Packages/User/Monokai Extended Dark.tmTheme"
 link "Packages/User/Default (Linux).sublime-keymap"
 link "Packages/User/Default (Windows).sublime-keymap"
 
-################################################################ Languages
+######################################################## Language Specific
 
 # Comment character for Batch File
 link "Packages/Batch File/Comments.tmPreferences"
+
+link "Packages/User/HTML.sublime-settings"
+link "Packages/User/INI.sublime-settings"
+link "Packages/User/Python.sublime-settings"
+link "Packages/User/VimL.sublime-settings"
