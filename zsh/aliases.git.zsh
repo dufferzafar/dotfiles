@@ -6,7 +6,7 @@ alias gai="git add --intent-to-add"
 alias gap="git add -p"
 alias gau="git add -u ."
 
-alias gb="git branch -v"
+alias gb="git branch -vv"
 
 alias gbb="git bisect bad"
 alias gbg="git bisect good"
@@ -66,8 +66,8 @@ alias glu="git log --graph --abbrev-commit --decorate --date=relative --format=f
 
 alias gm="git merge --squash "
 
-alias gp="git push"
-alias gpl="git pull"
+alias gp="git push "
+alias gpl="git pull "
 gpb() {
     git push --set-upstream origin "$(git rev-parse --abbrev-ref HEAD 2>/dev/null)"
 }
@@ -89,6 +89,8 @@ alias gsts="git stash save"
 alias gsa="git stash apply"
 alias gsp="git stash pop"
 alias gstl="git stash list"
+
+alias gun="git reset --soft @~1"
 
 alias gwhat="git whatchanged --oneline"
 
