@@ -13,7 +13,7 @@ DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 # but first makes sure that the target directory exists.
 link() {
     mkdir -p "$(dirname ~/.config/sublime-text-3/"$1")"
-    ln -sf "$DIR/$1" ~/.config/sublime-text-3/"$1"
+    ln -f "$DIR/$1" ~/.config/sublime-text-3/"$1"
 }
 
 ######################################################### Core Preferences
