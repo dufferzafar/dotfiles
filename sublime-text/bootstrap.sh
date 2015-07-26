@@ -21,6 +21,9 @@ link() {
 link "Packages/User/Preferences.sublime-settings"
 link "Packages/User/Package Control.sublime-settings"
 
+# Some commands missing from the Pallette
+link "Packages/User/Command Pallette.sublime-commands"
+
 link "Packages/User/Monokai Extended Dark.tmTheme"
 
 ########################################################## Key & Mousemaps
