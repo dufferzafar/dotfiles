@@ -39,6 +39,7 @@
 [merge]
   tool = meld
 [diff]
+  renames = copies
   tool = meld
   algorithm = patience
 [difftool]
@@ -46,9 +47,9 @@
 [difftool "bc4"]
   cmd = /usr/bin/bcompare $LOCAL $REMOTE
 [alias]
+  exec = "!exec "
   pr = "!f() { git fetch -fu ${2:-origin} refs/pull/$1/head:pr/$1 && git checkout pr/$1; }; f"
   pr-clean = "!git for-each-ref refs/heads/pr/* --format=\"%(refname)\" | while read ref ; do branch=${ref#refs/heads/} ; git branch -D $branch ; done"
-  stash-show = "!f() { git stash show stash^{/$*} -p; }; f"
   stash-apply = "!f() { git stash apply stash^{/$*}; }; f"
-  exec = "!exec "
+  stash-show = "!f() { git stash show stash^{/$*} -p; }; f"
   week = "!f() { git log --all --since=6.days.ago --author-date-order --author=dufferzafar --decorate; }; f"

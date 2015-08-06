@@ -26,3 +26,6 @@ bower_components
 
 # Python Virtualenv
 env/
+
+# Tarballs
+*.tar*
