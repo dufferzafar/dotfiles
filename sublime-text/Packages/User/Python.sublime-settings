@@ -1,9 +1,10 @@
 {
-	"extensions":
-	[
-		"py",
-		"sage"
-	],
-	"tab_size": 4,
-	"translate_tabs_to_spaces": true
+    "extensions":
+    [
+        "py.example",
+        "py",
+        "sage"
+    ],
+    "tab_size": 4,
+    "translate_tabs_to_spaces": true
 }
