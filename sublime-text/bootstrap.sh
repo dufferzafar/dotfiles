@@ -40,3 +40,7 @@ link "Packages/User/HTML.sublime-settings"
 link "Packages/User/INI.sublime-settings"
 link "Packages/User/Python.sublime-settings"
 link "Packages/User/VimL.sublime-settings"
+
+################################################################ Snippets
+
+link "Packages/User/Basic Project Settings.sublime-snippet"
