@@ -44,3 +44,7 @@ link "Packages/User/VimL.sublime-settings"
 ################################################################ Snippets
 
 link "Packages/User/Basic Project Settings.sublime-snippet"
+
+########################################################## Custom Plugins
+
+link "Packages/Add Cursor/add_cursors.py"
