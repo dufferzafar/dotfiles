@@ -3,6 +3,8 @@ IFS=$'\n\t'
 
 # Iterate over each passed file
 for arg do
+    # Uses subliminal: https://github.com/Diaoul/subliminal
+    # sudo pip install subliminal
     ~/.local/bin/subliminal -l en -- $arg
 
     # TODO: Improve Notifications
