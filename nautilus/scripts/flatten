@@ -21,7 +21,7 @@ do
         done
 
         # Remove if the directory is empty
-        rmdir --ignore-fail-on-non-empty $arg
+        find $arg -type d -empty -delete
     fi
 done
 
