@@ -28,3 +28,7 @@ export LANG=en_US.UTF-8
 # asciinema wants this
 export LC_ALL=en_IN.UTF-8
 export SHELL=/usr/bin/zsh
+
+# fzf - fuzzy file finder
+export FZF_DEFAULT_COMMAND='ag -l -g ""'
+export FZF_DEFAULT_OPTS="--extended --cycle --multi"

@@ -72,3 +72,7 @@ ln -sf "$DIR/zsh/.zshrc" ~/.zshrc
 
 # Neobundle
 curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh
+
+# fzf
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install

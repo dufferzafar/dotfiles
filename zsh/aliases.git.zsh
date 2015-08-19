@@ -119,4 +119,3 @@ function gdate {
 function groot {
     cd "$(git rev-parse --show-toplevel)"
 }
-

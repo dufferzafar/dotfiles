@@ -38,3 +38,6 @@ source $dot/zsh/env.zsh
 [ -f ~/.rvm/scripts/rvm ] && source ~/.rvm/scripts/rvm
 
 setopt nosharehistory
+
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
