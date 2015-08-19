@@ -35,8 +35,6 @@ source $dot/zsh/screen.zsh
 source $dot/zsh/env.zsh
 
 # RVM
-if [[ -f "$HOME/.rvm/scripts/rvm" ]]; then
-    source "$HOME/.rvm/scripts/rvm"
-fi
+[ -f ~/.rvm/scripts/rvm ] && source ~/.rvm/scripts/rvm
 
 setopt nosharehistory
