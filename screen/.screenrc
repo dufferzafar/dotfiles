@@ -33,11 +33,9 @@ defscrollback 5000
 hardstatus off
 hardstatus alwayslastline
 
-hardstatus string "%{= kK} %-Lw%{=b kR}%n%f %t%{-}%+Lw %=%{= dd} %{b kw}%H %{r}%1` %{w}| %{g}%c %{w}| %{y}%d.%m.%Y %{w}"
+hardstatus string "%{= kK} %-Lw%{=b kR}%n%f %t%{-}%+Lw %=%{= dd} %{b kw}%H %{r}%1` %{w}| %{g}%C %{w}| %{y}%d.%m.%Y %{w}"
 
 ################################################## Keybindings
 
 # Quick Screen Cycle
-bindkey "^[[1;5C" next  # Ctrl-Right
-bindkey "^[[1;5D" prev  # Ctrl-Left
 
