@@ -1,0 +1,30 @@
+// [PackageDev] target_format: plist, ext: tmLanguage
+{
+    "name": "Jrnl File",
+    "scopeName": "source.jrnl",
+    "fileTypes": ["jrnl"],
+
+    "patterns": [
+        { "include": "#date" },
+        { "include": "#tags" }
+    ],
+
+    "repository": {
+        "date": {
+            "match": "(\\d{4}-\\d{2}-\\d{2}\\s\\d{2}:\\d{2})\\s(.*)",
+            "name": "line.comment.jrnl",
+            "captures": {
+                "1": {"name": "comment.git-blame"},
+                "2": {"name": "variable.parameter.line-number.git-blame"}
+                // "1": {"name": "constant.numeric.date.git-blame"},
+                // "2": {"name": "support.function.author.git-blame"}
+            }
+        },
+        "tags": {
+            "match": "@\\w+",
+            "name": "keyword.jrnl"
+        }
+    },
+
+    "uuid": "6c6128dc-0dcc-4a79-8adb-35bf12199d7f"
+}

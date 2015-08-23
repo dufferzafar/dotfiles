@@ -41,6 +41,10 @@ link "Packages/User/INI.sublime-settings"
 link "Packages/User/Python.sublime-settings"
 link "Packages/User/VimL.sublime-settings"
 
+# A custom syntax highlight for jrnl files
+# https://github.com/maebert/jrnl
+link "Packages/Jrnl/Jrnl.tmLanguage"
+
 ################################################################ Snippets
 
 link "Packages/User/Basic Project Settings.sublime-snippet"
