@@ -1,29 +1,32 @@
-# Virtualenv Thingies!
+# Python
 alias py="python"
 alias py2="python2"
 alias py3="python3"
+alias ptpy="ptpython"
+
+# Virtualenv
+alias venv="virtualenv"
 alias epy="env/bin/python"
 alias epip="env/bin/pip"
 alias ebpy="env/bin/bpython"
 alias efab="env/bin/fab"
 
-# Misc. Utilities
-alias du="du -hd 1"
-
-alias gbld="go build"
-
-# Python Tools (living in a virtual environment)
-alias beet="~/.apps/appy/2/bin/beet"
-alias sub="subliminal -l en -- "
-
-alias ytb="youtube-dl -ciw --no-mtime -f 18 --restrict-filenames -o '~/Videos/%(title)s.%(ext)s'"
-alias ted="youtube-dl -ciw --no-mtime -f medium --restrict-filenames -o '~/Videos/%(title)s.%(ext)s'"
-
-alias o="xdg-open"
-alias r="ranger"
+# Anaconda
+alias apy="/home/dufferzafar/.apps/anaconda3/bin/python"
+alias apip="/home/dufferzafar/.apps/anaconda3/bin/pip"
 
 # Serve a directory
 alias pysrv="python3 -m http.server "
+
+# https://github.com/Diaoul/subliminal
+alias sub="subliminal -l en -- "
+
+# https://github.com/richrd/suplemon
+alias supl='~/dev/clones/suplemon/suplemon.py'
+
+# https://github.com/rg3/youtube-dl/
+alias ytb="youtube-dl -ciw --no-mtime -f 18 --restrict-filenames -o '~/Videos/%(title)s.%(ext)s'"
+alias ted="youtube-dl -ciw --no-mtime -f medium --restrict-filenames -o '~/Videos/%(title)s.%(ext)s'"
 
 # cheat!
 ce() {
@@ -58,3 +61,9 @@ alias aptp='sudo apt-get purge'
 alias aptr='sudo apt-get remove'
 alias aptrp='sudo apt-get autoremove --purge'
 alias apts='apt-cache show'
+
+# Misc.
+alias du="du -hd 1"
+alias gbld="go build"
+alias o="xdg-open"
+alias r="ranger"
