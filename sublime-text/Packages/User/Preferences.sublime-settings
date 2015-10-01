@@ -1,12 +1,12 @@
 {
 	"always_show_minimap_viewport": true,
 	"animation_enabled": false,
-	"auto_complete_commit_on_tab": true,
+	"auto_complete_selector": "source - (comment, string.quoted)",
 	"auto_complete_triggers":
 	[
 		{
 			"characters": ".",
-			"selector": "source.python"
+			"selector": "source.python - (comment, string.quoted)"
 		}
 	],
 	"binary_file_patterns":
@@ -71,7 +71,6 @@
 		"*.pyo",
 		"*.sdf",
 		"*.so",
-		"*.sublime-project",
 		"*.sublime-workspace",
 		"*.suo",
 		".DS_Store",
@@ -100,26 +99,30 @@
 	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
-		"Sublime Tweet",
+		"BracketHighlighter",
+		"C++",
+		"Clickable URLs",
+		"FindKeyConflicts",
+		"FormatLua",
+		"Git",
+		"Git Conflict Resolver",
 		"GoSublime",
 		"JSHint",
-		"BracketHighlighter",
-		"SublimeLinter-jshint",
-		"SFTP",
-		"Pylinter",
-		"FindKeyConflicts",
-		"Sublime Bookmarks",
-		"SublimeLinter",
-		"SublimeLinter-shellcheck",
-		"Clickable URLs",
-		"SublimeLinter-pep8",
+		"LaTeXTools",
+		"Lua Dev",
 		"Markdown",
-		"Git",
-		"WordCount",
-		"Sublimall",
+		"Pylinter",
 		"RESTer HTTP Client",
+		"SFTP",
+		"Sublimall",
+		"Sublime Bookmarks",
+		"Sublime Tweet",
+		"SublimeLinter",
+		"SublimeLinter-jshint",
+		"SublimeLinter-pep8",
+		"SublimeLinter-shellcheck",
 		"Vintage",
-		"Git Conflict Resolver"
+		"WordCount"
 	],
 	"ignored_words":
 	[

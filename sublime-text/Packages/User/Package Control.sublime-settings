@@ -4,6 +4,7 @@
 	[
 		"Anaconda"
 	],
+	"bootstrapped": true,
 	"git_binary": "/usr/bin/git",
 	"in_process_packages":
 	[
@@ -15,6 +16,7 @@
 		"Advanced CSV",
 		"AdvancedNewFile",
 		"AlignTab",
+		"All Autocomplete",
 		"Anaconda",
 		"ApacheConf.tmLanguage",
 		"AutoHotkey",
@@ -22,13 +24,12 @@
 		"AutoSelect",
 		"BetterFindBuffer",
 		"BracketHighlighter",
-		"C Improved",
 		"C++ Snippets",
 		"Case Conversion",
 		"Chmod",
 		"Clickable URLs",
-		"CUDA C++",
 		"Cython",
+		"DistractionFreeWindow",
 		"Emmet",
 		"ExportHtml",
 		"FileDiffs",
@@ -58,7 +59,7 @@
 		"Markdown Preview",
 		"MarkdownEditing",
 		"MasmAssembly",
-		"Mediawiker",
+		"Minify",
 		"MoveTab",
 		"MultiEditUtils",
 		"NSIS",
