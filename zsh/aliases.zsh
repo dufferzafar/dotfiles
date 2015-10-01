@@ -11,18 +11,11 @@ alias epip="env/bin/pip"
 alias ebpy="env/bin/bpython"
 alias efab="env/bin/fab"
 
-# Anaconda
-alias apy="/home/dufferzafar/.apps/anaconda3/bin/python"
-alias apip="/home/dufferzafar/.apps/anaconda3/bin/pip"
-
 # Serve a directory
 alias pysrv="python3 -m http.server "
 
 # https://github.com/Diaoul/subliminal
 alias sub="subliminal -l en -- "
-
-# https://github.com/richrd/suplemon
-alias supl='~/dev/clones/suplemon/suplemon.py'
 
 # https://github.com/rg3/youtube-dl/
 alias ytb="youtube-dl -ciw --no-mtime -f 18 --restrict-filenames -o '~/Videos/%(title)s.%(ext)s'"
@@ -67,3 +60,18 @@ alias du="du -hd 1"
 alias gbld="go build"
 alias o="xdg-open"
 alias r="ranger"
+
+# Create an alias only if the destination exists
+alia () {
+    [[ -f $2 ]] && alias $1=$2
+}
+
+# Anaconda
+alia apy ~/.apps/anaconda3/bin/python
+alia apip ~/.apps/anaconda3/bin/pip
+
+# https://github.com/richrd/suplemon
+alia supl ~/dev/clones/suplemon/suplemon.py
+
+# http://github.com/dufferzafar/netuse
+alia netuse ~/dev/netuse/netuse.py

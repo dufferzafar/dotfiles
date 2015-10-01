@@ -10,6 +10,10 @@ export PATH=$PATH:$GOPATH/bin
 
 export PATH=$PATH:$HOME/.dotfiles/bin
 
+# TODO: Put all these applications into a separate install script?
+# Git Cola!
+[ -d ~/dev/clones/git-cola ] && export PATH=$PATH:$HOME/dev/clones/git-cola/bin
+
 # Used by pipsi
 export PATH=$PATH:$HOME/.local/bin
 
