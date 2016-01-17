@@ -15,9 +15,6 @@ local dot=~/.dotfiles
 # Copies text to clipboard
 source $dot/zsh/cb.zsh
 
-# Rupa's Z
-source $dot/zsh/z.sh
-
 # Silly hacks
 source $dot/zsh/hacks.zsh
 
@@ -38,6 +35,13 @@ source $dot/zsh/env.zsh
 [ -f ~/.rvm/scripts/rvm ] && source ~/.rvm/scripts/rvm
 
 setopt nosharehistory
+
+# Autojump - https://github.com/wting/autojump
+# to easily navigate directories from the command-line
+[[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && source ~/.autojump/etc/profile.d/autojump.sh
+
+# j is the new z, yo!
+alias z="j"
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
