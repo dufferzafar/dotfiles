@@ -2,7 +2,13 @@
 # for each project.
 _Help/
 
-# Nemo <3 .hidden files
+# Contain random testing code
+_Help.*
+
+# Bit Torrent Sync Folder
+.sync/
+
+# .hidden files
 .hidden
 
 # I <3 Sublime
@@ -27,5 +33,14 @@ bower_components
 # Python Virtualenv
 env/
 
+# IPython Notebook Checkpoints
+.ipynb_checkpoints
+
 # Tarballs
 *.tar*
+
+# Python Tests Stuff
+*.coverage
+
+# Exuberant CTags
+.tags
