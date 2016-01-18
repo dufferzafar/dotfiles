@@ -21,10 +21,6 @@ source $dot/zsh/hacks.zsh
 # Cool functions
 source $dot/zsh/functions.zsh
 
-# Custom Aliases
-source $dot/zsh/aliases.zsh
-source $dot/zsh/aliases.git.zsh
-
 # Set screen process/title
 source $dot/zsh/screen.zsh
 
@@ -42,6 +38,10 @@ setopt nosharehistory
 
 # j is the new z, yo!
 alias z="j"
+
+# Custom Aliases
+source $dot/zsh/aliases.zsh
+source $dot/zsh/aliases.git.zsh
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
