@@ -56,3 +56,7 @@ compinit -u
 
 # show completion menu when number of options is at least 2
 zstyle ':completion:*' menu select=2
+
+# Alt+0 Alt+. gives the first part of the previous command!
+# Thanks to awesome folks over at #zsh
+bindkey -s '\e,' '\e0\e.'
