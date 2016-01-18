@@ -72,7 +72,12 @@ gpb() {
     git push --set-upstream origin "$(git rev-parse --abbrev-ref HEAD 2>/dev/null)"
 }
 
-alias gr="git reset HEAD"
+gmkpull() {
+    repo_name="$(basename "$(git rev-parse --show-toplevel)")"
+    branch_name="$(git rev-parse --abbrev-ref HEAD 2>/dev/null)"
+    pull_url="https://github.com/dufferzafar/"$repo_name"/compare/"$branch_name"?expand=1"
+    xdg-open $pull_url
+}
 alias grb="git rebase master"
 alias grbi="git rebase -i master"
 alias grbc="git rebase --continue"
