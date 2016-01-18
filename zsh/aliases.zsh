@@ -67,8 +67,10 @@ alia () {
 }
 
 # Anaconda
-alia apy ~/.apps/anaconda3/bin/python
-alia apip ~/.apps/anaconda3/bin/pip
+local anaconda=~/.apps/anaconda3/bin
+alia apy  $anaconda/python
+alia apip $anaconda/pip
+alia aipy $anaconda/ipython
 
 # https://github.com/richrd/suplemon
 alia supl ~/dev/clones/suplemon/suplemon.py
