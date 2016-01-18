@@ -88,3 +88,12 @@ alia picard ~/dev/picard/tagger.py
 
 # https://github.com/MTG/acousticbrainz-client
 alia abzsubmit ~/dev/alpha/abzsubmit/env/bin/abzsubmit
+
+# Taken from: https://github.com/jkbrzt/httpie#redirected-output
+httpless() {
+    http --pretty=all --print=hb "$@" | less -R
+}
+
+curless() {
+    curl -iq "$@" | less -R
+}
