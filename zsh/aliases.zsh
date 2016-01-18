@@ -77,3 +77,12 @@ alia supl ~/dev/clones/suplemon/suplemon.py
 
 # http://github.com/dufferzafar/netuse
 alia netuse ~/dev/netuse/netuse.py
+
+# https://github.com/laurent22/massren
+alia massren ~/dev/clones/massren/massren
+
+# https://github.com/musicbrainz/picard/
+alia picard ~/dev/picard/tagger.py
+
+# https://github.com/MTG/acousticbrainz-client
+alia abzsubmit ~/dev/alpha/abzsubmit/env/bin/abzsubmit
