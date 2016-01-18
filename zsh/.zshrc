@@ -45,3 +45,14 @@ source $dot/zsh/aliases.git.zsh
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# COMPLETION SETTINGS
+# add custom completion scripts
+fpath=(~/.dotfiles/zsh/completion $fpath)
+
+# compsys initialization
+autoload -U compinit
+compinit -u
+
+# show completion menu when number of options is at least 2
+zstyle ':completion:*' menu select=2
