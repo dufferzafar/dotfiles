@@ -18,6 +18,23 @@ sudo bash bootstrap.sh
 
 ## Todo
 
+* Make `gio` work offline
+  * cache responses in ~/.cache/gio ?
+  * when connected to internet prefer online stuff
+
+* Will the hub completion script need to be updated? How?
+
+* Vim
+  * ~/.vim/ftdetect/markdown.md
+  * au BufNewFile,BufRead *.md setf markdown
+
+* Perform cleanup, test etc.
+
+* Add a way to uninstall!
+
+* Use antigen to load oh-my-zsh stuff
+  * use zsh profiling where the bottleneck is, and will it make sense to switch to antigen
+
 * [nbeaver/lesskey](https://github.com/nbeaver/lesskey)
 * [nbeaver/bashrc-public](https://github.com/nbeaver/bashrc-public)
 * [ingydotnet/git-hub](https://github.com/ingydotnet/git-hub)
