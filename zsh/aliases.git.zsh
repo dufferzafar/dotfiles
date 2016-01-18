@@ -78,10 +78,14 @@ gmkpull() {
     pull_url="https://github.com/dufferzafar/"$repo_name"/compare/"$branch_name"?expand=1"
     xdg-open $pull_url
 }
+
+alias gr="git reset -q HEAD"
 alias grb="git rebase master"
 alias grbi="git rebase -i master"
 alias grbc="git rebase --continue"
 alias grbs="git rebase --skip"
+
+alias grem="git remote -vv"
 
 alias gru="git remote update"
 
