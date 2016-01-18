@@ -4,6 +4,9 @@ export PATH="$PATH:$HOME/.rvm/bin"
 # Paths
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/usr/bin:/bin:/sbin:/usr/games"
 
+# 3rd party binaries, downloaded from random places on the internet
+export PATH=$PATH:$HOME/.apps/bin
+
 export GOPATH=$HOME/.go
 export GOROOT=/usr/lib/go
 export PATH=$PATH:$GOPATH/bin
