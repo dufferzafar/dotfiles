@@ -86,6 +86,9 @@
     // Git Savvy: Show Status
     { "keys": ["ctrl+\\"], "command": "gs_show_status" },
 
+    // Insert Nums
+    { "keys": ["shift+alt+t"], "command": "prompt_insert_nums" },
+
     // Todo Review
     // { "keys": [ "ctrl+k", "ctrl+t" ], "command": "todo_review", "args": { "paths": [], "open_files": true } },
 
