@@ -97,3 +97,8 @@ httpless() {
 curless() {
     curl -iq "$@" | less -R
 }
+
+# https://www.gitignore.io/docs#install-command-line-linux
+gio() {
+    curl -L -s https://www.gitignore.io/api/"$@"
+}
