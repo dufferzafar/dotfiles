@@ -44,3 +44,6 @@ env/
 
 # Exuberant CTags
 .tags
+
+# Custom Makefiles that I add quick commands to!
+Makefile.dzmake

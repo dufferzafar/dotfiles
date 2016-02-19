@@ -106,3 +106,12 @@ fzit() {
     fi
   done
 }
+
+# Make that prefers my custom files!
+make() {
+  if [[ "$1" != "-f" && -f Makefile.dzmake ]]; then
+    /usr/bin/make -f Makefile.dzmake "$@"
+  else
+    /usr/bin/make "$@"
+  fi
+}
