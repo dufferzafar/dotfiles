@@ -1,3 +1,6 @@
+
+#####################################################################
+
 # Python
 alias py="python"
 alias py2="python2"
@@ -6,22 +9,28 @@ alias ptpy="ptpython"
 
 # Virtualenv
 alias venv="virtualenv"
+alias eac="source env/bin/activate"
 alias epy="env/bin/python"
 alias epip="env/bin/pip"
 alias ebpy="env/bin/bpython"
 alias efab="env/bin/fab"
 
 # Serve a directory
+# TODO: Use devd?
 alias pysrv="python3 -m http.server "
+
+#####################################################################
 
 # https://github.com/Diaoul/subliminal
 alias sub="subliminal -l en -- "
 
 # https://github.com/rg3/youtube-dl/
 alias ytb="youtube-dl -ciw --no-mtime -f 18 --restrict-filenames -o '~/Videos/%(title)s.%(ext)s'"
-alias ytmp3="youtube-dl -ciw --no-mtime --format=bestaudio --extract-audio --audio-format=mp3 --audio-quality=0 --restrict-filenames -o '~/Videos/%(title)s.%(ext)s'"
+alias ytmp3="youtube-dl -ciw --no-mtime --format=bestaudio --extract-audio --audio-format=mp3 --audio-quality=0 -o '~/Music/%(title)s.%(ext)s'"
 alias ted="youtube-dl -ciw --no-mtime -f medium --restrict-filenames -o '~/Videos/%(title)s.%(ext)s'"
 alias vimeo="youtube-dl -ciw --no-mtime -f h264-sd --restrict-filenames -o '~/Videos/%(title)s.%(ext)s'"
+
+#####################################################################
 
 # cheat!
 ce() {
@@ -63,6 +72,8 @@ alias gbld="go build"
 alias o="xdg-open"
 alias r="ranger"
 
+#####################################################################
+
 # Create an alias only if the destination exists
 alia () {
     [[ -f $2 ]] && alias $1=$2
@@ -88,6 +99,8 @@ alia picard ~/dev/picard/tagger.py
 
 # https://github.com/MTG/acousticbrainz-client
 alia abzsubmit ~/dev/alpha/abzsubmit/env/bin/abzsubmit
+
+#####################################################################
 
 # Use the silversearcher to find stuff!
 agf() {
