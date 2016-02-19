@@ -89,6 +89,11 @@ alia picard ~/dev/picard/tagger.py
 # https://github.com/MTG/acousticbrainz-client
 alia abzsubmit ~/dev/alpha/abzsubmit/env/bin/abzsubmit
 
+# Use the silversearcher to find stuff!
+agf() {
+    ag -C 2 --color --group $@ | less -R
+}
+
 # Taken from: https://github.com/jkbrzt/httpie#redirected-output
 httpless() {
     http --pretty=all --print=hb "$@" | less -R
