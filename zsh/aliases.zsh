@@ -95,7 +95,16 @@ httpless() {
 }
 
 curless() {
-    curl -iq "$@" | less -R
+    curl -q -i -s "$@" | less -R
+}
+
+# Pass a request through mitmproxy!
+httm() {
+    http --proxy=http:http://localhost:8080 --proxy=https:http://localhost:8080 "$@" >/dev/null
+}
+
+ncm() {
+    printf "$1" | nc localhost 8080 >/dev/null
 }
 
 # https://www.gitignore.io/docs#install-command-line-linux
