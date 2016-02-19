@@ -46,7 +46,7 @@ function gd {
     ! [ -z "$1" ] && git diff "$1" || git diff .
 }
 
-alias gdc="git diff --cached ."
+alias gdc="git diff --cached"
 
 alias gf="git fetch "
 alias gfu="git fetch upstream && git rebase upstream/master"
@@ -67,6 +67,8 @@ alias glu="git log --graph --abbrev-commit --decorate --date=relative --format=f
 alias gm="git merge --squash "
 
 alias gp="git push "
+alias gpf="git push --force"
+
 alias gpl="git pull "
 gpb() {
     git push --set-upstream origin "$(git rev-parse --abbrev-ref HEAD 2>/dev/null)"
@@ -85,7 +87,7 @@ alias grbi="git rebase -i master"
 alias grbc="git rebase --continue"
 alias grbs="git rebase --skip"
 
-alias grem="git remote -vv"
+alias grv="git remote -vv"
 
 alias gru="git remote update"
 
