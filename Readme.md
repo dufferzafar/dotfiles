@@ -18,6 +18,8 @@ sudo bash bootstrap.sh
 
 ## Todo
 
+* LazyLoad zsh subscripts like gvm, rvm, nvm
+
 * Make `gio` work offline
   * cache responses in ~/.cache/gio ?
   * when connected to internet prefer online stuff

@@ -43,3 +43,5 @@ export PYTHONPATH=$PYTHONPATH:$HOME/.python
 # fzf - fuzzy file finder
 export FZF_DEFAULT_COMMAND='ag -l -g ""'
 export FZF_DEFAULT_OPTS="--extended --cycle --multi"
+
+export NVM_DIR=~/.nvm

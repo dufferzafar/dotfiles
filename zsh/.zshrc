@@ -27,8 +27,14 @@ source $dot/zsh/screen.zsh
 # Environment Variables & PATHs
 source $dot/zsh/env.zsh
 
-# RVM
-[ -f ~/.rvm/scripts/rvm ] && source ~/.rvm/scripts/rvm
+# Ruby Version Manager
+[ -f ~/.rvm/scripts/rvm ] && source ~/.rvm/scripts/rvm && rvm use 1.9.3 >/dev/null
+
+# Go Version Manager
+[ -f ~/.gvm/scripts/gvm ] && source ~/.gvm/scripts/gvm && gvm use 1.5 >/dev/null
+
+# Node Version Manager
+[ -s ~/.nvm/nvm.sh ] && source ~/.nvm/nvm.sh && nvm use v5 >/dev/null
 
 setopt nosharehistory
 
