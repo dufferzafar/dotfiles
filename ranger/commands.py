@@ -83,7 +83,10 @@
 # of ranger.
 # ===================================================================
 
+import os
 from ranger.api.commands import *
+from ranger.core.loader import CommandLoader
+
 
 class alias(Command):
     """:alias <newcommand> <oldcommand>
@@ -1469,3 +1472,88 @@ class linemode(default_linemode):
         # Ask the browsercolumns to redraw
         for col in self.fm.ui.browser.columns:
             col.need_redraw = True
+
+
+class compress(Command):
+    """
+    :compress <archive>
+
+    Compress marked files to <archive>
+    """
+
+    def execute(self):
+        cwd = self.fm.thisdir
+        marked_files = cwd.get_selection()
+
+        if not marked_files:
+            return
+
+        def refresh(_):
+            cwd = self.fm.get_directory(original_path)
+            cwd.load_content()
+
+        original_path = cwd.path
+        parts = self.line.split()
+
+        if len(parts) < 2:
+            self.fm.notify("Specify archive name - :compress <archive>")
+            return
+
+        au_flags = parts[1:]
+
+        descr = "compressing files in: " + os.path.basename(parts[1])
+        obj = CommandLoader(
+            args=['apack'] + au_flags + [os.path.relpath(f.path, cwd.path) for f in marked_files],
+            descr=descr
+        )
+
+        obj.signal_bind('after', refresh)
+        self.fm.loader.add(obj)
+
+    def tab(self, tabnum):
+        """Complete with current folder name."""
+
+        extension = ['.zip', '.tar.gz', '.rar', '.7z']
+        return ['compress ' + os.path.basename(self.fm.thisdir.path) + ext for ext in extension]
+
+
+class extract(Command):
+    """
+    :extract <directory>
+
+    Extract marked files to <directory>
+    """
+
+    def execute(self):
+        cwd = self.fm.thisdir
+        marked_files = cwd.get_selection()
+
+        if not marked_files:
+            return
+
+        def refresh(_):
+            cwd = self.fm.get_directory(original_path)
+            cwd.load_content()
+
+        original_path = cwd.path
+        parts = self.line.split()
+
+        extract_to = cwd.path
+        if len(parts) == 2:
+            extract_to = parts[1]
+
+        au_flags = ['-X', extract_to, '-e', '-f']
+
+        one_file = marked_files[0]
+        if len(marked_files) == 1:
+            descr = "extracting: " + os.path.basename(one_file.path)
+        else:
+            descr = "extracting files from: " + os.path.basename(one_file.dirname)
+
+        obj = CommandLoader(
+            args=['aunpack'] + au_flags + [f.path for f in marked_files],
+            descr=descr
+        )
+
+        obj.signal_bind('after', refresh)
+        self.fm.loader.add(obj)
