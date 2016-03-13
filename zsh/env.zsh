@@ -11,11 +11,8 @@ export GOPATH=$HOME/.go
 export GOROOT=/usr/lib/go
 export PATH=$PATH:$GOPATH/bin
 
-export PATH=$PATH:$HOME/.dotfiles/bin
-
-# TODO: Put all these applications into a separate install script?
-# Git Cola!
-[ -d ~/dev/clones/git-cola ] && export PATH=$PATH:$HOME/dev/clones/git-cola/bin
+# https://gitlab.com/dufferzafar/scripts
+export PATH=$PATH:$HOME/.scripts
 
 # Used by pipsi
 export PATH=$PATH:$HOME/.local/bin
@@ -25,6 +22,9 @@ export PATH=$PATH:$HOME/.local/bin
 # export MANPATH="/usr/local/man:$MANPATH"
 
 export FPP_EDITOR=subl
+
+# Make vim the default editor
+export EDITOR="vim"
 
 # I <3 256 bits colors
 export TERM=xterm-256color
