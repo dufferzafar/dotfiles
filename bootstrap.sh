@@ -60,9 +60,6 @@ exit
 # sublime text
 source "$DIR/sublime-text/bootstrap.sh"
 
-# Nautilus
-source "$DIR/nautilus/bootstrap.sh"
-
 ########################################### The End
 
 # Zsh
