@@ -43,10 +43,10 @@ alias gcpk="git cherry-pick -n"
 
 # If a param is passed, diff that, else diff the current folder
 function gd {
-    ! [ -z "$1" ] && git diff "$1" || git diff .
+    ! [ -z "$1" ] && git diff -M "$1" || git diff -M .
 }
 
-alias gdc="git diff --cached"
+alias gdc="git diff --cached -M"
 
 alias gf="git fetch "
 alias gfu="git fetch upstream && git rebase upstream/master"
