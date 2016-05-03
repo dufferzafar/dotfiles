@@ -13,10 +13,6 @@ for file in $DIR/ranger/*; do
     ln -sf "$file" ~/.config/ranger/"${file##*/}"
 done
 
-# Screencloud
-mkdir -p ~/.config/screencloud
-ln -sf "$DIR/screencloud/ScreenCloud.conf" ~/.config/screencloud/ScreenCloud.conf
-
 # Pidgin
 mkdir -p ~/.purple
 for file in $DIR/pidgin/*; do
