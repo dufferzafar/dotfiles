@@ -19,10 +19,6 @@ for file in $DIR/pidgin/*; do
     ln -sf "$file" ~/.purple/"${file##*/}"
 done
 
-# pip
-mkdir -p ~/.pip
-ln -sf "$DIR/pip/pip.conf" ~/.pip/pip.conf
-
 # cheat
 ln -sf "$DIR/.cheatrc" ~/.cheatrc
 
@@ -30,12 +26,6 @@ ln -sf "$DIR/.cheatrc" ~/.cheatrc
 ln -sf "$DIR/vim/.vimrc" ~/.vimrc
 mkdir -p ~/.vim/colors
 ln -sf "$DIR/vim/monokai.vim" ~/.vim/colors/monokai.vim
-
-# Wget
-ln -sf "$DIR/wget/.wgetrc" ~/.wgetrc
-
-# Screen
-ln -sf "$DIR/screen/.screenrc" ~/.screenrc
 
 # jrnl
 ln -sf "$DIR/.jrnl_config" ~/.jrnl_config
