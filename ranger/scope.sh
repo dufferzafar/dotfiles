@@ -27,6 +27,7 @@ maxln=200    # Stop after $maxln lines.  Can be used like ls | head -n $maxln
 # Find out something about the file:
 mimetype=$(file --mime-type -Lb "$path")
 extension=${path##*.}
+shebang=$(head -n 1 "$path")
 
 # Functions:
 # runs a command and saves its output into $output.  Useful if you need
@@ -70,6 +71,10 @@ esac
 case "$mimetype" in
     # Syntax highlight for text files:
     text/* | */xml)
+        case "$shebang" in
+            *python*)
+                try highlight --syntax python --out-format=ansi "$path" && { dump | trim; exit 5; } || exit 2;;
+        esac
         try highlight --out-format=ansi "$path" && { dump | trim; exit 5; } || exit 2;;
     # Ascii-previews of images:
     image/*)
