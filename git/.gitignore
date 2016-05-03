@@ -1,5 +1,4 @@
-# These folders contain miscellaneous material
-# for each project.
+# These folders contain miscellaneous material for each project
 _Help/
 
 # Contain random testing code
@@ -10,6 +9,9 @@ _Help.*
 
 # .hidden files
 .hidden
+
+# .directory files for Dolphin
+.directory
 
 # I <3 Sublime
 *.sublime-project
@@ -33,6 +35,9 @@ bower_components
 # Python Virtualenv
 env/
 
+# Python Packages
+*.egg-info/
+
 # IPython Notebook Checkpoints
 .ipynb_checkpoints
 
@@ -41,6 +46,7 @@ env/
 
 # Python Tests Stuff
 *.coverage
+htmlcov/
 
 # Exuberant CTags
 .tags

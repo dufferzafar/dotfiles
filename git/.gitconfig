@@ -11,8 +11,7 @@
   editor = vim
   autocrlf = input
   pager = less -+$LESS -R
-[credential]
-  helper = /usr/share/doc/git/contrib/credential/gnome-keyring/git-credential-gnome-keyring
+	fileMode = false
 [push]
   default = simple
 [color]
@@ -36,12 +35,11 @@
 [gui]
   editor = sublime
   historybrowser = gitk
-[merge]
-  tool = meld
 [diff]
   renames = copies
   tool = meld
   algorithm = patience
+	noprefix = true
 [difftool]
   prompt = false
 [difftool "bc4"]
@@ -51,3 +49,8 @@
   stash-apply = "!f() { git stash apply stash^{/$*}; }; f"
   stash-show = "!f() { git stash show stash^{/$*} -p; }; f"
   week = "!f() { git log --all --since=6.days.ago --author-date-order --author=dufferzafar --decorate; }; f"
+[gitreview]
+	remote = origin
+[pager]
+	diff = diff-so-fancy | less --tabs=1,5 -R
+	show = diff-so-fancy | less --tabs=1,5 -R
