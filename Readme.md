@@ -18,6 +18,16 @@ sudo bash bootstrap.sh
 
 ## Todo
 
+* tigrc
+    * http://jonas.nitro.dk/tig/tigrc.5.html
+    * https://github.com/jonas/tig/blob/master/tigrc
+    * https://github.com/jtheoof/dotfiles/blob/master/.tigrc
+
+* mpv configurations & scripts
+
+* Terminator Config File
+    * ~/.config/terminator/config
+
 * LazyLoad zsh subscripts like gvm, rvm, nvm
 
 * Make `gio` work offline
@@ -40,8 +50,6 @@ sudo bash bootstrap.sh
 * [nbeaver/lesskey](https://github.com/nbeaver/lesskey)
 * [nbeaver/bashrc-public](https://github.com/nbeaver/bashrc-public)
 * [ingydotnet/git-hub](https://github.com/ingydotnet/git-hub)
-* [junegunn/fzf.git](https://github.com/junegunn/fzf.git)
-* [tj/git-extras](https://github.com/tj/git-extras)
 * [olivierverdier/zsh-git-prompt](https://github.com/olivierverdier/zsh-git-prompt)
 * [cxreg/smartcd](https://github.com/cxreg/smartcd)
 * [kennethreitz/autoenv](https://github.com/kennethreitz/autoenv)
