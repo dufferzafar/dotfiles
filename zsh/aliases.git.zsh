@@ -130,3 +130,7 @@ function gdate {
 function groot {
     cd "$(git rev-parse --show-toplevel)"
 }
+
+function git-most {
+    git log --pretty=format: --name-only | sort | uniq -c | sort -rg | head -10
+}

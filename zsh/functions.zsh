@@ -107,6 +107,17 @@ fzit() {
   done
 }
 
+pdfpages() {
+  for file in "$@"; do
+    echo $file
+    pdfinfo "$file" | grep -oP '(?<=Pages:          )[ A-Za-z0-9]*'
+  done
+}
+
+pdfex() {
+  qpdf --linearize "$1" --pages "$1" "$2-$3" -- "$4"
+}
+
 # Make that prefers my custom files!
 make() {
   if [[ "$1" != "-f" && -f Makefile.dzmake ]]; then
