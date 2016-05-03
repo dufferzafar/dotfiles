@@ -1,14 +1,11 @@
-# Path to your oh-my-zsh installation.
+# Path to oh-my-zsh installation
 export ZSH=$HOME/.oh-my-zsh
 
-# Set name of the theme to load.
-ZSH_THEME="af-magic"
+# My Custom Theme
+ZSH_THEME="duffer"
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-plugins=(pip node npm pep8 python pylint pyenv terminator colored-man zsh-syntax-highlighting history-substring-search command-not-found)
-
-# Core Zsh file
-source "$ZSH/oh-my-zsh.sh"
+# Load default oh-my-zsh plugins (~/.oh-my-zsh/plugins/*)
+plugins=(pip node npm pep8 python pylint pyenv terminator colored-man zsh-syntax-highlighting history-substring-search command-not-found zsh-completions)
 
 local dot=~/.dotfiles
 
@@ -36,8 +33,6 @@ source $dot/zsh/env.zsh
 # Node Version Manager
 [ -s ~/.nvm/nvm.sh ] && source ~/.nvm/nvm.sh && nvm use v5 >/dev/null
 
-setopt nosharehistory
-
 # Autojump - https://github.com/wting/autojump
 # to easily navigate directories from the command-line
 [[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && source ~/.autojump/etc/profile.d/autojump.sh
@@ -48,6 +43,9 @@ alias z="j"
 # Custom Aliases
 source $dot/zsh/aliases.zsh
 source $dot/zsh/aliases.git.zsh
+
+# Core Zsh file
+source "$ZSH/oh-my-zsh.sh"
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -66,3 +64,6 @@ zstyle ':completion:*' menu select=2
 # Alt+0 Alt+. gives the first part of the previous command!
 # Thanks to awesome folks over at #zsh
 bindkey -s '\e,' '\e0\e.'
+
+# Don't share history among open zsh sessions (terminal tabs)
+setopt nosharehistory
