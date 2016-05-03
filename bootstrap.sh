@@ -28,7 +28,7 @@ mkdir -p ~/.pip
 ln -sf "$DIR/pip/pip.conf" ~/.pip/pip.conf
 
 # cheat
-ln -sf "$DIR/cheat/.cheatrc" ~/.cheatrc
+ln -sf "$DIR/.cheatrc" ~/.cheatrc
 
 # Vim
 ln -sf "$DIR/vim/.vimrc" ~/.vimrc
@@ -42,14 +42,14 @@ ln -sf "$DIR/wget/.wgetrc" ~/.wgetrc
 ln -sf "$DIR/screen/.screenrc" ~/.screenrc
 
 # jrnl
-ln -sf "$DIR/jrnl/.jrnl_config" ~/.jrnl_config
+ln -sf "$DIR/.jrnl_config" ~/.jrnl_config
 
 # the silver searcher
-ln -sf "$DIR/ag/.agignore" ~/.agignore
+ln -sf "$DIR/.agignore" ~/.agignore
 
 # ptpython
 mkdir -p ~/.ptpython
-ln -sf "$DIR/python/ptpython.py" ~/.ptpython/config.py
+ln -sf "$DIR/.ptpython.py" ~/.ptpython/config.py
 
 # Setup stuff contained in the apps/ directory
 source "$DIR/apps.sh"
