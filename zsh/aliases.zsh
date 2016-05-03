@@ -9,11 +9,13 @@ alias ptpy="ptpython"
 
 # Virtualenv
 alias venv="virtualenv"
+# Python 2 venv
 alias eac="source env/bin/activate"
 alias epy="env/bin/python"
 alias epip="env/bin/pip"
-alias ebpy="env/bin/bpython"
-alias efab="env/bin/fab"
+# Python 3 venv
+alias vpy="venv/bin/python"
+alias vpip="venv/bin/pip"
 
 # Serve a directory
 # TODO: Use devd?
@@ -26,6 +28,7 @@ alias sub="subliminal -l en -- "
 
 # https://github.com/rg3/youtube-dl/
 alias ytb="youtube-dl -ciw --no-mtime -f 18 --restrict-filenames -o '~/Videos/%(title)s.%(ext)s'"
+alias ytbg="youtube-dl -ciw --no-mtime --restrict-filenames -o '~/Videos/%(title)s.%(ext)s'"
 alias ytmp3="youtube-dl -ciw --no-mtime --format=bestaudio --extract-audio --audio-format=mp3 --audio-quality=0 -o '~/Music/%(title)s.%(ext)s'"
 alias ted="youtube-dl -ciw --no-mtime -f medium --restrict-filenames -o '~/Videos/%(title)s.%(ext)s'"
 alias vimeo="youtube-dl -ciw --no-mtime -f h264-sd --restrict-filenames -o '~/Videos/%(title)s.%(ext)s'"
@@ -67,7 +70,12 @@ alias aptrp='sudo apt-get autoremove --purge'
 alias apts='apt-cache show'
 
 # Misc.
-alias du="du -hd 1"
+dus() {
+    du -hs "$1" 2>/dev/null
+}
+du() {
+    du --apparent-size -hd 1 "$@" | sort -rh
+}
 alias gbld="go build"
 alias o="xdg-open"
 alias r="ranger"
@@ -102,7 +110,12 @@ alia abzsubmit ~/dev/alpha/abzsubmit/env/bin/abzsubmit
 
 #####################################################################
 
-# Use the silversearcher to find stuff!
+# Use locate to find files
+loki() {
+    locate -e -i "$@" | fzf
+}
+
+# Use the silversearcher to find text!
 agf() {
     ag -C 2 --color --group $@ | less -R
 }
