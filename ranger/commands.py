@@ -1538,10 +1538,7 @@ class extract(Command):
         original_path = cwd.path
         parts = self.line.split()
 
-        extract_to = cwd.path
-        if len(parts) == 2:
-            extract_to = parts[1]
-
+        extract_to = parts[1] if len(parts) == 2 else original_path
         au_flags = ['-X', extract_to, '-e', '-f']
 
         one_file = marked_files[0]
@@ -1557,3 +1554,5 @@ class extract(Command):
 
         obj.signal_bind('after', refresh)
         self.fm.loader.add(obj)
+
+    # TODO: Add tab() function which cycles through the folder names
