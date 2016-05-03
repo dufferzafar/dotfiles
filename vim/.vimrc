@@ -7,6 +7,10 @@ source ~/.dotfiles/vim/keymap.vim
 
 " Git commit file
 autocmd Filetype gitcommit setlocal spell textwidth=72
+
+" Set minimum size of LargeFiles to be 10 MB
+let g:LargeFile=10
+
 " My custom color scheme
 colorscheme monokai
 " Insert Current Date & Time
