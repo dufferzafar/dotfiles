@@ -3,9 +3,9 @@
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
 # Git
-ln -sf "$DIR/git/.gitconfig" ~/.gitconfig
-ln -sf "$DIR/git/.gitignore" ~/.gitignore
-ln -sf "$DIR/git/.gitattributes" ~/.gitattributes
+ln -sf "$DIR/.gitconfig" ~/.gitconfig
+ln -sf "$DIR/.gitignore" ~/.gitignore
+ln -sf "$DIR/.gitattributes" ~/.gitattributes
 
 # Ranger
 mkdir -p ~/.config/ranger
