@@ -22,6 +22,9 @@ done
 # cheat
 ln -sf "$DIR/.cheatrc" ~/.cheatrc
 
+# tmux
+ln -sf "$DIR/.tmux.conf" ~/.tmux.conf
+
 # Vim
 ln -sf "$DIR/vim/.vimrc" ~/.vimrc
 mkdir -p ~/.vim/colors
