@@ -53,3 +53,10 @@ htmlcov/
 
 # Custom Makefiles that I add quick commands to!
 Makefile.dzmake
+
+# Bittorrent Sync Files
+.sync/
+
+# Ignore other VCS
+.bzr/
+.hg/
