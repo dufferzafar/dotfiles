@@ -37,9 +37,6 @@ source $dot/zsh/env.zsh
 # to easily navigate directories from the command-line
 [[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && source ~/.autojump/etc/profile.d/autojump.sh
 
-# j is the new z, yo!
-alias z="j"
-
 # Custom Aliases
 source $dot/zsh/aliases.zsh
 source $dot/zsh/aliases.git.zsh

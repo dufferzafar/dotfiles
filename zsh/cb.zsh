@@ -39,6 +39,10 @@ cb() {
 # Copy contents of a file
 function cbf() { cat "$1" | cb; }
 
+# Copy path of a file / directory
+# NOTE: Could also use realpath
+function cbp() { readlink -f "$1" | cb; }
+
 # Copy SSH public key
 alias cbssh="cbf ~/.ssh/id_rsa.pub"
 
