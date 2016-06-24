@@ -11,7 +11,7 @@
   editor = vim
   autocrlf = input
   pager = less -+$LESS -R
-	fileMode = false
+  fileMode = false
 [push]
   default = simple
 [color]
@@ -39,18 +39,18 @@
   renames = copies
   tool = meld
   algorithm = patience
-	noprefix = true
+  noprefix = true
 [difftool]
   prompt = false
-[difftool "bc4"]
-  cmd = /usr/bin/bcompare $LOCAL $REMOTE
 [alias]
   exec = "!exec "
+  news = "!f() { tig HEAD@{1}..HEAD@{0}; }; f"
   stash-apply = "!f() { git stash apply stash^{/$*}; }; f"
   stash-show = "!f() { git stash show stash^{/$*} -p; }; f"
   week = "!f() { git log --all --since=6.days.ago --author-date-order --author=dufferzafar --decorate; }; f"
 [gitreview]
-	remote = origin
+  remote = origin
 [pager]
-	diff = diff-so-fancy | less --tabs=1,5 -R
-	show = diff-so-fancy | less --tabs=1,5 -R
+  diff = diff-so-fancy | less --tabs=1,5 -R
+  log = diff-so-fancy | less --tabs=1,5 -R
+  show = diff-so-fancy | less --tabs=1,5 -R
