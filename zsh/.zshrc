@@ -25,13 +25,13 @@ source $dot/zsh/screen.zsh
 source $dot/zsh/env.zsh
 
 # Ruby Version Manager
-[ -f ~/.rvm/scripts/rvm ] && source ~/.rvm/scripts/rvm && rvm use 1.9.3 >/dev/null
+[ -f ~/.rvm/scripts/rvm ] && source ~/.rvm/scripts/rvm && rvm use 1.9.3 >/dev/null 2>&1
 
 # Go Version Manager
-[ -f ~/.gvm/scripts/gvm ] && source ~/.gvm/scripts/gvm && gvm use 1.5 >/dev/null
+[ -f ~/.gvm/scripts/gvm ] && source ~/.gvm/scripts/gvm && gvm use 1.5  >/dev/null 2>&1
 
 # Node Version Manager
-[ -s ~/.nvm/nvm.sh ] && source ~/.nvm/nvm.sh && nvm use v5 >/dev/null
+[ -s ~/.nvm/nvm.sh ] && source ~/.nvm/nvm.sh && nvm use v5 >/dev/null 2>&1
 
 # Autojump - https://github.com/wting/autojump
 # to easily navigate directories from the command-line
