@@ -8,6 +8,9 @@ alias gau="git add -u ."
 
 alias gb="git branch -vv"
 
+# Go to the previously checked out branch
+alias gbk="git checkout -"
+
 alias gbb="git bisect bad"
 alias gbg="git bisect good"
 alias gbr="git bisect reset"
@@ -54,7 +57,7 @@ alias gfu="git fetch upstream && git rebase upstream/master"
 alias gg="git grep --break --heading --line-number"
 
 # alias gl="git log --date=short --pretty=format:'%C(bold blue)%h%C(reset) %<|(35)%ar %<(70,mtrunc) %s %d'" -n 20
-alias gl="git --no-pager log --date=short --pretty=format:'%C(red)%h%C(reset) - %C(green)%<|(22,mtrunc)%ar%C(reset)  -   %C(white)%<(80,mtrunc)%s%C(reset) %C(yellow)%<(30,trunc)%d%C(reset)' -n 20"
+alias gl="git --no-pager log --date=short --pretty=format:'%C(red)%h%C(reset) - %C(green)%<|(19,trunc)%ar%C(reset)  -   %C(white)%<(80,mtrunc)%s%C(reset) %C(yellow)%<(45,trunc)%d%C(reset)' -n 20"
 
 # View commits that are not on master (pull request commits!)
 alias glp="git --no-pager log master...  --no-merges --date=short --pretty=format:'%C(red)%h%C(reset) - %C(green)%<|(22,mtrunc)%ar%C(reset)  -   %C(white)%<(80,mtrunc)%s%C(reset) %C(yellow)%<(30,trunc)%d%C(reset)'"
