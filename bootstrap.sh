@@ -13,12 +13,6 @@ for file in $DIR/ranger/*; do
     ln -sf "$file" ~/.config/ranger/"${file##*/}"
 done
 
-# Pidgin
-mkdir -p ~/.purple
-for file in $DIR/pidgin/*; do
-    ln -sf "$file" ~/.purple/"${file##*/}"
-done
-
 # cheat
 ln -sf "$DIR/.cheatrc" ~/.cheatrc
 
