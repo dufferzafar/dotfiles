@@ -1,6 +1,10 @@
 # If a param is passed, add that, else add the current folder
 function ga {
-    ! [ -z "$1" ] && git add "$@" || git add .
+    if ! [ -z "$1" ]; then
+        git add "$@"
+    else
+        git add .
+    fi
 }
 alias gai="git add --intent-to-add"
 alias gap="git add -p"
