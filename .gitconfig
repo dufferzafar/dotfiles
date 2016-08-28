@@ -44,6 +44,7 @@
   prompt = false
 [alias]
   exec = "!exec "
+  ignore = !"echo >> .gitignore"
   news = "!f() { tig HEAD@{1}..HEAD@{0}; }; f"
   stash-apply = "!f() { git stash apply stash^{/$*}; }; f"
   stash-show = "!f() { git stash show stash^{/$*} -p; }; f"
