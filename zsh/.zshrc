@@ -18,9 +18,6 @@ source $dot/zsh/hacks.zsh
 # Cool functions
 source $dot/zsh/functions.zsh
 
-# Set screen process/title
-source $dot/zsh/screen.zsh
-
 # Environment Variables & PATHs
 source $dot/zsh/env.zsh
 
@@ -31,7 +28,7 @@ source $dot/zsh/env.zsh
 [ -f ~/.gvm/scripts/gvm ] && source ~/.gvm/scripts/gvm && gvm use 1.5  >/dev/null 2>&1
 
 # Node Version Manager
-[ -s ~/.nvm/nvm.sh ] && source ~/.nvm/nvm.sh && nvm use v5 >/dev/null 2>&1
+[ -s ~/.nvm/nvm.sh ] && source ~/.nvm/nvm.sh && nvm use stable >/dev/null 2>&1
 
 # Autojump - https://github.com/wting/autojump
 # to easily navigate directories from the command-line
@@ -41,9 +38,6 @@ source $dot/zsh/env.zsh
 source $dot/zsh/aliases.zsh
 source $dot/zsh/aliases.git.zsh
 
-# Core Zsh file
-source "$ZSH/oh-my-zsh.sh"
-
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -51,12 +45,20 @@ source "$ZSH/oh-my-zsh.sh"
 # add custom completion scripts
 fpath=(~/.dotfiles/zsh/completion $fpath)
 
-# compsys initialization
+# Completion System initialization
 autoload -U compinit
 compinit -u
 
-# show completion menu when number of options is at least 2
+# Show completion menu when number of options is at least 2
 zstyle ':completion:*' menu select=2
 
 # Don't share history among open zsh sessions (terminal tabs)
 setopt nosharehistory
+
+# Kill entire arguments on pressing Ctrl + W
+autoload -U select-word-style
+select-word-style s
+# select-word-style n
+
+# Core Zsh file
+source "$ZSH/oh-my-zsh.sh"
