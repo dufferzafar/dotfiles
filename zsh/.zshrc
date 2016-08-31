@@ -38,9 +38,6 @@ source $dot/zsh/env.zsh
 source $dot/zsh/aliases.zsh
 source $dot/zsh/aliases.git.zsh
 
-# fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 # COMPLETION SETTINGS
 # add custom completion scripts
 fpath=(~/.dotfiles/zsh/completion $fpath)
@@ -62,3 +59,6 @@ select-word-style s
 
 # Core Zsh file
 source "$ZSH/oh-my-zsh.sh"
+
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
