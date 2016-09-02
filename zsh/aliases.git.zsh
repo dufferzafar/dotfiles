@@ -57,6 +57,7 @@ alias gdc="git diff --cached -M"
 
 alias gf="git fetch "
 alias gfu="git fetch upstream && git rebase upstream/master"
+alias gfa="git fza "
 
 alias gg="git grep --break --heading --line-number"
 
