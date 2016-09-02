@@ -27,10 +27,10 @@ if [ "$(uname)" = "Darwin" ]; then
 fi
 
 # Ruby Version Manager
-[ -f ~/.rvm/scripts/rvm ] && source ~/.rvm/scripts/rvm && rvm use 1.9.3 >/dev/null 2>&1
+[ -s ~/.rvm/scripts/rvm ] && source ~/.rvm/scripts/rvm && rvm use 1.9.3 >/dev/null 2>&1
 
 # Go Version Manager
-[ -f ~/.gvm/scripts/gvm ] && source ~/.gvm/scripts/gvm && gvm use 1.5  >/dev/null 2>&1
+[ -s ~/.gvm/scripts/gvm ] && source ~/.gvm/scripts/gvm && gvm use 1.5  >/dev/null 2>&1
 
 # Node Version Manager
 [ -s ~/.nvm/nvm.sh ] && source ~/.nvm/nvm.sh && nvm use stable >/dev/null 2>&1
