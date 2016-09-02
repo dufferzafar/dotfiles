@@ -5,6 +5,9 @@
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>q :q!<CR>
 
+" I don't know what Ex mode is, and I don't want to know!
+:map Q :q!<CR>
+
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 cmap w!! w !sudo tee > /dev/null %
 
