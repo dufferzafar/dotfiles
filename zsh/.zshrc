@@ -21,6 +21,11 @@ source $dot/zsh/functions.zsh
 # Environment Variables & PATHs
 source $dot/zsh/env.zsh
 
+# Use OSX Stuff if we're running on a Mac
+if [ "$(uname)" = "Darwin" ]; then
+	source $dot/zsh/osx.zsh
+fi
+
 # Ruby Version Manager
 [ -f ~/.rvm/scripts/rvm ] && source ~/.rvm/scripts/rvm && rvm use 1.9.3 >/dev/null 2>&1
 
