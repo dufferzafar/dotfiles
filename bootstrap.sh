@@ -13,6 +13,11 @@ for file in $DIR/ranger/*; do
     ln -sf "$file" ~/.config/ranger/"${file##*/}"
 done
 
+# mpv
+mkdir -p ~/.config/mpv
+ln -sf "$DIR/mpv/mpv.conf" ~/.config/mpv/mpv.conf
+ln -sf "$DIR/mpv/input.conf" ~/.config/mpv/input.conf
+
 # cheat
 ln -sf "$DIR/.cheatrc" ~/.cheatrc
 
