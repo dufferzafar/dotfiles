@@ -6,6 +6,7 @@ export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/usr/bin:/bin:/sb
 
 # 3rd party binaries, downloaded from random places on the internet
 export PATH=$PATH:$HOME/.apps/bin
+export MANPATH=$MANPATH:$HOME/.apps/.manpages
 
 export GOPATH=$HOME/.go
 export GOROOT=/usr/lib/go
@@ -17,9 +18,10 @@ export PATH=$PATH:$HOME/.scripts
 # Used by pipsi
 export PATH=$PATH:$HOME/.local/bin
 
-# export PATH=$PATH:/home/dufferzafar/apps/utils
-# export MANPATH=$MANPATH:/home/dufferzafar/Apps/manpages
-# export MANPATH="/usr/local/man:$MANPATH"
+# Syntax highlighting in less
+# TODO: Use monokai syntax highlight
+export LESSOPEN="| /home/dufferzafar/.dotfiles/ranger/scope.sh %s"
+export LESS=' -R '
 
 export FPP_EDITOR=subl
 
