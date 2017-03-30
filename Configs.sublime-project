@@ -1,0 +1,31 @@
+{
+	"folders":
+	[
+		{
+			"folder_exclude_patterns":
+			[
+				"fpp",
+				"_Help",
+				"hosts",
+				"apps/nginx_ensite",
+			],
+			"path": "/home/dufferzafar/.dotfiles"
+		},
+		{
+			"path": "/home/dufferzafar/.ssh"
+		},
+		{
+			"path": "/home/dufferzafar/dev/alpha/pam"
+		},
+		{
+			"path": "/home/dufferzafar/.scripts"
+		},
+		{
+			"path": "/home/dufferzafar/.config/mpv",
+			"folder_exclude_patterns":
+			[
+				"mpv/watch_later"
+			]
+		}
+	]
+}
