@@ -8,10 +8,10 @@
   "timeformat": "%Y-%m-%d %H:%M",
   "highlight": true,
   "journals": {
-    "default": "/mnt/Work/Documents/Journal/life.jrnl",
-    "life": "/mnt/Work/Documents/Journal/life.jrnl",
-    "work": "/mnt/Work/Documents/Journal/work.jrnl",
-    "code": "/mnt/Work/Documents/Journal/code.jrnl",
-    "idea": "/mnt/Work/Documents/Journal/idea.jrnl"
+    "default": "/mnt/Data/Documents/Journal/life.jrnl",
+    "life": "/mnt/Data/Documents/Journal/life.jrnl",
+    "work": "/mnt/Data/Documents/Journal/work.jrnl",
+    "code": "/mnt/Data/Documents/Journal/code.jrnl",
+    "idea": "/mnt/Data/Documents/Journal/idea.jrnl"
   }
 }
