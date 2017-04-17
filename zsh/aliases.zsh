@@ -24,7 +24,7 @@ alias pysrv="python3 -m http.server "
 #####################################################################
 
 # https://github.com/Diaoul/subliminal
-alias sub="subliminal -l en -- "
+alias sub="subliminal download -l en -- "
 
 # https://github.com/rg3/youtube-dl/
 alias ytb="youtube-dl -ciw --no-mtime -f 18 --restrict-filenames -o '~/Videos/%(title)s.%(ext)s'"
@@ -56,6 +56,7 @@ bored() {
 # jrnl
 alias jl="jrnl life"
 alias ji="jrnl idea"
+alias jie="jrnl idea --edit -n 1"
 alias jw="jrnl work"
 alias jc="jrnl code"
 
@@ -65,7 +66,10 @@ alias apti='sudo apt-get install'
 alias aptp='sudo apt-get purge'
 alias aptr='sudo apt-get remove'
 alias aptrp='sudo apt-get autoremove --purge'
-alias apts='apt-cache show'
+
+apts() {
+    apt-cache show "$@" | less -p "Description"
+}
 
 # Misc.
 dus() {
@@ -101,10 +105,7 @@ alia netuse ~/dev/netuse/netuse.py
 alia massren ~/dev/clones/massren/massren
 
 # https://github.com/musicbrainz/picard/
-alia picard ~/dev/picard/tagger.py
-
-# https://github.com/MTG/acousticbrainz-client
-alia abzsubmit ~/dev/alpha/abzsubmit/env/bin/abzsubmit
+alia picard ~/.apps/picard/tagger.py
 
 #####################################################################
 
