@@ -1,4 +1,13 @@
 {
+	"build_systems":
+	[
+		{
+			"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+			"name": "Anaconda Python Builder",
+			"selector": "source.python",
+			"shell_cmd": "python -u \"$file\""
+		}
+	],
 	"folders":
 	[
 		{
@@ -7,7 +16,7 @@
 				"fpp",
 				"_Help",
 				"hosts",
-				"apps/nginx_ensite",
+				"apps/nginx_ensite"
 			],
 			"path": "/home/dufferzafar/.dotfiles"
 		},
@@ -21,11 +30,11 @@
 			"path": "/home/dufferzafar/.scripts"
 		},
 		{
-			"path": "/home/dufferzafar/.config/mpv",
 			"folder_exclude_patterns":
 			[
 				"mpv/watch_later"
-			]
+			],
+			"path": "/home/dufferzafar/.config/mpv"
 		}
 	]
 }
