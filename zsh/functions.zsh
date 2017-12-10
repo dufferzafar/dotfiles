@@ -162,3 +162,11 @@ pyt2() {
   local py="./env/bin/python2.7"
   run_pytest $*
 }
+
+# Update a specific repository
+update-repo() {
+    for source in "$@"; do
+        sudo apt-get update -o Dir::Etc::sourcelist="sources.list.d/${source}" \
+        -o Dir::Etc::sourceparts="-" -o APT::Get::List-Cleanup="0"
+    done
+}
