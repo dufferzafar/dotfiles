@@ -114,6 +114,20 @@ pdfpages() {
   done
 }
 
+pdf2jpg() {
+  for file in "$@"; do
+    echo $file "->" "${file%.*}".jpg
+    convert -density 200 -trim "$file" -quality 100 "${file%.*}".jpg
+  done
+}
+
+jpg2pdf() {
+  for file in "$@"; do
+    echo $file "->" "${file%.*}".pdf
+    convert -density 200 -trim "$file" -quality 100 "${file%.*}".pdf
+  done
+}
+
 pdfex() {
   qpdf --linearize "$1" --pages "$1" "$2-$3" -- "$4"
 }
