@@ -14,7 +14,6 @@ _Help.*
 .directory
 
 # I <3 Sublime
-*.sublime-project
 *.sublime-workspace
 
 # I usually create these files for testing and debugging purposes
