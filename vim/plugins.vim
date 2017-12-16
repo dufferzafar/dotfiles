@@ -20,7 +20,8 @@ NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-commentary'
 NeoBundle 'altercation/vim-colors-solarized'
-NeoBundle 'gabrielelana/vim-markdown'
+NeoBundle 'plasticboy/vim-markdown'
+NeoBundle 'metakirby5/codi.vim'
 
 " New Syntaxes
 NeoBundle 'groenewege/vim-less'

@@ -25,3 +25,6 @@ iab xdatex <c-r>=strftime("%d/%m/%y %H:%M:%S")<cr>
 
 " Press F4 to toggle highlighting on/off, and show current value.
 :noremap <F4> :set hlsearch! hlsearch?<CR>
+
+" OCP Indent for ocaml
+set rtp^="/home/dufferzafar/.opam/system/share/ocp-indent/vim"
