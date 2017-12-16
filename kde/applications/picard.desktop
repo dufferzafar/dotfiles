@@ -1,0 +1,12 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Name=MusicBrainz Picard
+Comment=Tag your music with the next generation MusicBrainz tagger
+Exec=/usr/bin/python3 /home/dufferzafar/.apps/picard/tagger.py %F
+Terminal=false
+Type=Application
+StartupNotify=true
+StartupWMClass=MusicBrainz-Picard
+Icon=/home/dufferzafar/.apps/picard/resources/images/256x256/picard.png
+Categories=AudioVideo;Audio;AudioVideoEditing;
+MimeType=audio/x-mp3;audio/ogg;audio/mpeg;application/ogg;audio/x-flac;audio/x-flac+ogg;audio/x-vorbis+ogg;audio/x-speex+ogg;audio/x-oggflac;audio/x-musepack;audio/x-tta;audio/x-ms-wma;audio/x-wavpack;

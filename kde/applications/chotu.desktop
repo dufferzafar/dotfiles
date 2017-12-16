@@ -1,0 +1,10 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Name=Chotu
+Comment=A butler to help with odd jobs
+Exec=/home/dufferzafar/dev/chotu/chotu.py
+Terminal=false
+Icon=/home/dufferzafar/dev/chotu/icons/butler.png
+# Type=Application
+# MimeType=text/plain;
+# Categories=TextEditor;Development;Utility;

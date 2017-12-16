@@ -1,0 +1,11 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Name=Sublime Text
+GenericName=Text Editor
+Comment=Edit source code
+Exec=/home/dufferzafar/.apps/sublime/sublime_text %U
+Terminal=false
+Type=Application
+MimeType=text/plain;
+Icon=/home/dufferzafar/.apps/sublime/Icon/128x128/sublime-text.png
+Categories=TextEditor;Development;Utility;

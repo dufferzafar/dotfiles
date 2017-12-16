@@ -1,0 +1,11 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=PyCharm Community Edition
+Icon=/home/dufferzafar/.apps/pycharm/bin/pycharm400.png
+Exec="/home/dufferzafar/.apps/pycharm/bin/pycharm.sh" %f
+Comment=Develop with pleasure!
+Categories=Development;IDE;
+Terminal=false
+StartupWMClass=jetbrains-pycharm-ce
