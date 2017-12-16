@@ -10,8 +10,14 @@ _Help.*
 # .hidden files
 .hidden
 
-# .directory files for Dolphin
+# Dolphin File Manager
 .directory
+.directory.png
+.folder.png
+.dolphin.folder.png
+
+# GitHub wiki of a repo
+# .github.wiki/
 
 # I <3 Sublime
 *.sublime-workspace
@@ -62,3 +68,6 @@ Makefile.dzmake
 
 # OSX Stuff
 .DS_Store
+
+# Node
+node_modules/
