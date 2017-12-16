@@ -5,7 +5,7 @@
 			"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
 			"name": "Anaconda Python Builder",
 			"selector": "source.python",
-			"shell_cmd": "python -u \"$file\""
+			"shell_cmd": "\"python\" -u \"$file\""
 		}
 	],
 	"folders":
@@ -18,7 +18,7 @@
 				"hosts",
 				"apps/nginx_ensite"
 			],
-			"path": "/home/dufferzafar/.dotfiles"
+			"path": "."
 		},
 		{
 			"path": "/home/dufferzafar/.ssh"
@@ -35,6 +35,21 @@
 				"mpv/watch_later"
 			],
 			"path": "/home/dufferzafar/.config/mpv"
+		},
+		{
+		    "folder_exclude_patterns":
+		    [
+		    	"ANSIescape",
+		    	"GitSavvy",
+		    	"*.cache",
+		    ],
+		    "file_exclude_patterns":
+		    [
+		    	"FileHistory*.json",
+		    	"*.bak",
+		    	"*.cache",
+		    ],
+			"path": "/home/dufferzafar/.config/sublime-text-3/Packages/User"
 		}
 	]
 }
