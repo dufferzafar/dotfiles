@@ -2,7 +2,7 @@
   ui = on
 [user]
   email = dufferzafar0@gmail.com
-  name = Shadab Zafar
+	name = Shadab Zafar
 [github]
   user = dufferzafar
 [core]
@@ -30,8 +30,14 @@
   old = red
   new = green
 [cola]
-  fontdiff = Consolas,11,-1,5,50,0,0,0,0,0
+	fontdiff = Consolas,15,-1,5,50,0,0,0,0,0
   tabwidth = 4
+	spellcheck = false
+[cola "color"]
+  text = "030303"
+  header = "bbbbbb"
+  add = "33f480"
+  remove = f21f3b
 [gui]
   editor = sublime
   historybrowser = gitk
