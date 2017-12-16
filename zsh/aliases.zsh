@@ -5,6 +5,10 @@ alias p="po"
 
 alias goo="googler"
 
+c() {
+    cheat "$1" | less -R
+}
+
 #####################################################################
 
 # Python
@@ -38,17 +42,6 @@ alias ytbdl="youtube-dl -ciw --no-mtime -f '(mp4)[height<720]' --restrict-filena
 alias ytmp3="youtube-dl -ciw --no-mtime --format=bestaudio --extract-audio --audio-format=mp3 --audio-quality=0 -o '~/Music/%(title)s.%(ext)s'"
 
 #####################################################################
-
-# cheat!
-ce() {
-    ( cd /mnt/Work/Github/cheat && cheat edit "$1" )
-}
-cs() {
-    ( cd /mnt/Work/Github/cheat && cheat show "$1" | less )
-}
-cc() {
-    ( cd /mnt/Work/Github/cheat && cheat show "$1" --copy "$2" )
-}
 
 # Quick Ping!
 alias pingu="ping 8.8.8.8"
