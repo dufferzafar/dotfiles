@@ -13,6 +13,7 @@ source $dot/zsh/hacks.zsh
 
 # Cool functions
 source $dot/zsh/functions.zsh
+source $dot/zsh/fzf.zsh
 
 # Environment Variables & PATHs
 # TODO: Rename this file to .zshenv and setup link
