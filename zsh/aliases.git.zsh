@@ -113,6 +113,9 @@ alias gun="git reset --soft @~1"
 
 alias gwhat="git whatchanged --oneline"
 
+# hub
+alias hb="hub browse"
+
 # Set the git date environment to any date
 # then make any ammends to change time!
 #
@@ -133,6 +136,32 @@ function gdate {
         echo "Git date environment set to:" "$*"
     fi
 }
+
+# Change the git author environment
+# Then you can make any commits/amends etc. as that person
+#
+# Usage:
+#
+# gauth name email
+# gauth reset
+function gauth {
+    if [[ -z $1 ]]; then
+        echo "Git author environment: " "$GIT_AUTHOR_NAME - $GIT_AUTHOR_EMAIL"
+    elif [[ $1 = "reset" ]]; then
+        unset GIT_AUTHOR_NAME
+        unset GIT_AUTHOR_EMAIL
+        unset GIT_COMMITTER_NAME
+        unset GIT_COMMITTER_EMAIL
+        echo "Git author environment reset."
+    else
+        export GIT_AUTHOR_NAME="$1"
+        export GIT_AUTHOR_EMAIL="$2"
+        export GIT_COMMITTER_NAME="$1"
+        export GIT_COMMITTER_EMAIL="$2"
+        echo "Git author environment set to: " "$GIT_AUTHOR_NAME - $GIT_AUTHOR_EMAIL"
+    fi
+}
+
 
 # Go to the root directory of a git project
 function groot {
