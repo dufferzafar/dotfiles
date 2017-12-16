@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Service
+ServiceTypes=KonqPopupMenu/Plugin
+MimeType=all/all
+Actions=hide;
+X-KDE-Priority=TopLevel
+X-KDE-StartupNotify=false
+Icon=password-show-on
+
+[Desktop Action hide]
+Name=Hide File
+Icon=password-show-on
+Exec=~/.scripts/hide-file %f

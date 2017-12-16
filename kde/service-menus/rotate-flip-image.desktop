@@ -1,0 +1,35 @@
+[Desktop Entry]
+Type=Service
+ServiceTypes=KonqPopupMenu/Plugin
+MimeType=image/jpeg;image/png;
+Icon=image-png
+Actions=right;left;180;flip;flop
+X-KDE-Priority=TopLevel
+X-KDE-StartupNotify=false
+X-KDE-Submenu=Image
+
+[Desktop Action right]
+Name=Rotate right
+Icon=object-rotate-right
+Exec=convert -rotate 90 %f %f
+
+[Desktop Action left]
+Name=Rotate left
+Icon=object-rotate-left
+Exec=convert -rotate 270 %f %f
+
+[Desktop Action 180]
+Name=Turn upside down
+Icon=view-refresh
+Exec=convert -rotate 180 %f %f
+
+[Desktop Action flip]
+Name=Flip vertically
+Icon=object-flip-vertical
+Exec=convert -flip %f %f
+
+[Desktop Action flop]
+Name=Flip horizontally
+Icon=object-flip-horizontal
+Exec=convert -flop %f %f
+

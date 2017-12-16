@@ -39,14 +39,14 @@ ln -sf "$DIR/.agignore" ~/.agignore
 mkdir -p ~/.ptpython
 ln -sf "$DIR/.ptpython.py" ~/.ptpython/config.py
 
-# Setup stuff contained in the apps/ directory
-source "$DIR/apps.sh"
+# KDE related stuff
+KDE=~/.local/share/kservices5/
+mkdir -p "$KDE/ServiceMenus"
+for file in $DIR/kde/service-menus/*; do
+    ln -sf "$file" $KDE/ServiceMenus/"${file##*/}"
+done
 
 exit
-########################################### Delegate
-
-# sublime text
-source "$DIR/sublime-text/bootstrap.sh"
 
 ########################################### The End
 
