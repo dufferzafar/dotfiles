@@ -71,6 +71,9 @@ def configure(repl):
     # syntax errors.)
     repl.enable_input_validation = True
 
+    # Fish style auto suggestion
+    repl.enable_auto_suggest = True
+
     # Use this colorscheme for the code.
     repl.use_code_colorscheme('monokai')
 
