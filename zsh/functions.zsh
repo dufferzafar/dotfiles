@@ -127,3 +127,14 @@ xsv-head() {
     xsv cat -n rows -- $1 | head -n $lines | xsv table | less -S
 }
 
+loadrvm() {
+  [ -s ~/.rvm/scripts/rvm ] && source ~/.rvm/scripts/rvm && rvm use 1.9.3 >/dev/null 2>&1
+}
+
+loadgvm() {
+  [ -s ~/.gvm/scripts/gvm ] && source ~/.gvm/scripts/gvm && gvm use 1.8.3  >/dev/null 2>&1
+}
+
+loadnvm() {
+  [ -s ~/.nvm/nvm.sh ] && source ~/.nvm/nvm.sh && nvm use stable >/dev/null 2>&1
+}

@@ -29,13 +29,13 @@ source $dot/zsh/aliases.zsh
 source $dot/zsh/aliases.git.zsh
 
 # Ruby Version Manager
-[ -s ~/.rvm/scripts/rvm ] && source ~/.rvm/scripts/rvm && rvm use 1.9.3 >/dev/null 2>&1
+# [ -s ~/.rvm/scripts/rvm ] && source ~/.rvm/scripts/rvm && rvm use 1.9.3 >/dev/null 2>&1
 
 # Go Version Manager
-[ -s ~/.gvm/scripts/gvm ] && source ~/.gvm/scripts/gvm && gvm use 1.5  >/dev/null 2>&1
+# [ -s ~/.gvm/scripts/gvm ] && source ~/.gvm/scripts/gvm && gvm use 1.8.3  >/dev/null 2>&1
 
 # Node Version Manager
-[ -s ~/.nvm/nvm.sh ] && source ~/.nvm/nvm.sh && nvm use stable >/dev/null 2>&1
+# [ -s ~/.nvm/nvm.sh ] && source ~/.nvm/nvm.sh && nvm use stable >/dev/null 2>&1
 
 # Autojump - https://github.com/wting/autojump
 # to easily navigate directories from the command-line
