@@ -13,7 +13,7 @@ google() {
 # https://www.mankier.com/blog/explaining-shell-commands-in-the-shell.html
 explain () {
   if [ "$#" -eq 0 ]; then
-    while read  -p "Command: " cmd; do
+    while read  "cmd?Command: "; do
       curl -Gs "https://www.mankier.com/api/explain/?cols="75 --data-urlencode "q=$cmd"
     done
     echo "Bye!"
