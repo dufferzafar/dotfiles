@@ -134,28 +134,6 @@ make() {
   fi
 }
 
-# Functions for testing mitmproxy
-run_pytest() {
-  if [[ $1 == "--cov" ]]; then
-    cov=$(echo "--cov mitmproxy --cov pathod --cov netlib --cov-report html")
-    shift 1
-  else
-    cov=""
-  fi
-
-  $py -m pytest -s -v --color=yes ${cov} $* 2>&1 | less -r
-}
-
-pyt3() {
-  local py="./venv/bin/python3.5"
-  run_pytest $*
-}
-
-pyt2() {
-  local py="./env/bin/python2.7"
-  run_pytest $*
-}
-
 # Update a specific repository
 update-repo() {
     for source in "$@"; do
