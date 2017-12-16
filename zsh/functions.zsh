@@ -163,3 +163,11 @@ update-repo() {
         -o Dir::Etc::sourceparts="-" -o APT::Get::List-Cleanup="0"
     done
 }
+
+# View the topmost lines of a csv file
+# https://github.com/BurntSushi/xsv/releases
+xsv-head() {
+    lines=${2:-100}
+    xsv cat -n rows -- $1 | head -n $lines | xsv table | less -S
+}
+
