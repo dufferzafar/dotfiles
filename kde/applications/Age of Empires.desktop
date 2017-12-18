@@ -1,0 +1,21 @@
+[Desktop Entry]
+Comment[en_IN]=
+Comment=
+Exec=env WINEPREFIX="/home/dufferzafar/.wine" wine C:\\\\windows\\\\command\\\\start.exe /Unix "/mnt/Data/Games/Age of Empires/AoE II HD - African/AoK HD.exe"
+GenericName[en_IN]=Strategy Game
+GenericName=Strategy Game
+Icon=/mnt/Data/Games/Age of Empires/AoE.png
+MimeType=
+Name[en_IN]=Age of Empires II HD (African Kingdoms)
+Name=Age of Empires II HD (African Kingdoms)
+NoDisplay=false
+Path=
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+X-DBUS-ServiceName=
+X-DBUS-StartupType=
+X-KDE-RunOnDiscreteGpu=false
+X-KDE-SubstituteUID=false
+X-KDE-Username=
