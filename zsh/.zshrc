@@ -24,10 +24,6 @@ if [ "$(uname)" = "Darwin" ]; then
 	source $dot/zsh/osx.zsh
 fi
 
-# Custom Aliases
-source $dot/zsh/aliases.zsh
-source $dot/zsh/aliases.git.zsh
-
 # Ruby Version Manager
 # [ -s ~/.rvm/scripts/rvm ] && source ~/.rvm/scripts/rvm && rvm use 1.9.3 >/dev/null 2>&1
 
@@ -40,6 +36,10 @@ source $dot/zsh/aliases.git.zsh
 # Autojump - https://github.com/wting/autojump
 # to easily navigate directories from the command-line
 [[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && source ~/.autojump/etc/profile.d/autojump.sh
+
+# Custom Aliases
+source $dot/zsh/aliases.zsh
+source $dot/zsh/aliases.git.zsh
 
 # =============================================================================
 #                            Zsh Completion Settings
