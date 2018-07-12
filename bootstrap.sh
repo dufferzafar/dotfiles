@@ -10,7 +10,7 @@ ln -sf "$DIR/.gitattributes" ~/.gitattributes
 # Ranger
 mkdir -p ~/.config/ranger
 for file in $DIR/ranger/*; do
-    ln -sf "$file" ~/.config/ranger/"${file##*/}"
+    ln -sf "$file" ~/.config/ranger/"${file##*/}"           # gives basename of file
 done
 
 # mpv
@@ -33,10 +33,9 @@ ln -sf "$DIR/vim/monokai.vim" ~/.vim/colors/monokai.vim
 ln -sf "$DIR/.jrnl_config" ~/.jrnl_config
 
 # Supercat
-SPC=~/.spcrc
-mkdir -p SPC
+mkdir -p ~/.spcrc
 for file in $DIR/spc/spcrc*; do
-    ln -sf "$file" $SPC/"${file##*/}"
+    ln -sf "$file" ~/.spcrc/"${file##*/}"
 done
 
 # the silver searcher
