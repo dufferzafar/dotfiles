@@ -32,6 +32,13 @@ ln -sf "$DIR/vim/monokai.vim" ~/.vim/colors/monokai.vim
 # jrnl
 ln -sf "$DIR/.jrnl_config" ~/.jrnl_config
 
+# Supercat
+SPC=~/.spcrc
+mkdir -p SPC
+for file in $DIR/spc/spcrc*; do
+    ln -sf "$file" $SPC/"${file##*/}"
+done
+
 # the silver searcher
 ln -sf "$DIR/.agignore" ~/.agignore
 

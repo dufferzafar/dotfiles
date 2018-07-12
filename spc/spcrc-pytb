@@ -1,0 +1,11 @@
+#                    col a n t pattern
+#################### ### # # # ########################################
+
+# Header
+Green                grn b 1 s Traceback
+# Error
+Red                  red b 0 r (^[A-Z].*Error.*)
+# Line Number
+Yellow               yel b 0 r line ([0-9]+)
+# File Paths
+Yellow               yel b 0 r File \"([^"]+)\"

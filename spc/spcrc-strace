@@ -1,0 +1,32 @@
+#                    col a n t pattern
+#################### ### # # # ########################################
+
+# Gray out all syscalls by default
+Black                blk b 0 r (\w+)\(.*\)
+Red                  red b 0 s  =
+
+# Highlight useful syscalls
+
+#       File system related
+Blue                 blu b 0 r (create(\w+)?)\(.*\)
+Blue                 blu b 0 r (open(\w+)?)\(.*\)
+Blue                 blu b 0 r (close(\w+)?)\(.*\)
+Blue                 blu b 0 r (read(\w+)?)\(.*\)
+Mag                  mag b 0 r (write(\w+)?)\(.*\)
+
+#       Process related
+Red                  red b 0 r (exec(\w+)?)\(.*\)
+Red                  red b 0 r (fork(\w+)?)\(.*\)
+Red                  red b 0 r (kill(\w+)?)\(.*\)
+
+#       Others
+Red                  red b 0 r (inotify_\w+)\(.*\)
+
+# CAPITAL_CONSTANTS
+Cyan                 cya - 0 r ([A-Z_][A-Z_]+)
+
+# File Paths
+Yellow               yel b 0 r \"([^"]+)\"
+
+# False positives
+White                whi - 0 s NULL
