@@ -39,9 +39,12 @@ alias pysrv="python3 -m http.server "
 alias sub="subliminal download -l en -v -- "
 
 # https://github.com/rg3/youtube-dl/
-alias ytb="youtube-dl -ciw --no-mtime -f 18 --restrict-filenames -o '~/Videos/%(title)s.%(ext)s'"
-alias ytbdl="youtube-dl -ciw --no-mtime -f '(mp4)[height<720]' --restrict-filenames -o '~/Videos/%(title)s.%(ext)s'"
-alias ytmp3="youtube-dl -ciw --no-mtime --format=bestaudio --extract-audio --audio-format=mp3 --audio-quality=0 -o '~/Music/%(title)s.%(ext)s'"
+alias ytb="youtube-dl   -ciw --no-mtime -f 18                  -o '~/Videos/%(title)s.%(ext)s'"
+alias ytbdl="youtube-dl -ciw --no-mtime -f '(mp4)[height<720]' -o '~/Videos/%(title)s.%(ext)s'"
+alias ytmp3="youtube-dl -ciw --no-mtime -f bestaudio           -o '~/Music/%(title)s.%(ext)s'   --extract-audio --audio-format=mp3 --audio-quality=0 --embed-thumbnail --add-metadata"
+
+# youtube-dl -f bestaudio --extract-audio --audio-format mp3 --audio-quality 0 <Video-URL>
+
 
 #####################################################################
 
