@@ -24,9 +24,6 @@
 			"path": "/home/dufferzafar/.ssh"
 		},
 		{
-			"path": "/home/dufferzafar/dev/alpha/pam"
-		},
-		{
 			"path": "/home/dufferzafar/.scripts"
 		},
 		{
@@ -50,6 +47,9 @@
 		    	"*.cache",
 		    ],
 			"path": "/home/dufferzafar/.config/sublime-text-3/Packages/User"
+		},
+		{
+			"path": "/home/dufferzafar/dev/@alpha/pam"
 		}
 	]
 }
