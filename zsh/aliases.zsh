@@ -14,8 +14,10 @@ c() {
 # Python
 alias py="python"
 alias py2="python2"
-alias py3="python3.5"
-alias ptpy="python3.5 -m ptpython"
+alias py3="python3.6"
+alias ptpy="python3.6 -m ptpython"
+
+alias pipi="pip install --user"
 
 # Virtualenv
 alias venv="virtualenv"
