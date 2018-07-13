@@ -1,8 +1,10 @@
 # These folders contain miscellaneous material for each project
 _Help/
+._Help/
 
 # Contain random testing code
 _Help.*
+._Help.*
 
 # Bit Torrent Sync Folder
 .sync/

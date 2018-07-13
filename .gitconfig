@@ -34,9 +34,9 @@
   tabwidth = 4
 	spellcheck = false
 [cola "color"]
-  text = "030303"
-  header = "bbbbbb"
-  add = "33f480"
+  text = 030303
+  header = bbbbbb
+  add = 33f480
   remove = f21f3b
 [gui]
   editor = sublime
@@ -50,7 +50,7 @@
   prompt = false
 [alias]
   exec = "!exec "
-  ignore = !"echo >> .gitignore"
+  ignore = !echo >> .gitignore
   news = "!f() { tig HEAD@{1}..HEAD@{0}; }; f"
   stash-apply = "!f() { git stash apply stash^{/$*}; }; f"
   stash-show = "!f() { git stash show stash^{/$*} -p; }; f"
@@ -66,3 +66,5 @@
 	insteadOf = kde:
 [url "git@git.kde.org:"]
 	pushInsteadOf = kde:
+[gc]
+	autoDetach = false
