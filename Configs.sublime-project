@@ -50,6 +50,13 @@
 		},
 		{
 			"path": "/home/dufferzafar/dev/@alpha/pam"
+		},
+		{
+			"folder_exclude_patterns":
+			[
+				"ShadowFox",
+			],
+			"path": "/home/dufferzafar/.mozilla/firefox/54negid3.default/chrome"
 		}
 	]
 }
