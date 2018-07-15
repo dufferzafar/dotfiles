@@ -35,7 +35,7 @@ fi
 
 # Autojump - https://github.com/wting/autojump
 # to easily navigate directories from the command-line
-[[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && source ~/.autojump/etc/profile.d/autojump.sh
+[[ -s /etc/profile.d/autojump.zsh ]] && source /etc/profile.d/autojump.zsh
 
 # Custom Aliases
 source $dot/zsh/aliases.zsh
@@ -75,7 +75,7 @@ export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="duffer"
 
 # Load default oh-my-zsh plugins (~/.oh-my-zsh/plugins/*)
-plugins=(autojump node npm python pip pep8 pylint pyenv docker vagrant terminator colored-man command-not-found zsh-syntax-highlighting history-substring-search zsh-completions)
+plugins=(node npm python pip pep8 pylint pyenv docker vagrant terminator colored-man command-not-found zsh-syntax-highlighting history-substring-search zsh-completions)
 
 # Core Zsh file
 source "$ZSH/oh-my-zsh.sh"
