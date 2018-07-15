@@ -94,24 +94,14 @@ alia () {
     [[ -f $2 ]] && alias $1=$2
 }
 
-# Anaconda <3
+# Anaconda
 local anaconda=~/.apps/anaconda3/bin
 alia apy $anaconda/python
 alia conda $anaconda/conda
 alia jupyter $anaconda/jupyter
 
-# https://github.com/richrd/suplemon
-alia supl ~/.apps/suplemon/suplemon.py
-
-# http://github.com/dufferzafar/netuse
-# alia netuse ~/dev/netuse/netuse.py
-
 # https://github.com/dufferzafar/massren
-alia massren ~/dev/massren/massren.py
-alia massren_go ~/dev/clones/massren/massren
-
-# https://github.com/musicbrainz/picard/
-alia picard ~/.apps/picard/tagger.py
+alia massren ~/dev/massren/massren
 
 #####################################################################
 
