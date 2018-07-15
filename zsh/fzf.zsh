@@ -22,7 +22,6 @@ fzf-edit-file-or-open-dir() {
         dolphin --select "$file"
     else # enter
         if [ -f "$file" ]; then
-            # /usr/local/bin/mvim "$file"
             subl "$file"
         elif [ -d "$file" ]; then
             cd "$file"
@@ -35,13 +34,14 @@ zle     -N   fzf-edit-file-or-open-dir
 bindkey '^P' fzf-edit-file-or-open-dir
 
 # fzit - fzf based git commit browser (enter for show, ctrl-d for diff, ` toggles sort)
+# TODO: Display a preview pane on right, similar to tig
 fzit() {
   local out shas sha q k
   while out=$(
       git log --graph --color=always \
           --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" |
       fzf --ansi --multi --no-sort --reverse --query="$q" \
-          --print-query --expect=ctrl-d --toggle-sort=\`); do
+          --print-query --expect=ctrl-d); do
     q=$(head -1 <<< "$out")
     k=$(head -2 <<< "$out" | tail -1)
     shas=$(sed '1,2d;s/^[^a-z0-9]*//;/^$/d' <<< "$out" | awk '{print $1}')
@@ -54,4 +54,24 @@ fzit() {
       done
     fi
   done
+}
+zle     -N   fzit
+bindkey '^[g' fzit
+
+# Use locate to find files
+loki() {
+    if [ -z "$1" ]; then echo "No argument supplied"; zle accept-line; return 1; fi
+
+    out=($(locate -e -i "$@" | \
+            fzf \
+            --exit-0 \
+            --expect=ctrl-f \
+            --bind "enter:execute(xdg-open {}),ctrl-o:execute(xdg-open (dirname {}))"))
+    key=$(head -1 <<< "$out")
+    file=$(head -2 <<< "$out" | tail -1)
+
+    if [ "$key" = ctrl-f ]; then
+        dolphin --select "$file"
+    fi
+    # zle accept-line
 }

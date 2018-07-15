@@ -105,11 +105,6 @@ alia massren ~/dev/massren/massren
 
 #####################################################################
 
-# Use locate to find files
-loki() {
-    locate -e -i "$@" | fzf --bind "enter:execute(xdg-open {}),ctrl-o:execute(xdg-open (dirname {}))"
-}
-
 # Use the silversearcher to find text!
 agf() {
     ag -C 2 --color --group $@ | less -R
