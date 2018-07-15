@@ -85,7 +85,8 @@ source "$ZSH/oh-my-zsh.sh"
 # =============================================================================
 
 # fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -d /usr/share/fzf ] && source "/usr/share/fzf/completion.zsh" 2> /dev/null
+[ -d /usr/share/fzf ] && source "/usr/share/fzf/key-bindings.zsh" 2> /dev/null
 
 # OPAM (Ocaml Package Manager) configuration
 # . /home/dufferzafar/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
