@@ -50,11 +50,6 @@ TODO: Cleanup the `zsh_history` file
 * autojump
     - ~/.local/share/autojump
 
-# TODO
-
-* Clementine
-    - Build from source
-
 * Konversation
     - Config file: `~/.config/konversationrc`
     - Old log files: `~/.konversations`
@@ -63,5 +58,45 @@ TODO: Cleanup the `zsh_history` file
     - Copy from backup
     - `chown $USER ~/.ssh/config`
     - `chmod 644 ~/.ssh/config`
+
+* Kmail
+    - ~/.config/akonadi_maildir_resource_0rc
+    - ~/.config/akonadi_newmailnotifier_agentrc
+    - ~/.config/emaildefaults
+    - ~/.config/emailidentities
+    - ~/.config/foldermailarchiverc
+    - ~/.config/kmail2rc
+    - ~/.config/kmailsearchindexingrc
+    - ~/.config/mailtransports
+    - ~/.config/specialmailcollectionsrc
+
+* Pandoc Templates etc.
+    - `~/.pandoc`
+
+* KTorrent
+    - `~/.config/ktorrentrc`
+
+* VSFTPd
+    - To sync files between Laptop & iPad
+    - Install: ``
+    - Some changes to the config file?
+    - sudo systemctl enable vsftpd.service
+
+* Resilio Sync
+    - To sync files between Laptop & Android Phone
+    - Install from AUR: `rslsync`
+    - Add user to main group
+        + `sudo usermod -a -G dufferzafar rslsync`
+    - http://localhost:8888/gui/
+
+## Dev
+
+* `~/.apps/anaconda3`
+    - Install or Copy from backup
+
+# TODO
+
+* Clementine
+    - Build from source
 
 Where is the places list stored in config?
