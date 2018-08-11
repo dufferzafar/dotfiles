@@ -23,8 +23,12 @@ _Mostly for my reference_
 * fzf:
     - `Ctrl + R`: Reverse search command history
     - `Ctrl + P`: File list with preview pane
+    - `Alt + G`: Git commit graph / list
 
 ## Todo
+
+* An alias that reminds me of some aliases
+  - Suggest a random alias
 
 * `~/.spcrc`
   - My config files for supercat
@@ -98,15 +102,19 @@ _Mostly for my reference_
 * [nbeaver/lesskey](https://github.com/nbeaver/lesskey)
 * [nbeaver/bashrc-public](https://github.com/nbeaver/bashrc-public)
 * [ingydotnet/git-hub](https://github.com/ingydotnet/git-hub)
-* [olivierverdier/zsh-git-prompt](https://github.com/olivierverdier/zsh-git-prompt)
 * [cxreg/smartcd](https://github.com/cxreg/smartcd)
 * [kennethreitz/autoenv](https://github.com/kennethreitz/autoenv)
-* [sindresorhus/pure](https://github.com/sindresorhus/pure)
 
 https://github.com/aziz/dotfiles/blob/master/templates/provisioning/ubuntu/fonts.sh
 
 * A command that forgets zsh histories
   - Beginning with something
+
+## Prompt
+
+* [sindresorhus/pure](https://github.com/sindresorhus/pure)
+* [olivierverdier/zsh-git-prompt](https://github.com/olivierverdier/zsh-git-prompt)
+* [bhilburn/powerlevel9k](https://github.com/bhilburn/powerlevel9k)
 
 ## Faster loading
 
@@ -134,12 +142,14 @@ https://github.com/aziz/dotfiles/blob/master/templates/provisioning/ubuntu/fonts
   - http://github.com//ranger
 
 * Prune zsh history
-  - Do NOT delete any thing
+  - Do *not* delete any thing
     + Just move it to a separate file?
   
   - Remove personal stuff?
   - Commands with URLs?
   - Commands that are seldom used?
+  - `^subl *`
+  - `^youtube-dl *`
 
   - Commands
     + `sed -i '/string/d' .bash_history`
