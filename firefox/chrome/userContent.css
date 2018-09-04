@@ -1,0 +1,24 @@
+/*
+Shadow Fox
+==========
+
+https://github.com/overdodactyl/ShadowFox/
+https://github.com/overdodactyl/ShadowFox/wiki/Development
+*/
+
+@import "ShadowFox/userContent_imports.css";
+
+/*###########################################################################################################*/
+
+/*
+Tree style tabs
+===============
+
+https://github.com/piroor/treestyletab/wiki/Code-snippets-for-custom-style-rules#for-userchromecss
+*/
+
+@-moz-document regexp("moz-extension://.+/resources/group-tab.html.*") {
+  :root {
+    background: red !important;
+  }
+}

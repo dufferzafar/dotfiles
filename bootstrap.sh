@@ -54,6 +54,13 @@ done
 
 exit
 
+# firefox
+FF=~/.mozilla/firefox/*.default
+# mkdir -p "$FF/chrome"
+# $(cd ff && git pull shadowfox)
+ln -sf "$DIR/firefox/chrome/userChrome.css" $FF/chrome/
+ln -sf "$DIR/firefox/chrome/userContent.css" $FF/chrome/
+
 ########################################### The End
 
 # Zsh
