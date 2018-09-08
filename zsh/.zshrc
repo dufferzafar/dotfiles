@@ -35,7 +35,11 @@ fi
 
 # Autojump - https://github.com/wting/autojump
 # to easily navigate directories from the command-line
-[[ -s /etc/profile.d/autojump.zsh ]] && source /etc/profile.d/autojump.zsh
+# [[ -s /etc/profile.d/autojump.zsh ]] && source /etc/profile.d/autojump.zsh
+
+# jump - https://github.com/gsamokovarov/jump
+# Has better matching (fuzzy) than autojump
+eval "$(jump shell zsh)"
 
 # Custom Aliases
 source $dot/zsh/aliases.zsh
