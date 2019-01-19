@@ -30,7 +30,8 @@ TODO: Cleanup the `zsh_history` file
     + git clone `https://github.com/dufferzafar/.python`
 
 * Firefox
-    - `userChrome.css`
+    - `userChrome.css`, `userContent.css`
+    - Pull from repo
 
 * `~/.config`
     - hub
@@ -76,6 +77,13 @@ TODO: Cleanup the `zsh_history` file
 * KTorrent
     - `~/.config/ktorrentrc`
 
+* SSHd
+    - `sshd` is probably already installed
+    - Set proper 
+    - `chmod 700 ~/.ssh`
+    - `chmod 600 ~/.ssh/authorized_keys`
+    - `sudo systemctl start sshd.service`
+
 * VSFTPd
     - To sync files between Laptop & iPad
     - Install: ``
@@ -89,6 +97,9 @@ TODO: Cleanup the `zsh_history` file
         + `sudo usermod -a -G dufferzafar rslsync`
     - http://localhost:8888/gui/
 
+* `etcher` for making Live USB
+    - `https://etcher.io/`
+
 ## Dev
 
 * `~/.apps/anaconda3`
@@ -100,6 +111,28 @@ TODO: Cleanup the `zsh_history` file
     - Build from source
 
 Where is the places list stored in config?
+
+## activity watch
+
+_Couldn't decide if I should install from AUR or setup things manually on my own._
+
+Current setup is manual.
+
+```
+cd ~/.apps/activitywatch
+git pull
+git submodule update --recursive
+rm -rf venv
+python3 -m venv venv
+source venv/bin/activate
+make build DEV=true
+```
+
+Copy desktop file from [this issue](https://github.com/ActivityWatch/activitywatch/issues/176) to `~/.local/share/applications/activity-watch.desktop`
+
+Add to autostart: `sudo cp ~/.local/share/applications/activity-watch.desktop /etc/xdg/autostart/`
+
+Install the firefox extension: `https://addons.mozilla.org/en-US/firefox/addon/aw-watcher-web/      `
 
 ## rslsync
 
