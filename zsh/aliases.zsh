@@ -57,12 +57,18 @@ bored() {
     cowsay -f $(ls /usr/share/cowsay/cows | shuf -n 1 | cut -d. -f1) $(whatis $(ls /bin | shuf -n 1) 2>/dev/null)
 }
 
-# apt-get
-alias aptg='sudo apt'
-alias apti='sudo apt install'
-alias aptp='sudo apt purge'
-alias aptr='sudo apt remove'
-alias aptrp='sudo apt autoremove --purge'
+# pacman
+# https://wiki.archlinux.org/index.php/Pacman/Rosetta
+alias paci='sudo pacman -S'
+alias pacu='sudo yaourt -Syu --noconfirm'
+alias pacr='sudo pacman -R'
+alias pacrp='sudo pacman -Rns $(pacman -Qtdq)'
+
+# Update all AUR packages, pronto!
+# The traditional advice is to *not* do this because
+# AUR PKGBUILDs may be updated and is a potential threat surface
+# But life is too short to examine each update carefully.
+alias auru='yaourt -Syua --noconfirm'
 
 apts() {
     apt-cache show "$@" | less -p "Description"
