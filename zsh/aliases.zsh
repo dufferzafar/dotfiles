@@ -5,17 +5,17 @@ alias p="po"
 
 alias goo="googler"
 
-c() {
-    cheat "$1" | less -R
-}
+# https://github.com/chubin/cheat.sh#command-line-client-chtsh
+c() {cht.sh "$1" | less -R}
+alias cs="cht.sh"
 
 #####################################################################
 
 # Python
 alias py="python"
 alias py2="python2"
-alias py3="python3.6"
-alias ptpy="python3.6 -m ptpython"
+alias py3="python3.7"
+alias ptpy="python3.7 -m ptpython"
 
 alias pipi="pip install --user"
 
@@ -54,7 +54,7 @@ alias pingu="ping 8.8.8.8"
 # Learn about a random command, whenever you feel like it.
 # Copied from: http://askubuntu.com/a/337382/415634
 bored() {
-    cowsay -f $(ls /usr/share/cowsay/cows | shuf -n 1 | cut -d. -f1) $(whatis $(ls /bin | shuf -n 1) 2>/dev/null)
+    cowsay -f $(ls /usr/share/cows | shuf -n 1 | cut -d. -f1) $(whatis $(ls /bin | shuf -n 1) 2>/dev/null)
 }
 
 # pacman
@@ -79,6 +79,11 @@ dus() {
     du --apparent-size -hd 1 "$@" | sort -rh
 }
 
+# jump
+jcd() {
+  j "$(basename $PWD)/**/$@"
+}
+
 # jrnl
 alias jl="jrnl life"
 alias ji="jrnl idea"
@@ -92,7 +97,7 @@ alias o="xdg-open"
 alias r="ranger"
 
 # Ensure aria does not download files that are already present
-alias aria="aria2c -c --auto-file-renaming=false --allow-overwrite=false --conditional-get=true"
+alias aria="aria2c -c -x 16 -s 16 --auto-file-renaming=false --allow-overwrite=false --conditional-get=true"
 #####################################################################
 
 # Create an alias only if the destination exists
@@ -114,6 +119,11 @@ alia massren ~/dev/massren/massren
 # Use the silversearcher to find text!
 agf() {
     ag -C 2 --color --group $@ | less -R
+}
+
+# Use pdfgrep to find text in PDFs!
+pdf-grep() {
+    pdfgrep -C 2 -Hni --color always $@ *.pdf | less -R
 }
 
 # Taken from: https://github.com/jkbrzt/httpie#redirected-output
