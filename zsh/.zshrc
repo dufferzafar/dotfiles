@@ -76,7 +76,34 @@ zle -N self-insert url-quote-magic
 export ZSH=$HOME/.oh-my-zsh
 
 # My Custom Theme
-ZSH_THEME="duffer"
+# ZSH_THEME="duffer"
+ZSH_THEME="spaceship"
+
+# https://github.com/denysdovhan/spaceship-prompt/blob/master/docs/Options.md
+SPACESHIP_PROMPT_ORDER=(
+  user dir host git
+#   line_sep
+#   battery vi_mode jobs
+  exit_code char
+)
+SPACESHIP_RPROMPT_ORDER=(exec_time venv conda pyenv time)
+SPACESHIP_DIR_COLOR=012
+SPACESHIP_TIME_SHOW=true
+SPACESHIP_TIME_PREFIX="| "
+SPACESHIP_TIME_COLOR=245
+SPACESHIP_TIME_FORMAT="%D{%I:%M:%S}"
+
+SPACESHIP_DIR_TRUNC_REPO=true
+
+SPACESHIP_GIT_PREFIX="("
+SPACESHIP_GIT_SYMBOL=""
+SPACESHIP_GIT_SUFFIX=") "
+SPACESHIP_GIT_BRANCH_COLOR=white
+SPACESHIP_GIT_STATUS_SHOW=false
+
+# SPACESHIP_VENV_PREFIX="venv("
+# SPACESHIP_VENV_SUFFIX=") "
+SPACESHIP_VENV_COLOR=198
 
 # Load default oh-my-zsh plugins (~/.oh-my-zsh/plugins/*)
 plugins=(node npm python pip pep8 pylint pyenv docker vagrant terminator colored-man command-not-found zsh-syntax-highlighting history-substring-search zsh-completions)
