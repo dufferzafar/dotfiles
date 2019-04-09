@@ -1,5 +1,8 @@
 # Ctrl + P in the terminal
 # https://gist.github.com/chew-z/db310b0e3184ae335e24d2ec7087a123
+# alias preview="fzf --preview
+# add support for ctrl+o to open selected file in VS Code
+export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(code {})+abort'"
 fzf-edit-file-or-open-dir() {
     local out key file helpline
     helpline="Ctrl-f to reveal in file browser | Enter to edit file"
@@ -11,7 +14,7 @@ fzf-edit-file-or-open-dir() {
     IFS=$'\n' out=($(ag -g "" | fzf --header="$helpline" \
             --exit-0 \
             --expect=ctrl-f \
-            --preview '[ -f {} ] && head -n 50 {}' \
+            --preview 'bat --color \"always\" {}' \
             --preview-window right \
             --bind='?:toggle-preview' ))
 
