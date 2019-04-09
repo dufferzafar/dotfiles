@@ -106,7 +106,13 @@ SPACESHIP_GIT_STATUS_SHOW=false
 SPACESHIP_VENV_COLOR=198
 
 # Load default oh-my-zsh plugins (~/.oh-my-zsh/plugins/*)
-plugins=(node npm python pip pep8 pylint pyenv docker vagrant terminator colored-man command-not-found zsh-syntax-highlighting history-substring-search zsh-completions)
+plugins=(
+	node npm z.lua
+	python pip pep8 pylint pyenv
+	docker vagrant
+	terminator colored-man-pages command-not-found
+	zsh-syntax-highlighting history-substring-search zsh-completions
+)
 
 # Core Zsh file
 source "$ZSH/oh-my-zsh.sh"
