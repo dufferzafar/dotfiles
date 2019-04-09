@@ -3,11 +3,35 @@ alias s="subl"
 alias g="git"
 alias p="po"
 
+alias code="code-insiders"
+
 alias goo="googler"
 
 # https://github.com/chubin/cheat.sh#command-line-client-chtsh
-c() {cht.sh "$1" | less -R}
 alias cs="cht.sh"
+c() {
+    #                   Remove escape sequences
+    cht.sh "$1" | sed "s,\x1B\[[0-9;]*[a-zA-Z],,g" | bat -l bash
+}
+
+cf() {
+    #                                                          CLfu requires base64 argument as well
+    curl -sL "https://www.commandlinefu.com/commands/matching/$@/$(echo -n $@ | openssl base64)/plaintext" | bat -l bash;
+}
+
+cfs () {
+    (curl -d "q=$@" https://www.commandlinefu.com/search/autocomplete 2>/dev/null) |
+    egrep 'autocomplete|votes|destination' |
+    perl -p -e 's/<a style="display:none" class="destination" href="//g;
+                s/<[^>]*>//g;
+                s/">$/\n-----\n/g;
+                s/^ +|\([0-9]+ votes,//g;
+                s/^\//http:\/\/commandlinefu.com\//g;
+                s/^http:/\# http/g;'  |
+    bat -l md
+}
+# curl -sd q=Network http://www.commandlinefu.com/search/autocomplete | html2text -width 100
+# tagged/163/grep
 
 #####################################################################
 
@@ -40,7 +64,7 @@ alias sub="subliminal download -l en -v -- "
 
 # https://github.com/rg3/youtube-dl/
 alias ytb="youtube-dl   -ciw --no-mtime -f 18                  -o '~/Videos/%(title)s.%(ext)s'"
-alias ytbdl="youtube-dl -ciw --no-mtime -f '(mp4)[height<720]' -o '~/Videos/%(title)s.%(ext)s'"
+alias ytbdl="youtube-dl -ciw --no-mtime --write-sub -o '~/Videos/%(title)s.%(ext)s'"
 alias ytmp3="youtube-dl -ciw --no-mtime -f bestaudio           -o '~/Music/%(title)s.%(ext)s'   --extract-audio --audio-format=mp3 --audio-quality=0 --embed-thumbnail --add-metadata"
 
 # youtube-dl -f bestaudio --extract-audio --audio-format mp3 --audio-quality 0 <Video-URL>
@@ -98,6 +122,9 @@ alias r="ranger"
 
 # Ensure aria does not download files that are already present
 alias aria="aria2c -c -x 16 -s 16 --auto-file-renaming=false --allow-overwrite=false --conditional-get=true"
+
+alias po="popd"
+
 #####################################################################
 
 # Create an alias only if the destination exists
