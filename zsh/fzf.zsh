@@ -14,7 +14,7 @@ fzf-edit-file-or-open-dir() {
     IFS=$'\n' out=($(ag -g "" | fzf --header="$helpline" \
             --exit-0 \
             --expect=ctrl-f \
-            --preview 'bat --color \"always\" {}' \
+            --preview 'bat --color always {}' \
             --preview-window right \
             --bind='?:toggle-preview' ))
 
@@ -25,7 +25,7 @@ fzf-edit-file-or-open-dir() {
         dolphin --select "$file"
     else # enter
         if [ -f "$file" ]; then
-            subl "$file"
+            code-insiders "$file"
         elif [ -d "$file" ]; then
             cd "$file"
         fi
@@ -69,12 +69,15 @@ loki() {
             fzf \
             --exit-0 \
             --expect=ctrl-f \
-            --bind "enter:execute(xdg-open {}),ctrl-o:execute(xdg-open (dirname {}))"))
+            --multi \
+            --bind "enter:accept,ctrl-e:execute(xdg-open {}),ctrl-o:execute(xdg-open (dirname {}))"))
     key=$(head -1 <<< "$out")
     file=$(head -2 <<< "$out" | tail -1)
 
     if [ "$key" = ctrl-f ]; then
         dolphin --select "$file"
+    else;
+        echo $out
     fi
     # zle accept-line
 }

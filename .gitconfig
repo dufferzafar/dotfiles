@@ -1,8 +1,8 @@
 [color]
   ui = on
 [user]
-  email = dufferzafar0@gmail.com
-	name = Shadab Zafar
+  name = Shadab Zafar
+  email = szafar@tower-research.com
 [github]
   user = dufferzafar
 [core]
@@ -13,7 +13,7 @@
   pager = less -+$LESS -R
   fileMode = false
 [push]
-  default = simple
+  default = matching
 [color]
   ui = 1
 [color "status"]
@@ -30,16 +30,16 @@
   old = red
   new = green
 [cola]
-	fontdiff = Consolas,15,-1,5,50,0,0,0,0,0
+  fontdiff = Fira Code,15,-1,5,50,0,0,0,0,0
   tabwidth = 4
-	spellcheck = false
+  spellcheck = false
 [cola "color"]
   text = 030303
   header = bbbbbb
   add = 33f480
   remove = f21f3b
 [gui]
-  editor = sublime
+  editor = vscode-insiders
   historybrowser = gitk
 [diff]
   renames = copies
@@ -55,16 +55,25 @@
   stash-apply = "!f() { git stash apply stash^{/$*}; }; f"
   stash-show = "!f() { git stash show stash^{/$*} -p; }; f"
   week = "!f() { git log --all --since=6.days.ago --author-date-order --author=dufferzafar --decorate; }; f"
+  push-gerrit = !/usr/bin/python2 /apps/infra/bin/git_push_gerrit.py
 [gitreview]
   remote = origin
 [pager]
-  diff = diff-so-fancy | less --tabs=1,5 -R
-  log = diff-so-fancy | less --tabs=1,5 -R
-  show = diff-so-fancy | less --tabs=1,5 -R
+  # diff = diff-so-fancy | less --tabs=4 -RFX
+  # log = diff-so-fancy | less --tabs=4 -RFX
+  # show = diff-so-fancy | less --tabs=4 -RFX
 
 [url "git://anongit.kde.org/"]
-	insteadOf = kde:
+  insteadOf = kde:
 [url "git@git.kde.org:"]
-	pushInsteadOf = kde:
+  pushInsteadOf = kde:
 [gc]
-	autoDetach = false
+  autoDetach = false
+
+# Tower Research Specific Config
+[init]
+  templatedir = /apps/infrafs2/szafar/.infra-git-templates
+[url "ssh://infragitd@infragit/"]
+  insteadOf = infra:
+[url "ssh://gerrit:29418/"]
+  insteadOf = gerrit:

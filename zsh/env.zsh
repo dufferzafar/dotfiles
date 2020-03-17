@@ -23,10 +23,10 @@ export PATH="$HOME/.cargo/bin:$PATH"
 
 # Syntax highlighting in less
 # TODO: Use monokai syntax highlight
-export LESSOPEN="| /home/dufferzafar/.dotfiles/ranger/scope.sh %s"
+export LESSOPEN="| /apps/infrafs2/szafar/.dotfiles/ranger/scope.sh %s"
 export LESS=' -R '
 
-export FPP_EDITOR=subl
+# export FPP_EDITOR=subl
 
 # Make vim the default editor
 export EDITOR="vim"
