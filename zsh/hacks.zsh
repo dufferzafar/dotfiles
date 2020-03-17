@@ -26,3 +26,7 @@ pastefinish() {
 }
 zstyle :bracketed-paste-magic paste-init pasteinit
 zstyle :bracketed-paste-magic paste-finish pastefinish
+
+
+bindkey "\E[1~" beginning-of-line
+bindkey "\E[4~" end-of-line

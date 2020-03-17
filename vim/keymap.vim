@@ -28,6 +28,8 @@ inoremap <C-S-tab> <Esc>:tabprevious<CR>i
 inoremap <C-tab>   <Esc>:tabnext<CR>i
 inoremap <C-t>     <Esc>:tabnew<CR>
 
+nnoremap <C-p> :Files<Cr>
+
 " Disable arrow keys
 " map <up> <nop>
 " map <down> <nop>

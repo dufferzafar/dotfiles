@@ -1,7 +1,17 @@
 
-alias s="subl"
+# Single letter aliases!
 alias g="git"
+alias l="ls -lh --group-directories-first"
+alias o="xdg-open"
 alias p="po"
+alias r="ranger"
+alias s="subl"
+# alias c=cheat!
+
+alias ca="conda activate"
+alias cls="conda info --envs"
+alias crm="conda env remove -n"
+alias cnew="conda env create -n"
 
 alias code="code-insiders"
 
@@ -32,6 +42,12 @@ cfs () {
 }
 # curl -sd q=Network http://www.commandlinefu.com/search/autocomplete | html2text -width 100
 # tagged/163/grep
+
+#####################################################################
+
+# hl highlighted versions of the commands
+alias df="df -h | hl --df"
+alias free="free -g | hl --free"
 
 #####################################################################
 
@@ -115,11 +131,6 @@ alias jie="jrnl idea --edit -n 1"
 alias jw="jrnl work"
 alias jc="jrnl code"
 
-alias ll="ls -lSrh"
-
-alias o="xdg-open"
-alias r="ranger"
-
 # Ensure aria does not download files that are already present
 alias aria="aria2c -c -x 16 -s 16 --auto-file-renaming=false --allow-overwrite=false --conditional-get=true"
 
@@ -151,6 +162,11 @@ agf() {
 # Use pdfgrep to find text in PDFs!
 pdf-grep() {
     pdfgrep -C 2 -Hni --color always $@ *.pdf | less -R
+}
+
+# Useful for exploring JSON
+jqless() {
+    jq -C "$@" | less -R
 }
 
 # Taken from: https://github.com/jkbrzt/httpie#redirected-output

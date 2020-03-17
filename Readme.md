@@ -13,7 +13,7 @@ git clone http://github.com/dufferzafar/dotfiles .dotfiles
 cd .dotfiles
 git submodule update --init --recursive
 
-sudo bash bootstrap.sh
+sudo bash -x bootstrap.sh
 ```
 
 ## Keyboard Shortcuts
@@ -69,7 +69,7 @@ _Mostly for my reference_
   - https://github.com/mpv-player/mpv/issues/4738#issuecomment-321298846
 
 * Terminator Config File
-    * ~/.config/terminator/config
+    * \~/.config/terminator/config
 
 * LazyLoad zsh subscripts like gvm, rvm, nvm
 
@@ -81,7 +81,7 @@ _Mostly for my reference_
 
 * Vim
   * ~/.vim/ftdetect/markdown.md
-  * au BufNewFile,BufRead *.md setf markdown
+  * au BufNewFile,BufRead \*.md setf markdown
 
 * Perform cleanup, test etc.
 
@@ -93,7 +93,7 @@ _Mostly for my reference_
 
 * Better history
   - https://github.com/larkery/zsh-histdb
-  - Stores everything in a 
+  - Stores everything in a
 
 * Lazy load npm/rvm/gvm commands
   - As soon as a command like `npm` etc are run, the corresponding shell file gets loaded
@@ -123,7 +123,7 @@ https://github.com/aziz/dotfiles/blob/master/templates/provisioning/ubuntu/fonts
     + Large debug log
     + Issues found
       * Completions for commands that I don't even use
-    
+
   - Pull requests
     + https://github.com/caarlos0/dotfiles/pull/189
     + https://github.com/caarlos0/dotfiles/pull/190
@@ -144,7 +144,7 @@ https://github.com/aziz/dotfiles/blob/master/templates/provisioning/ubuntu/fonts
 * Prune zsh history
   - Do *not* delete any thing
     + Just move it to a separate file?
-  
+
   - Remove personal stuff?
   - Commands with URLs?
   - Commands that are seldom used?

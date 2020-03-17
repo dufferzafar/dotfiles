@@ -1,3 +1,6 @@
+# C++
+build.gerrit/
+
 # These folders contain miscellaneous material for each project
 _Help/
 ._Help/
@@ -23,6 +26,10 @@ _Help.*
 
 # I <3 Sublime
 *.sublime-workspace
+*.sublime-project
+
+# I <3 VSCode more!
+.vscode/
 
 # I usually create these files for testing and debugging purposes
 *.ignore
@@ -73,3 +80,6 @@ Makefile.dzmake
 
 # Node
 node_modules/
+
+# VS Code
+*.code-workspace

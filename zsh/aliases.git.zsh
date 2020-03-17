@@ -24,16 +24,16 @@ function gc {
     if ! [ -z $GIT_COMMITTER_DATE ]; then
         read "response?Git date environment set to: $GIT_COMMITTER_DATE. Continue? [y/Y/n] "
         if [[ $response =~ ^[y]$ ]]; then
-            git commit -v
+            git commit
         elif [[ $response =~ ^[Y]$ ]]; then
             unset GIT_AUTHOR_DATE
             unset GIT_COMMITTER_DATE
-            git commit -v
+            git commit
         else
             echo "Commit aborted."
         fi
     else
-        git commit -v
+        git commit
     fi
 }
 
@@ -76,6 +76,7 @@ alias gm="git merge --squash "
 
 alias gp="git push "
 alias gpf="git push --force"
+alias gpgr="git push-gerrit"
 
 alias gpl="git pull "
 gpb() {

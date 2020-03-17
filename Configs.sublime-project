@@ -34,18 +34,18 @@
 			"path": "/home/dufferzafar/.config/mpv"
 		},
 		{
-		    "folder_exclude_patterns":
-		    [
-		    	"ANSIescape",
-		    	"GitSavvy",
-		    	"*.cache",
-		    ],
-		    "file_exclude_patterns":
-		    [
-		    	"FileHistory*.json",
-		    	"*.bak",
-		    	"*.cache",
-		    ],
+			"file_exclude_patterns":
+			[
+				"FileHistory*.json",
+				"*.bak",
+				"*.cache"
+			],
+			"folder_exclude_patterns":
+			[
+				"ANSIescape",
+				"GitSavvy",
+				"*.cache"
+			],
 			"path": "/home/dufferzafar/.config/sublime-text-3/Packages/User"
 		},
 		{
@@ -54,9 +54,12 @@
 		{
 			"folder_exclude_patterns":
 			[
-				"ShadowFox",
+				"ShadowFox"
 			],
 			"path": "/home/dufferzafar/.mozilla/firefox/54negid3.default/chrome"
+		},
+		{
+			"path": "/apps/infrafs2/szafar/.scripts"
 		}
 	]
 }
