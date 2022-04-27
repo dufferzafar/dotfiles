@@ -1,0 +1,34 @@
+#!/usr/bin/bash
+
+set -x
+
+sync_configs() {
+    BOX=infraguistage1.newark
+
+    # Sync local dotfiles with newark
+    # Make exact mirror of local files - delete remote etc.
+
+    rsync -av ~/.dotfiles $BOX:$HOME/
+    rsync -av ~/.oh-my-zsh $BOX:$HOME/
+    rsync -av ~/.vim $BOX:$HOME/
+    rsync -av ~/.fzf $BOX:$HOME/
+}
+
+sync_binaries() {
+    rsync -av --delete \
+        --files-from=<(find /spare/ssd/szafar/apps/bin -type f -printf "%f\n") \
+        /spare/ssd/szafar/apps/bin/ \
+        $1:szafar/bin/
+}
+
+# Local box
+sync_binaries szafar@szafarlinux.gurg-off
+
+# Risk Dashboard
+sync_binaries risktool@riskref1.newark
+sync_binaries szafar@riskref1.newark
+
+# TRM boxes
+sync_binaries risk@infrarisk2.newark
+sync_binaries riskstage@infrariskstage1.newark
+sync_binaries risk@infrarisk1.lonx
