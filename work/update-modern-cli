@@ -1,0 +1,280 @@
+#!/bin/bash
+
+# $HOME provides colo wide sync for free
+MODERN_BIN="${MODERN_BIN:-$HOME/bin}"
+
+mkdir -p "$MODERN_BIN"
+pushd "$MODERN_BIN"
+
+# First get eget itself, then use it to get other binaries
+# eget - https://github.com/zyedidia/eget/
+# TODO: Look into another alternative: https://github.com/xermicus/blindspot
+curl -sSL https://zyedidia.github.io/eget.sh | sh
+
+# agrind - https://github.com/rcoh/angle-grinder
+eget rcoh/angle-grinder -a musl
+
+# aria2c - https://github.com/aria2/aria2/
+eget q3aql/aria2-static-builds -a linux -a 64 -a bz2 -f aria2c
+
+# as-tree - https://github.com/jez/as-tree
+eget jez/as-tree
+
+# atuin - https://github.com/ellie/atuin
+# NOTE: Not compiled with musl but glibc, will fail on boxes with older glibc
+eget ellie/atuin
+
+# bat - https://github.com/sharkdp/bat
+eget sharkdp/bat -a x86_64 -a musl.tar
+
+# bat-extras - https://github.com/eth-p/bat-extras
+# batdiff, batgrep, batman, bat-modules, batpipe, batwatch, prettybat
+eget eth-p/bat-extras --all
+
+# broot - https://github.com/Canop/broot
+eget Canop/broot -f build/x86_64-unknown-linux-musl/broot
+
+# btop - https://github.com/aristocratos/btop
+eget aristocratos/btop
+
+# chezmoi - https://github.com/twpayne/chezmoi
+# manage dotfiles across multiple machines
+eget twpayne/chezmoi -a musl
+
+# choose
+eget theryangeary/choose -a musl
+
+# cht.sh
+# csview
+
+# csvtk
+eget shenwei356/csvtk
+
+# ctags
+
+# curlie
+eget rs/curlie -a linux -a amd64.tar
+
+# czkawka
+
+# dasel
+eget TomWright/dasel
+
+# delta
+eget dandavison/delta -a musl.tar
+
+# diffsitter
+# diff-so-fancy
+# diskonaut
+
+# dog
+# eget ogham/dog -f x86_64-unknown-linux-gnu.zip
+
+# dsq
+eget multiprocessio/dsq
+
+# dua
+# duc
+# duf
+
+# dust
+eget bootandy/dust -a 86_64 -a musl
+
+# dyff
+# eget
+# espanso
+
+# exa
+eget ogham/exa -a musl
+
+# fac
+# fd
+eget sharkdp/fd -a x86_64 -a musl
+
+# fselect
+
+# fx
+eget antonmedv/fx
+
+# fzr
+# fzrepl
+
+# gaze
+eget wtetsu/gaze -f gaze
+chmod +x ./gaze
+
+
+# gdu
+eget dundee/gdu -a static
+mv gdu* gdu
+
+# gh
+eget cli/cli  -a tar -a amd64 -a linux -f gh
+
+# gitbatch
+# git-diffsitter
+# git-icdiff
+# gitlab
+
+# gitui
+eget extrawurst/gitui
+
+# glow
+eget charmbracelet/glow -a linux_x86_64.tar
+
+# goaccess
+# gobang
+
+# gron
+eget tomnomnom/gron
+
+# hexyl
+# hey
+# htmlq
+
+# hunter
+# NOTE: Use lf / nnn instead
+# eget rabite0/hunter -a linux-intel-64
+
+# icdiff
+
+# jid
+eget simeji/jid
+
+# jiq
+eget fiatjaf/jiq
+
+# jj
+
+# jless
+eget PaulJuliusMartinez/jless
+
+# jo
+# jog
+# jqed
+# just
+eget casey/just
+
+# lazygit
+
+# lf
+eget gokcehan/lf
+
+# lfs
+# lnav
+
+# lolcate
+eget ngirard/lolcate-rs -f lolcate
+
+# lzop
+
+# mcfly
+eget cantino/mcfly -a x86_64 -a musl
+
+# mdp
+
+# mlr
+eget johnkerl/miller
+
+# navi
+eget denisidoro/navi
+
+# ncdu
+# nnn
+
+# osg
+
+# pandoc
+eget jgm/pandoc
+
+# pet
+# pgweb
+# pistol
+eget doronbehar/pistol -a pistol
+
+# procs
+eget dalance/procs -a x86 -a lnx
+
+# pup
+
+# qsv
+eget jqnatividad/qsv -a x86_64 -a musl --all
+mv qsvlite qsv
+
+# rg
+eget BurntSushi/ripgrep
+
+# rgr
+eget acheronfail/repgrep -a musl
+
+# runiq
+# sd
+
+# silver
+# NOTE: Breaks because libgit2.so is not present
+# eget reujab/silver
+
+# slides
+eget maaslalani/slides
+
+# smug
+eget ivaaaan/smug
+
+# so
+# eget samtay/so -a musl
+
+# sq
+eget neilotoole/sq -a linux-amd64.tar
+
+# sshpass
+
+# starship
+eget starship/starship -a starship-x86_64-unknown-linux-musl.tar.gz
+
+# taskell
+# termshark
+
+# tokei
+
+# t-rec
+eget sassman/t-rec-rs  -f t-rec
+
+# tv
+eget alexhallam/tv
+
+# unison
+eget bcpierce00/unison -a static
+
+# usql
+
+# verco
+# eget vamolessa/verco
+
+# vivid
+eget sharkdp/vivid  -a x86_64 -a musl
+
+# watchexec
+eget watchexec/watchexec  -a x86_64 -a musl.tar
+
+# wkhtmltoimage
+# wkhtmltopdf
+
+# xidel
+# xplr
+eget sayanarijit/xplr -a musl.tar
+
+# xxh
+# eget xxh/xxh
+
+# zellij
+eget zellij-org/zellij
+
+# zoxide
+
+# fish shell - static binary
+# eget xxh/fish-portable --download-only
+
+popd
+
+# eget https://raw.githubusercontent.com/learnbyexample/command_help/master/ch
+# eget https://sourceforge.net/projects/graphicsmagick/files/graphicsmagick/1.3.38/GraphicsMagick-1.3.38.tar.xz/download
