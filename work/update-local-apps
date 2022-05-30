@@ -26,7 +26,8 @@ pushd /spare/local/szafar/apps/ >/dev/null
     tar xzf dbeaver.tar.gz
 popd
 
-# Straightforward binaries from GitHub - This is why I ♥ Rust!
+# Binaries from GitHub
+# Replaced with eget & update-modern-cli
 function download_latest_release {
 	URL=$(
         curl -s https://api.github.com/repos/$1/$2/releases/latest \
@@ -45,17 +46,3 @@ function gh_update {
     tar xf $GH_USER-$GH_REPO.tar.gz --wildcards --strip-components=1 "*/$GH_REPO"
     mv $GH_REPO ../bin/
 }
-
-pushd /spare/local/szafar/apps/_tarballs_ > /dev/null
-    # gh_update sharkdp bat
-    # gh_update sharkdp fd
-    # gh_update sharkdp hexyl
-    # gh_update dandavison delta
-    # gh_update jesseduffield lazygit 'Linux_x86_64.tar.gz'
-    # gh_update kovidgoyal kitty 'Linux amd64'
-popd
-
-# espanso
-# tokei
-# rg
-# xsv
