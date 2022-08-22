@@ -3,8 +3,7 @@
 alias g="git"
 alias l="ls -lh --group-directories-first"
 alias o="xdg-open"
-alias p="po"
-alias r="ranger"
+alias p="popd"
 alias s="subl"
 # alias c=cheat!
 
