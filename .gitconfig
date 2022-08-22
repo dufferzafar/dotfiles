@@ -10,10 +10,10 @@
   attributesfile = ~/.gitattributes
   editor = vim
   autocrlf = input
-  pager = less -+$LESS -R
+  pager = delta -s --dark
   fileMode = false
 [push]
-  default = matching
+  default = simple
 [color]
   ui = 1
 [color "status"]
@@ -41,13 +41,23 @@
 [gui]
   editor = vscode-insiders
   historybrowser = gitk
+# [diff]
+#   renames = copies
+#   tool = meld
+#   algorithm = patience
+#   noprefix = true
+# [difftool]
+#   prompt = false
 [diff]
-  renames = copies
-  tool = meld
-  algorithm = patience
-  noprefix = true
+    tool = kitty
+    guitool = kitty.gui
 [difftool]
-  prompt = false
+    prompt = false
+    trustExitCode = true
+[difftool "kitty"]
+    cmd = kitty +kitten diff $LOCAL $REMOTE
+[difftool "kitty.gui"]
+    cmd = kitty kitty +kitten diff $LOCAL $REMOTE
 [alias]
   exec = "!exec "
   ignore = !echo >> .gitignore
@@ -77,3 +87,11 @@
   insteadOf = infra:
 [url "ssh://gerrit:29418/"]
   insteadOf = gerrit:
+[http]
+	sslVerify = false
+[credential "https://github.com"]
+	helper = 
+	helper = !/spare/local/szafar/apps/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/spare/local/szafar/apps/bin/gh auth git-credential

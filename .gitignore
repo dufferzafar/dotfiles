@@ -1,5 +1,8 @@
 # C++
 build.gerrit/
+.cache/clangd/index/
+.clangd
+.gdb_history
 
 # These folders contain miscellaneous material for each project
 _Help/
@@ -24,12 +27,14 @@ _Help.*
 # GitHub wiki of a repo
 # .github.wiki/
 
-# I <3 Sublime
+# I used to <3 Sublime
 *.sublime-workspace
 *.sublime-project
 
 # I <3 VSCode more!
-.vscode/
+# .vscode/
+.vscode/tags
+.vscode/ctags
 
 # I usually create these files for testing and debugging purposes
 *.ignore
@@ -83,3 +88,13 @@ node_modules/
 
 # VS Code
 *.code-workspace
+
+# Python
+__pycache__/
+
+# Vim files
+*.swp
+*.swo
+*~
+
+deploy/deploy_scripts_dev_210/
