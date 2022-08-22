@@ -1,9 +1,9 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# fi
 
 # https://htr3n.github.io/2018/07/faster-zsh/
 
@@ -37,19 +37,29 @@ fi
 source $dot/zsh/aliases.zsh
 source $dot/zsh/aliases.git.zsh
 
+# Work Profile @ Tower Research Capital, India
+source $dot/work/tower.zsh
+
 # =============================================================================
 #                            Zsh Completion Settings
 # =============================================================================
 
 # add custom completion scripts
-fpath=($dot/zsh/completion $fpath)
+# [ -d /spare/ssd/szafar/apps/completions ] && fpath=(/spare/ssd/szafar/apps/completions $fpath)
 
 # Completion System initialization
-autoload -U compinit
-compinit -u
+# autoload -U compinit
+# compinit -u
+
+autoload -Uz compinit
+for dump in ~/.zcompdump(N.mh+24); do
+  compinit
+done
+
+compinit -C
 
 # Show completion menu when number of options is at least 2
-zstyle ':completion:*' menu select=2
+# zstyle ':completion:*' menu select=2
 
 # Kill entire arguments on pressing Ctrl + W
 autoload -U select-word-style
@@ -67,14 +77,21 @@ zle -N self-insert url-quote-magic
 # Path to oh-my-zsh installation
 export ZSH=$HOME/.oh-my-zsh
 
-# My Custom Theme
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Load default oh-my-zsh plugins (~/.oh-my-zsh/plugins/*)
 plugins=(
+	colored-man-pages 
+	command-not-found
+	autoupdate conda
+	node npm rsync
+	fd ripgrep zoxide
+	gh gitignore
+	magic-enter
 	python pip pep8 pylint pyenv
-	colored-man-pages command-not-found
 	zsh-syntax-highlighting zsh-completions
+	# zsh-interactive-cd
+	# zsh-autocomplete
 	history-substring-search
 	zoxide brew fzf
 )
@@ -88,8 +105,8 @@ source "$ZSH/oh-my-zsh.sh"
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh 2> /dev/null
-[ -d /usr/share/fzf ] && source "/usr/share/fzf/completion.zsh" 2> /dev/null
-[ -d /usr/share/fzf ] && source "/usr/share/fzf/key-bindings.zsh" 2> /dev/null
+# [ -d /usr/share/fzf ] && source "/usr/share/fzf/completion.zsh" 2> /dev/null
+# [ -d /usr/share/fzf ] && source "/usr/share/fzf/key-bindings.zsh" 2> /dev/null
 
 # OPAM (Ocaml Package Manager) configuration
 # . /home/dufferzafar/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
@@ -125,4 +142,19 @@ ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]=fg=009
 ZSH_HIGHLIGHT_STYLES[assign]=none
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+
+source /apps/infrafs2/szafar/.config/broot/launcher/bash/br
+
+#function jog {
+#  grep -v "jog" ~/.zsh_history_ext | grep -a --color=never "${PWD}   " | cut -f1 -d"⋮" | tail
+#   grep -v "jog" ~/.zsh_history_ext | grep -a --color=never "${PWD}   " | cut -f1 -d"⋮" | grep -v -e '^$' | tail | sort | uniq
+#}
+
+#function zshaddhistory() {
+#  echo "${1%%$'\n'}⋮${PWD}   " >> ~/.zsh_history_ext
+#}
+
+# export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+
