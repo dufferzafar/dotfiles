@@ -40,11 +40,11 @@ function eget() {
 }
 
 # agrind - slice and dice logs
-eget https://github.com/rcoh/angle-grinder -a musl -b agrind
+eget https://github.com/rcoh/angle-grinder -a musl --to agrind
 
 # aria2c - fast file downloader
 # main repo: https://github.com/aria2/aria2/
-eget https://github.com/q3aql/aria2-static-builds -a linux -a 64 -a bz2 -f aria2c -b aria2c
+eget https://github.com/q3aql/aria2-static-builds -a linux -a 64 -a bz2 -f aria2c --to aria2c
 
 # as-tree
 eget https://github.com/jez/as-tree
@@ -57,7 +57,7 @@ eget https://github.com/ellie/atuin
 eget https://github.com/sharkdp/bat -a x86_64 -a musl.tar
 
 # bat-extras - batdiff, batgrep, batman, bat-modules, batpipe, batwatch, prettybat
-eget https://github.com/eth-p/bat-extras --all -b batman
+eget https://github.com/eth-p/bat-extras --all --to batman
 
 # bfs - https://github.com/tavianator/bfs 
 # breadth first version of find command
@@ -86,22 +86,22 @@ eget https://github.com/wfxr/csview -a musl -a x86_64
 eget https://github.com/shenwei356/csvtk
 
 # curlie
-eget https://github.com/rs/curlie -a linux -a amd64.tar
+eget https://github.com/rs/curlie -a tar
 
-# czkawka - https://github.com/qarmin/czkawka
+# czkawka
 # TODO: Compare with fclones
 eget https://github.com/qarmin/czkawka -a linux -a cli
 
 # dasel
 eget https://github.com/TomWright/dasel -a dasel_linux_amd64
 
-# delta - https://github.com/dandavison/delta
+# delta
 eget https://github.com/dandavison/delta -a musl.tar
 
-# difft - https://github.com/Wilfred/difftastic
+# difft
 eget https://github.com/Wilfred/difftastic -b difft
 
-# diffsitter - https://github.com/afnanenayet/diffsitter
+# diffsitter
 # also provides git-diffsitter
 eget https://github.com/afnanenayet/diffsitter --all
 
@@ -123,30 +123,38 @@ eget https://github.com/multiprocessio/dsq
 # dua
 eget https://github.com/Byron/dua-cli 
 
-# duc
-# duf
+# duc - https://github.com/zevv/duc
+# a disk usage analyzer that saves to an index & provides a gui & a cli
+# written in C, needs to be compiled, no static
+
+# duf - better alternative to df -h
+eget https://github.com/muesli/duf -a linux -a x86 -a tar
 
 # dust
 eget https://github.com/bootandy/dust -a 86_64 -a musl
 
-# dyff
-# eget
-# espanso
+# dyff - yaml / json diff
+eget https://github.com/homeport/dyff
 
-# exa
+# espanso - text expander written in rust
+# eget https://github.com/federico-terzi/espanso
+
+# exa - better ls?
 eget https://github.com/ogham/exa -a musl
 
-# fac
+# fac - TUI for fixing git conflicts
+eget https://github.com/mkchoi212/fac
 
 # fclones
 # duplicate file finder
 # NOTE: Not compiled with musl but glibc, will fail on boxes with older glibc
 eget https://github.com/pkolaczk/fclones -a tgz
 
-# fd
+# fd - better find
 eget https://github.com/sharkdp/fd -a x86_64 -a musl
 
-# fselect
+# fselect - find files with sql queries
+eget https://github.com/jhspetersson/fselect
 
 # fx
 eget https://github.com/antonmedv/fx
@@ -161,14 +169,14 @@ chmod +x ./gaze
 # gdu - https://github.com/dundee/gdu
 # Faster alternative to ncdu
 eget https://github.com/dundee/gdu -a static
-mv gdu* gdu
+mv gdu_linux_amd64_static gdu
 
 # gfold
 # get status of all git repositories in current directory
 eget https://github.com/nickgerace/gfold 
 
 # gh
-eget https://github.com/cli/cli  -a tar -a amd64 -a linux -f gh -b gh
+eget https://github.com/cli/cli -a tar -f gh --to gh
 
 # gitbatch
 # git-icdiff
@@ -236,6 +244,7 @@ eget https://github.com/gokcehan/lf
 eget https://github.com/canop/lfs 
 
 # lnav
+eget https://github.com/tstack/lnav
 
 # lolcate
 eget https://github.com/ngirard/lolcate-rs -f lolcate
@@ -248,7 +257,7 @@ eget https://github.com/cantino/mcfly -a x86_64 -a musl
 # mdp
 
 # mlr
-eget https://github.com/johnkerl/miller
+eget https://github.com/johnkerl/miller -a linux -a amd64 -a tar
 
 # mprocs
 # run multiple commands in a tui
@@ -286,6 +295,7 @@ eget https://github.com/dalance/procs -a x86 -a lnx
 # qsv
 eget https://github.com/jqnatividad/qsv -a x86_64 -a musl --all
 mv qsvlite qsv
+rm qsvdp qsvlite_nightly qsvdp_nightly qsv_nightly
 
 # rg
 eget https://github.com/BurntSushi/ripgrep
@@ -352,7 +362,7 @@ eget https://github.com/vi/websocat
 
 # xidel
 # xplr
-eget https://github.com/sayanarijit/xplr -a musl.tar
+eget https://github.com/sayanarijit/xplr -a xplr-linux-musl.tar.gz
 
 # xxh
 # eget https://github.com/xxh/xxh
