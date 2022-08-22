@@ -1,6 +1,8 @@
 #!/usr/bin/bash
 
-set -x
+# set -x
+
+BIN_DIR=/spare/local/szafar/apps/bin/
 
 sync_configs() {
     BOX=infraguistage1.newark
@@ -14,21 +16,34 @@ sync_configs() {
     rsync -av ~/.fzf $BOX:$HOME/
 }
 
-sync_binaries() {
-    rsync -av --delete \
-        --files-from=<(find /spare/ssd/szafar/apps/bin -type f -printf "%f\n") \
-        /spare/ssd/szafar/apps/bin/ \
-        $1:szafar/bin/
+sync_binaries_3() {
+    echo "Syncing binaries to: " $1
+    rsync -av \
+        --files-from=<(find /spare/local/szafar/apps/bin -type f -executable -printf "%f\n") \
+        /spare/local/szafar/apps/bin/ \
+        $1
 }
 
-# Local box
-sync_binaries szafar@szafarlinux.gurg-off
+sync_binaries() {
+    echo "Syncing binaries to: " $1
+    rsync -av --no-links --ignore-existing --delete $BIN_DIR $1
+}
+
+
+# infrad
+sync_binaries infrad@riskref1.newark:szafar/bin/
+
+# risk@trm
+sync_binaries risk@infrarisk2.newark:szafar/bin/
+sync_binaries risk@infrarisk1.lonx:szafar/bin/
+sync_binaries riskstage@infrariskstage1.newark:szafar/bin/
 
 # Risk Dashboard
-sync_binaries risktool@riskref1.newark
-sync_binaries szafar@riskref1.newark
+sync_binaries szafar@riskref1.newark:szafar/bin/
+sync_binaries risktool@riskref1.newark:szafar/bin/
 
-# TRM boxes
-sync_binaries risk@infrarisk2.newark
-sync_binaries riskstage@infrariskstage1.newark
-sync_binaries risk@infrarisk1.lonx
+# Copy for other users
+sync_binaries szafar@infradev7.skae:/spare/local/risktech/bin
+
+# Local box
+sync_binaries szafar@szafarlinux.gurg-off:szafar/bin/
