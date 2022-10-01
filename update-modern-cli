@@ -1,0 +1,384 @@
+#!/bin/bash
+
+# Find commands that don't yet exist in this file
+function list_new_cli() {
+    comm -13 \
+        <(cat ~/.dotfiles/work/update-modern-cli | rg -o "([^,\s]+)" -r '$1'  | sort -u) \
+        <(fd . --base-directory /spare/local/szafar/apps/bin -tx | sort -u) | 
+        less
+    exit
+}
+
+# list_new_cli
+
+# $HOME provides colo wide sync for free
+EGET_BIN="${EGET_BIN:-$HOME/bin}"
+MODERN_BIN="${MODERN_BIN:-$EGET_BIN}"
+
+RED=`tput setaf 1`
+GREEN=`tput setaf 2`
+YELLOW=`tput setaf 3`
+NC=`tput sgr0`
+
+echo "${YELLOW}Downloading binaries to: ${MODERN_BIN}${NC}"
+mkdir -p "$MODERN_BIN" &> /dev/null
+pushd "$MODERN_BIN" &> /dev/null
+
+# First get eget itself, only if it doesn't exist
+# then use it to get other binaries
+# eget - https://github.com/zyedidia/eget/
+# TODO: Look into another alternative: https://github.com/xermicus/blindspot
+command -v eget &> /dev/null || ( 
+    echo "${RED}First downloading eget${NC}" && 
+    curl -sSL https://zyedidia.github.io/eget.sh | sh
+)
+
+function eget() {
+    echo ""
+    echo "${GREEN}${1}${NC}"
+    command eget --upgrade-only "$@"
+}
+
+# agrind - slice and dice logs
+eget https://github.com/rcoh/angle-grinder -a musl --to agrind
+
+# aria2c - fast file downloader
+# main repo: https://github.com/aria2/aria2/
+eget https://github.com/q3aql/aria2-static-builds -a linux -a 64 -a bz2 -f aria2c --to aria2c
+
+# as-tree
+eget https://github.com/jez/as-tree
+
+# atuin
+# NOTE: Not compiled with musl but glibc, will fail on boxes with older glibc
+eget https://github.com/ellie/atuin
+
+# bat
+eget https://github.com/sharkdp/bat -a x86_64 -a musl.tar
+
+# bat-extras - batdiff, batgrep, batman, bat-modules, batpipe, batwatch, prettybat
+eget https://github.com/eth-p/bat-extras --all --to batman
+
+# bfs - https://github.com/tavianator/bfs 
+# breadth first version of find command
+# TODO: needs to be compiled, written in C
+
+# broot - 
+eget https://github.com/Canop/broot -f x86_64-unknown-linux-musl/broot
+
+# btop - yet another top alternative
+# TODO: Choose the best amongst all the available top alternatives
+eget https://github.com/aristocratos/btop -f bin/btop
+
+# chezmoi - manage dotfiles across multiple machines
+eget https://github.com/twpayne/chezmoi -a chezmoi-linux-amd64-musl
+
+# choose - cut alternative?
+eget https://github.com/theryangeary/choose -a musl
+
+# cht.sh
+# curl -s https://raw.githubusercontent.com/chubin/cheat.sh/master/share/cht.sh.txt > cht.sh
+
+# csview
+eget https://github.com/wfxr/csview -a musl -a x86_64
+
+# csvtk
+eget https://github.com/shenwei356/csvtk
+
+# curlie
+eget https://github.com/rs/curlie -a tar
+
+# czkawka
+# TODO: Compare with fclones
+eget https://github.com/qarmin/czkawka -a linux -a cli
+
+# dasel
+eget https://github.com/TomWright/dasel -a dasel_linux_amd64
+
+# delta
+eget https://github.com/dandavison/delta -a musl.tar
+
+# difft
+eget https://github.com/Wilfred/difftastic -b difft
+
+# diffsitter
+# also provides git-diffsitter
+eget https://github.com/afnanenayet/diffsitter --all
+
+# direnv
+eget https://github.com/direnv/direnv 
+
+# diskonaut
+eget https://github.com/imsnif/diskonaut
+
+# doctree
+# eget https://github.com/sourcegraph/doctree 
+
+# dog
+# eget https://github.com/ogham/dog -f x86_64-unknown-linux-gnu.zip
+
+# dsq
+eget https://github.com/multiprocessio/dsq
+
+# dua
+eget https://github.com/Byron/dua-cli 
+
+# duc - https://github.com/zevv/duc
+# a disk usage analyzer that saves to an index & provides a gui & a cli
+# written in C, needs to be compiled, no static
+
+# duf - better alternative to df -h
+eget https://github.com/muesli/duf -a linux -a x86 -a tar
+
+# dust
+eget https://github.com/bootandy/dust -a 86_64 -a musl
+
+# dyff - yaml / json diff
+eget https://github.com/homeport/dyff
+
+# espanso - text expander written in rust
+# eget https://github.com/federico-terzi/espanso
+
+# exa - better ls?
+eget https://github.com/ogham/exa -a musl
+
+# fac - TUI for fixing git conflicts
+eget https://github.com/mkchoi212/fac
+
+# fclones
+# duplicate file finder
+# NOTE: Not compiled with musl but glibc, will fail on boxes with older glibc
+eget https://github.com/pkolaczk/fclones -a tgz
+
+# fd - better find
+eget https://github.com/sharkdp/fd -a x86_64 -a musl
+
+# fselect - find files with sql queries
+eget https://github.com/jhspetersson/fselect
+
+# fx
+eget https://github.com/antonmedv/fx
+
+# fzr
+# fzrepl
+
+# gaze
+eget https://github.com/wtetsu/gaze -f gaze
+chmod +x ./gaze
+
+# gdu - https://github.com/dundee/gdu
+# Faster alternative to ncdu
+eget https://github.com/dundee/gdu -a static
+mv gdu_linux_amd64_static gdu
+
+# gfold
+# get status of all git repositories in current directory
+eget https://github.com/nickgerace/gfold 
+
+# gh
+eget https://github.com/cli/cli -a tar -f gh --to gh
+
+# gitbatch
+# git-icdiff
+# gitlab
+
+# gitui
+eget https://github.com/extrawurst/gitui
+
+# glab
+eget https://github.com/profclems/glab -a tar -a Linux -a x86_64
+
+# glow
+eget https://github.com/charmbracelet/glow -a linux_x86_64.tar
+
+# goaccess
+# gobang
+
+# gron
+eget https://github.com/tomnomnom/gron
+
+# hurl
+eget https://github.com/Orange-OpenSource/hurl 
+
+# hexyl
+
+# hey
+# http load testing
+# TODO: compare with oha
+
+# htmlq
+
+# hunter
+# NOTE: Use lf / nnn instead
+# eget https://github.com/rabite0/hunter -a linux-intel-64
+
+# icdiff
+
+# jid
+eget https://github.com/simeji/jid
+
+# jiq
+eget https://github.com/fiatjaf/jiq
+
+# jj
+
+# jless
+eget https://github.com/PaulJuliusMartinez/jless
+
+# jo
+# jog
+# jqed
+# just
+eget https://github.com/casey/just
+
+# kalker
+# a calculator
+# eget https://github.com/PaddiM8/kalker
+
+# lazygit
+
+# lf
+eget https://github.com/gokcehan/lf
+
+# lfs
+eget https://github.com/canop/lfs 
+
+# lnav
+eget https://github.com/tstack/lnav
+
+# lolcate
+eget https://github.com/ngirard/lolcate-rs -f lolcate
+
+# lzop
+
+# mcfly
+eget https://github.com/cantino/mcfly -a x86_64 -a musl
+
+# mdp
+
+# mlr
+eget https://github.com/johnkerl/miller -a linux -a amd64 -a tar
+
+# mprocs
+# run multiple commands in a tui
+eget https://github.com/pvolok/mprocs
+
+# navi
+eget https://github.com/denisidoro/navi
+
+# ncdu
+# nnn
+
+# oha
+eget https://github.com/hatoo/oha
+
+# osg
+
+# pandoc
+eget https://github.com/jgm/pandoc
+
+# pet
+# pgweb
+
+# pipr
+# build shell pipes interactively
+eget https://github.com/elkowar/pipr 
+
+# pistol
+eget https://github.com/doronbehar/pistol -a pistol
+
+# procs
+eget https://github.com/dalance/procs -a x86 -a lnx
+
+# pup
+
+# qsv
+eget https://github.com/jqnatividad/qsv -a x86_64 -a musl --all
+mv qsvlite qsv
+rm qsvdp qsvlite_nightly qsvdp_nightly qsv_nightly
+
+# rg
+eget https://github.com/BurntSushi/ripgrep
+
+# rgr
+eget https://github.com/acheronfail/repgrep -a musl
+
+# runiq
+# sd
+
+# silver
+# NOTE: Breaks because libgit2.so is not present
+# eget https://github.com/reujab/silver
+
+# slides
+eget https://github.com/maaslalani/slides
+
+# smug
+eget https://github.com/ivaaaan/smug
+
+# so
+# eget https://github.com/samtay/so -a musl
+
+# sq
+eget https://github.com/neilotoole/sq -a linux-amd64.tar
+
+# sshpass
+
+# starship
+eget https://github.com/starship/starship -a starship-x86_64-unknown-linux-musl.tar.gz
+
+# taskell
+# termshark
+
+# tokei
+
+# t-rec
+eget https://github.com/sassman/t-rec-rs  -f t-rec
+
+# tv
+eget https://github.com/alexhallam/tv -f tidy-viewer
+
+# unison
+eget https://github.com/bcpierce00/unison -a static
+
+# usql
+eget https://github.com/https://github.com/xo/usql
+
+# verco
+# eget https://github.com/vamolessa/verco
+
+# vivid
+eget https://github.com/sharkdp/vivid  -a x86_64 -a musl
+
+# watchexec
+eget https://github.com/watchexec/watchexec  -a x86_64 -a musl.tar
+
+# websocat
+# socat for websockets
+eget https://github.com/vi/websocat
+
+# wkhtmltoimage
+# wkhtmltopdf
+
+# xidel
+# xplr
+eget https://github.com/sayanarijit/xplr -a xplr-linux-musl.tar.gz
+
+# xxh
+# eget https://github.com/xxh/xxh
+
+# zellij
+eget https://github.com/zellij-org/zellij
+
+# zenith
+eget https://github.com/bvaisvil/zenith 
+
+# zoxide
+
+# fish shell - static binary
+# eget https://github.com/xxh/fish-portable --download-only
+
+popd
+
+# eget https://raw.githubusercontent.com/learnbyexample/command_help/master/ch
+# eget https://sourceforge.net/projects/graphicsmagick/files/graphicsmagick/1.3.38/GraphicsMagick-1.3.38.tar.xz/download
