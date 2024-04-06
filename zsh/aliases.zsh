@@ -13,8 +13,6 @@ alias cls="conda info --envs"
 alias crm="conda env remove -n"
 alias cnew="conda env create -n"
 
-alias code="code-insiders"
-
 alias goo="googler"
 
 # https://github.com/chubin/cheat.sh#command-line-client-chtsh

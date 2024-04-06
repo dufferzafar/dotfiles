@@ -1,32 +1,24 @@
-# RVM
-export PATH="$PATH:$HOME/.rvm/bin"
-
-# Paths
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/usr/bin:/bin:/sbin:/usr/games"
-
 # 3rd party binaries, downloaded from random places on the internet
-export PATH=$PATH:$HOME/.apps/bin
-export MANPATH=$MANPATH:$HOME/.apps/.manpages
+#export PATH=$PATH:$HOME/.apps/bin
+#export MANPATH=$MANPATH:$HOME/.apps/.manpages
 
-export GOPATH=$HOME/.go
-export GOROOT=/usr/lib/go
-export PATH=$PATH:$GOPATH/bin
+#export GOPATH=$HOME/.go
+#export GOROOT=/usr/lib/go
+#export PATH=$PATH:$GOPATH/bin
 
 # https://gitlab.com/dufferzafar/scripts
 export PATH=$PATH:$HOME/.scripts
 
 # Used by pipsi
-export PATH=$PATH:$HOME/.local/bin
+#export PATH=$PATH:$HOME/.local/bin
 
 # Rust & Cargo
-export PATH="$HOME/.cargo/bin:$PATH"
+#export PATH="$HOME/.cargo/bin:$PATH"
 
 # Syntax highlighting in less
 # TODO: Use monokai syntax highlight
-export LESSOPEN="| /apps/infrafs2/szafar/.dotfiles/ranger/scope.sh %s"
-export LESS=' -R '
-
-# export FPP_EDITOR=subl
+#export LESSOPEN="| /apps/infrafs2/szafar/.dotfiles/ranger/scope.sh %s"
+#export LESS=' -R '
 
 # Make vim the default editor
 export EDITOR="vim"
@@ -38,18 +30,18 @@ export TERM=xterm-256color
 export LANG=en_US.UTF-8
 
 # asciinema wants this
-export LC_ALL=en_IN.UTF-8
-export SHELL=/usr/bin/zsh
+#export LC_ALL=en_IN.UTF-8
+#export SHELL=/usr/bin/zsh
 
 # I have some custom scripts here:
 # https://github.com/dufferzafar/.python
-export PYTHONPATH=$PYTHONPATH:$HOME/.python
+#export PYTHONPATH=$PYTHONPATH:$HOME/.python
 
 # fzf - fuzzy file finder
-export FZF_DEFAULT_COMMAND='ag -l -g ""'
-export FZF_DEFAULT_OPTS="--extended --cycle --multi"
+#export FZF_DEFAULT_COMMAND='ag -l -g ""'
+#export FZF_DEFAULT_OPTS="--extended --cycle --multi"
 
-export NVM_DIR=~/.nvm
+#export NVM_DIR=~/.nvm
 
 # Apache Hadoop & Spark
 # export SPARK_HOME=~/.apps/spark

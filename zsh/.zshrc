@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # https://htr3n.github.io/2018/07/faster-zsh/
 
 # When profiling zsh load times, uncomment this line
@@ -25,23 +32,6 @@ source $dot/zsh/env.zsh
 if [ "$(uname)" = "Darwin" ]; then
 	source $dot/zsh/osx.zsh
 fi
-
-# Ruby Version Manager
-# [ -s ~/.rvm/scripts/rvm ] && source ~/.rvm/scripts/rvm && rvm use 1.9.3 >/dev/null 2>&1
-
-# Go Version Manager
-# [ -s ~/.gvm/scripts/gvm ] && source ~/.gvm/scripts/gvm && gvm use 1.8.3  >/dev/null 2>&1
-
-# Node Version Manager
-# [ -s ~/.nvm/nvm.sh ] && source ~/.nvm/nvm.sh && nvm use stable >/dev/null 2>&1
-
-# Autojump - https://github.com/wting/autojump
-# to easily navigate directories from the command-line
-# [[ -s /etc/profile.d/autojump.zsh ]] && source /etc/profile.d/autojump.zsh
-
-# jump - https://github.com/gsamokovarov/jump
-# Has better matching (fuzzy) than autojump
-# eval "$(jump shell zsh)"
 
 # Custom Aliases
 source $dot/zsh/aliases.zsh
@@ -78,52 +68,15 @@ zle -N self-insert url-quote-magic
 export ZSH=$HOME/.oh-my-zsh
 
 # My Custom Theme
-# ZSH_THEME="duffer"
-# ZSH_THEME="spaceship"
 ZSH_THEME="powerlevel10k/powerlevel10k"
-
-# https://github.com/denysdovhan/spaceship-prompt/blob/master/docs/Options.md
-SPACESHIP_PROMPT_ORDER=(
-  user dir host git
-#   line_sep
-#   battery vi_mode jobs
-  exit_code char
-)
-SPACESHIP_RPROMPT_ORDER=(exec_time venv conda pyenv time)
-
-SPACESHIP_CONDA_VERBOSE="false"
-SPACESHIP_CONDA_COLOR="green"
-
-
-SPACESHIP_DIR_COLOR=012
-SPACESHIP_TIME_SHOW=true
-SPACESHIP_TIME_PREFIX="| "
-SPACESHIP_TIME_COLOR=245
-SPACESHIP_TIME_FORMAT="%D{%I:%M:%S}"
-
-SPACESHIP_DIR_TRUNC_REPO=true
-
-SPACESHIP_GIT_PREFIX="("
-SPACESHIP_GIT_SYMBOL=""
-SPACESHIP_GIT_SUFFIX=") "
-SPACESHIP_GIT_BRANCH_COLOR=white
-SPACESHIP_GIT_STATUS_SHOW=false
-
-# SPACESHIP_VENV_PREFIX="venv("
-# SPACESHIP_VENV_SUFFIX=") "
-SPACESHIP_VENV_COLOR=198
-
-# Use this lua binary for
-export ZLUA_EXEC=/spare/local/szafar/.conda/envs/cenv/bin/lua
 
 # Load default oh-my-zsh plugins (~/.oh-my-zsh/plugins/*)
 plugins=(
-	node npm z.lua
 	python pip pep8 pylint pyenv
-	docker vagrant
 	colored-man-pages command-not-found
 	zsh-syntax-highlighting zsh-completions
 	history-substring-search
+	zoxide brew fzf
 )
 
 # Core Zsh file
@@ -144,9 +97,6 @@ source "$ZSH/oh-my-zsh.sh"
 # Don't share history among open zsh sessions (terminal tabs)
 # https://stackoverflow.com/a/24876841
 unsetopt share_history
-
-# Work Profile @ Tower Research Capital, India
-source $dot/work/tower.zsh
 
 # Enable highlighters
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
@@ -173,8 +123,6 @@ ZSH_HIGHLIGHT_STYLES[double-quoted-argument]=fg=063
 ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]=fg=009
 ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]=fg=009
 ZSH_HIGHLIGHT_STYLES[assign]=none
-
-POWERLEVEL9K_VCS_DISABLED_DIR_PATTERN='/tmp/rs3(|/*)'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

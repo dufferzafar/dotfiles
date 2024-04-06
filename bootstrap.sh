@@ -7,12 +7,6 @@ ln -sf "$DIR/.gitconfig" ~/.gitconfig
 ln -sf "$DIR/.gitignore" ~/.gitignore
 ln -sf "$DIR/.gitattributes" ~/.gitattributes
 
-# Ranger
-mkdir -p ~/.config/ranger
-for file in $DIR/ranger/*; do
-    ln -sf "$file" ~/.config/ranger/"${file##*/}"           # gives basename of file
-done
-
 # mpv
 mkdir -p ~/.config/mpv
 ln -sf "$DIR/mpv/mpv.conf" ~/.config/mpv/mpv.conf
@@ -38,19 +32,9 @@ for file in $DIR/spc/spcrc*; do
     ln -sf "$file" ~/.spcrc/"${file##*/}"
 done
 
-# the silver searcher
-ln -sf "$DIR/.agignore" ~/.agignore
-
 # ptpython
 mkdir -p ~/.ptpython
 ln -sf "$DIR/.ptpython.py" ~/.ptpython/config.py
-
-# KDE related stuff
-KDE=~/.local/share/kservices5/
-mkdir -p "$KDE/ServiceMenus"
-for file in $DIR/kde/service-menus/*; do
-    ln -sf "$file" $KDE/ServiceMenus/"${file##*/}"
-done
 
 exit
 
