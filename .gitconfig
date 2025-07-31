@@ -1,10 +1,12 @@
-[color]
-  ui = on
+[github]
+  user = dufferzafar
 [user]
   name = Shadab Zafar
   email = szafar@tower-research.com
-[github]
-  user = dufferzafar
+[color]
+  ui = on
+[column]
+  ui = auto
 [core]
   excludesfile = ~/.gitignore
   attributesfile = ~/.gitattributes
@@ -12,8 +14,20 @@
   autocrlf = input
   pager = delta -s --dark
   fileMode = false
+[branch]
+  sort = -committerdate
+[blame]
+  #ignorerevsfile=.git-blame-ignore-revs
+[fetch]
+  prune = true
+  pruneTags = true
+  all = true
 [push]
   default = simple
+  autoSetupRemote = true
+  followTags = true
+[pull]
+  rebase = true
 [color]
   ui = 1
 [color "status"]
@@ -79,6 +93,10 @@
   pushInsteadOf = kde:
 [gc]
   autoDetach = false
+[tag]
+  sort = version:refname
+[help]
+  autocorrect = prompt
 
 # Tower Research Specific Config
 [init]
@@ -95,3 +113,8 @@
 [credential "https://gist.github.com"]
 	helper = 
 	helper = !/spare/local/szafar/apps/bin/gh auth git-credential
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process

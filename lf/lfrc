@@ -1,0 +1,117 @@
+%[ $LF_LEVEL -eq 1 ] || echo "Warning: You're in a nested lf instance!"
+
+# set previewer pistol
+set previewer ~/.scripts/batter
+# set previewer ~/.config/ranger/scope.sh
+
+set ratios 1:2:4
+
+set scrolloff 10
+# set shellopts '-eu'
+# set shell sh
+# set tabstop 2
+
+# required, but we could set IFS inside remove command itself
+# set ifs "\n"
+
+# y (select for copy) and P to paste soft-link
+# d (select for cut) and P to paste hard-link
+cmd link %{{
+    for file in $(lf -remote 'load'); do
+	    if [ ! -n "${mode+1}" ]; then
+	        mode="$file"
+    		continue
+	    fi
+        files+=("$file")
+    done
+	if [ "${#files[@]}" -lt 1 ]; then
+		lf -remote "send $id echo no files to link"
+		exit 0
+	fi
+	# symbolically  copy mode is indicating a soft link
+	if [[ "$mode" == copy ]]; then
+		ln -sr $files -t .
+	# while a move mode is indicating a hard link
+	elif [[ "$mode" == move ]]; then
+		ln $files -t .
+	fi
+}}
+
+# Fuzzy Find
+cmd fuzzy-find ${{
+    match="$(find . -maxdepth 1 | fzf --bind=ctrl-d:half-page-down,ctrl-u:half-page-up)"
+    [ -n "$match" ] && {
+        [ "$(expr "$(basename -- "$match")" : "^\..*")" -ne 0 ] && lf -remote "send $id set hidden"
+        lf -remote "send $id select '$match'"
+    }
+}}
+cmd fuzzy-find-recursive ${{
+    match="$(find . | fzf --bind=ctrl-d:half-page-down,ctrl-u:half-page-up)"
+    [ -n "$match" ] && {
+        [ "$(expr "$(basename -- "$match")" : "^\..*")" -ne 0 ] && lf -remote "send $id set hidden"
+        lf -remote "send $id select '$match'"
+    }
+}}
+
+cmd extract %{{
+    case "$f" in
+        *.tar*) tar xf "$f";;
+        *.tgz*) tar xf "$f";;
+        *.zip) unzip "$f";;
+        *.rar) unrar "$f";;
+        *.7z) 7z l "$f";;
+    esac
+}}
+
+# recursively make dirs
+cmd mkdir %{{
+    IFS=" "
+    mkdir -p -- "$*"
+    lf -remote "send $id select \"$*\""
+}}
+
+cmd z %lf -remote "send $id cd '$(zoxide query $1)'"
+
+cmd zi ${{
+    res="$(zoxide query -i "$1")"
+    lf -remote "send $id cd \"$res\""
+}}
+
+cmd copy-dirname %{{
+    dirname -- "$f" | head -c-1 | xclip -i -selection clipboard
+}}
+
+cmd copy-path ${{
+    printf '%s' "$fx" | xclip -i -selection clipboard
+}}
+
+# ================================================================== #
+
+map . set hidden! # instead of zh
+
+map Y :copy-path
+
+map Z :zi
+map P :link
+
+map <delete> delete
+
+map F :fuzzy-find
+map f :fuzzy-find-recursive
+
+# Go to symlink directory
+map gl &{{
+    origin="$(realpath -s -- "$(readlink -- "$f")")"
+    lf -remote "send $id select '$origin'"
+}}
+
+map b $git blame "$f"
+map e $vsr "$f"
+map E $vim "$f"
+map L $lnav "$f"
+map i $bat --pager "less -R" "$f"
+map x :extract
+map w push %wget<space>
+map S $$SHELL
+
+map <f-2> push :rename<space>

@@ -8,6 +8,7 @@ export PYTHONNOUSERSITE=True
 
 # This conda is managed by the devtools team
 source /opt/devtools/conda/etc/profile.d/conda.sh
+source /opt/devtools/micromamba/etc/profile.d/micromamba.sh
 
 # But I also have a separately installed conda in /spare/local/conda
 # [[ -f /spare/local/conda/etc/profile.d/conda.sh ]] && source /spare/local/conda/etc/profile.d/conda.sh 2> /dev/null
@@ -18,4 +19,5 @@ source /opt/devtools/conda/etc/profile.d/conda.sh
 # =========================================================
 
 # Binaries of 3rd party tools
+export PATH=/spare/ssd/szafar/apps/zsh/bin:/spare/ssd/szafar/apps/tmux/local/bin:$PATH
 export PATH=/spare/ssd/szafar/apps/bin/:$PATH

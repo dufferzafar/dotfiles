@@ -85,7 +85,7 @@ plugins=(
 	command-not-found
 	autoupdate conda
 	node npm rsync
-	fd ripgrep zoxide
+	zoxide
 	gh gitignore
 	magic-enter
 	python pip pep8 pylint pyenv
@@ -96,6 +96,9 @@ plugins=(
 	zoxide brew fzf
 )
 
+# TODO: Understand why this error was being raised and fix it?
+#export ZSH_DISABLE_COMPFIX=1
+
 # Core Zsh file
 source "$ZSH/oh-my-zsh.sh"
 
@@ -105,8 +108,14 @@ source "$ZSH/oh-my-zsh.sh"
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh 2> /dev/null
-# [ -d /usr/share/fzf ] && source "/usr/share/fzf/completion.zsh" 2> /dev/null
-# [ -d /usr/share/fzf ] && source "/usr/share/fzf/key-bindings.zsh" 2> /dev/null
+[ -d ~/.fzf ] && source ~/.fzf/shell/completion.zsh 2> /dev/null
+[ -d ~/.fzf ] && source ~/.fzf/shell/key-bindings.zsh 2> /dev/null
+
+zle -N fzf-history-widget
+bindkey '^[r' fzf-history-widget
+
+# Override fzf's Ctrl + R with atuin
+eval "$(atuin init zsh --disable-up-arrow)"
 
 # OPAM (Ocaml Package Manager) configuration
 # . /home/dufferzafar/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
@@ -114,6 +123,9 @@ source "$ZSH/oh-my-zsh.sh"
 # Don't share history among open zsh sessions (terminal tabs)
 # https://stackoverflow.com/a/24876841
 unsetopt share_history
+
+# Write to history file immediately instead of waiting for shell exit
+setopt inc_append_history
 
 # Enable highlighters
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
@@ -144,17 +156,20 @@ ZSH_HIGHLIGHT_STYLES[assign]=none
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 
-source /apps/infrafs2/szafar/.config/broot/launcher/bash/br
+# https://github.com/TheR1D/shell_gpt/
+# ~/.config/shell_gpt/.sgptrc
+# Shell-GPT integration ZSH v0.1
+_sgpt_zsh() {
+if [[ -n "$BUFFER" ]]; then
+    _sgpt_prev_cmd=$BUFFER
+    BUFFER+=" ⌛"
+    zle -I && zle redisplay
+    BUFFER=$(sgpt --shell <<< "$_sgpt_prev_cmd")
+    zle end-of-line
+fi
+}
+zle -N _sgpt_zsh
+bindkey '^[s' _sgpt_zsh
+# Shell-GPT integration ZSH v0.1
 
-#function jog {
-#  grep -v "jog" ~/.zsh_history_ext | grep -a --color=never "${PWD}   " | cut -f1 -d"⋮" | tail
-#   grep -v "jog" ~/.zsh_history_ext | grep -a --color=never "${PWD}   " | cut -f1 -d"⋮" | grep -v -e '^$' | tail | sort | uniq
-#}
-
-#function zshaddhistory() {
-#  echo "${1%%$'\n'}⋮${PWD}   " >> ~/.zsh_history_ext
-#}
-
-# export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-
-
+# source ~/.config/broot/launcher/bash/br

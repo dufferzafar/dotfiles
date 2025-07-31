@@ -1,16 +1,30 @@
 # C++
 build.gerrit/
+build/
+build.*/
 .cache/clangd/index/
 .clangd
 .gdb_history
 
+.vscode/
+.claude/
+
+*.perf.data
+*.csv
+*.sqlite
+
+# Valgrind files
+callgrind.out.*
+
 # These folders contain miscellaneous material for each project
 _Help/
 ._Help/
+_personal/
 
 # Contain random testing code
 _Help.*
 ._Help.*
+_personal.*
 
 # Bit Torrent Sync Folder
 .sync/
@@ -97,4 +111,5 @@ __pycache__/
 *.swo
 *~
 
-deploy/deploy_scripts_dev_210/
+# aider
+.aider*

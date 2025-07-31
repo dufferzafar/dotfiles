@@ -1,11 +1,16 @@
+# Global aliases
+alias -g L="| less"
+alias -g F="| fzf"
+alias -g @err="2> /dev/null"
+
+alias j="just"
 
 # Single letter aliases!
 alias g="git"
 alias l="ls -lh --group-directories-first"
-alias o="xdg-open"
+# alias o="xdg-open"
 alias p="popd"
-alias s="subl"
-# alias c=cheat!
+# alias po="popd"
 
 alias ca="conda activate"
 alias cls="conda info --envs"
@@ -20,6 +25,8 @@ c() {
     #                   Remove escape sequences
     cht.sh "$1" | sed "s,\x1B\[[0-9;]*[a-zA-Z],,g" | bat -l bash
 }
+
+alias code="code-insiders"
 
 cf() {
     #                                                          CLfu requires base64 argument as well
@@ -43,32 +50,16 @@ cfs () {
 #####################################################################
 
 # hl highlighted versions of the commands
-alias df="df -h | hl --df"
-alias free="free -g | hl --free"
+# alias df="df -h | hl --df"
+# alias free="free -g | hl --free"
 
 #####################################################################
 
 # Python
 alias py="python"
 alias py2="python2"
-alias py3="python3.7"
-alias ptpy="python3.7 -m ptpython"
-
-alias pipi="pip install --user"
-
-# Virtualenv
-alias venv="virtualenv"
-# Python 2 venv
-alias eac="source env/bin/activate"
-alias epy="env/bin/python"
-alias epip="env/bin/pip"
-# Python 3 venv
-alias vpy="venv/bin/python"
-alias vpip="venv/bin/pip"
-
-# Serve a directory
-# TODO: Use devd?
-alias pysrv="python3 -m http.server "
+alias py3="python3"
+alias ptpy="python3 -m ptpython"
 
 #####################################################################
 
@@ -81,7 +72,6 @@ alias ytbdl="youtube-dl -ciw --no-mtime --write-sub -o '~/Videos/%(title)s.%(ext
 alias ytmp3="youtube-dl -ciw --no-mtime -f bestaudio           -o '~/Music/%(title)s.%(ext)s'   --extract-audio --audio-format=mp3 --audio-quality=0 --embed-thumbnail --add-metadata"
 
 # youtube-dl -f bestaudio --extract-audio --audio-format mp3 --audio-quality 0 <Video-URL>
-
 
 #####################################################################
 
@@ -96,30 +86,16 @@ bored() {
 
 # pacman
 # https://wiki.archlinux.org/index.php/Pacman/Rosetta
-alias paci='sudo pacman -S'
-alias pacu='sudo yaourt -Syu --noconfirm'
-alias pacr='sudo pacman -R'
-alias pacrp='sudo pacman -Rns $(pacman -Qtdq)'
+# alias paci='sudo pacman -S'
+# alias pacu='sudo yaourt -Syu --noconfirm'
+# alias pacr='sudo pacman -R'
+# alias pacrp='sudo pacman -Rns $(pacman -Qtdq)'
 
 # Update all AUR packages, pronto!
 # The traditional advice is to *not* do this because
 # AUR PKGBUILDs may be updated and is a potential threat surface
 # But life is too short to examine each update carefully.
-alias auru='yaourt -Syua --noconfirm'
-
-apts() {
-    apt-cache show "$@" | less -p "Description"
-}
-
-# Misc.
-dus() {
-    du --apparent-size -hd 1 "$@" | sort -rh
-}
-
-# jump
-jcd() {
-  j "$(basename $PWD)/**/$@"
-}
+# alias auru='yaourt -Syua --noconfirm'
 
 # jrnl
 alias jl="jrnl life"
@@ -131,7 +107,6 @@ alias jc="jrnl code"
 # Ensure aria does not download files that are already present
 alias aria="aria2c -c -x 16 -s 16 --auto-file-renaming=false --allow-overwrite=false --conditional-get=true"
 
-alias po="popd"
 
 #####################################################################
 
@@ -141,20 +116,15 @@ alia () {
 }
 
 # Anaconda
-local anaconda=~/.apps/anaconda3/bin
-alia apy $anaconda/python
-alia conda $anaconda/conda
-alia jupyter $anaconda/jupyter
+# local anaconda=~/.apps/anaconda3/bin
+# alia apy $anaconda/python
+# alia conda $anaconda/conda
+# alia jupyter $anaconda/jupyter
 
 # https://github.com/dufferzafar/massren
 alia massren ~/dev/massren/massren
 
 #####################################################################
-
-# Use the silversearcher to find text!
-agf() {
-    ag -C 2 --color --group $@ | less -R
-}
 
 # Use pdfgrep to find text in PDFs!
 pdf-grep() {
@@ -167,22 +137,22 @@ jqless() {
 }
 
 # Taken from: https://github.com/jkbrzt/httpie#redirected-output
-httpless() {
-    http --pretty=all --print=hb "$@" | less -R
-}
+# httpless() {
+#     http --pretty=all --print=hb "$@" | less -R
+# }
 
-curless() {
-    curl -q -i -s "$@" | less -R
-}
+# curless() {
+#     curl -q -i -s "$@" | less -R
+# }
 
 # Pass a request through mitmproxy!
-httm() {
-    http --proxy=http:http://localhost:8080 --proxy=https:http://localhost:8080 "$@" >/dev/null
-}
+# httm() {
+#     http --proxy=http:http://localhost:8080 --proxy=https:http://localhost:8080 "$@" >/dev/null
+# }
 
-ncm() {
-    printf "$1" | nc localhost 8080 >/dev/null
-}
+# ncm() {
+#     printf "$1" | nc localhost 8080 >/dev/null
+# }
 
 # https://www.gitignore.io/docs#install-command-line-linux
 gio() {

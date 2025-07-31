@@ -11,16 +11,25 @@ unset PYTHONPATH PYTHONHOME
 # https://confluence.tower-research.com/display/DT/Defining+and+using+your+own+utilities
 export DEVTOOLS_CUSTOM_UTILS="
 utility=cgdb;spec=cgdb=0.8.0;public=true
-utility=gdb;spec=gdb=10;public=true
+utility=gdb;spec=gdb=12;public=true
+utility=git;spec=git=2.33;public=true
 utility=heaptrack;spec=heaptrack=1.4.0;public=true
 utility=heaptrack_print;spec=heaptrack=1.4.0;public=true
 utility=inotifywatch;spec=inotify-tools=3;public=true
 utility=mycli;spec=mycli=1.22;public=true
 utility=pgcli;spec=pgcli=3;public=true
 utility=zstd;spec=zstd>=1.5;public=true
+utility=http;spec=httpie=3;public=true
 "
 source /opt/devtools/utils/etc/profile
+source /opt/trc/shared/etc/profile
+
+# Now using visidata from it's develop branch
+# /spare/local/szafar/apps/visidata/bin/vd
 #utility=vd;spec=visidata=2.8;public=true
+
+# Now using micromamba from the one provided by devtools
+# /opt/devtools/micromamba
 #utility=mamba;spec=micromamba=0.24.0;binary=micromamba;public=true
 
 # This only brings in devtools conda and not other utilities
@@ -34,33 +43,46 @@ source /opt/devtools/utils/etc/profile
 
 # =========================================================
 
-# Aliases
-
-alias trc-fmt="trc-clang-format -i"
-
-# =========================================================
-
 # Binaries of 3rd party tools
 export PATH=/spare/local/szafar/apps/bin/:$PATH
 
 # JQ Helpers
+# These should've been separate scripts under ~/.scripts
 
-list-ss() {
-    cat /tmp/mongo/*.json | \
-    jq -r '.[] | select(.type == "SURVEILLANCE_SERVER") | .team + " " +.id'
-}
+# list-ss() {
+#     cat /tmp/mongo/*.json | \
+#     jq -r '.[] | select(.type == "SURVEILLANCE_SERVER") | .team + " " +.id'
+# }
 
-list-ts() {
-    cat /tmp/mongo/*.json | \
-    jq -r '.[] | select(.type == "TRADE_SERVER") | .team + " " +.id'
-}
+# list-ts() {
+#     cat /tmp/mongo/*.json | \
+#     jq -r '.[] | select(.type == "TRADE_SERVER") | .team + " " +.id'
+# }
 
-find-repo() {
-    query=$1
-    curl -s "https://gerrit.tower-research.com/projects/?n=100&S=0&query=${query}" \
-        -H 'Cookie: GerritAccount=aVApprsKZLw9Nyxvwn5yQn6-NXl0K8ty5W;' \
-    | tail -n +2 | jq -r '.[] | .id' | fzf
-}
+# find-repo() {
+#     query=$1
+#     curl -s "https://gerrit.tower-research.com/projects/?n=100&S=0&query=${query}" \
+#         -H 'Cookie: GerritAccount=aVApprsKZLw9Nyxvwn5yQn6-NXl0K8ty5W;' \
+#     | tail -n +2 | jq -r '.[] | .id' | fzf
+# }
 
 # Useful on remote machines
-alias users="who | awk '{print $5}' | awk -F. '{print $1 "." $2}' | cut -c2- | sort -u"
+# alias users="who | awk '{print $5}' | awk -F. '{print $1 "." $2}' | cut -c2- | sort -u"
+
+# =========================================================
+
+# eget
+export EGET_BIN=/spare/local/szafar/apps/bin
+
+# rust
+export RUSTUP_HOME=/spare/ssd/szafar/.rustup
+export CARGO_HOME=/spare/ssd/szafar/.cargo
+
+# golang
+# managed by mise - it sets it's own variables
+# https://github.com/jdx/mise/blob/main/src/plugins/core/go.rs
+# export GOPATH=/spare/ssd/szafar/.go
+
+# mise
+export MISE_DATA_DIR=/spare/ssd/szafar/.mise
+source /spare/ssd/szafar/.mise/env.zsh

@@ -1,24 +1,31 @@
-# 3rd party binaries, downloaded from random places on the internet
-#export PATH=$PATH:$HOME/.apps/bin
-#export MANPATH=$MANPATH:$HOME/.apps/.manpages
+# RVM
+# export PATH="$PATH:$HOME/.rvm/bin"
 
-#export GOPATH=$HOME/.go
-#export GOROOT=/usr/lib/go
-#export PATH=$PATH:$GOPATH/bin
+# Paths
+# export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/usr/bin:/bin:/sbin:/usr/games"
+
+# Custom build zsh & tmux
+# 3rd party binaries, downloaded from random places on the internet
+# export PATH=$PATH:/spare/bin
+# export MANPATH=$MANPATH:$HOME/.apps/.manpages
+
+# export GOPATH=$HOME/.go
+# export GOROOT=/usr/lib/go
+# export PATH=$PATH:$GOPATH/bin
 
 # https://gitlab.com/dufferzafar/scripts
 export PATH=$PATH:$HOME/.scripts
 
-# Used by pipsi
-#export PATH=$PATH:$HOME/.local/bin
-
 # Rust & Cargo
-#export PATH="$HOME/.cargo/bin:$PATH"
+# export PATH="$HOME/.cargo/bin:$PATH"
 
 # Syntax highlighting in less
 # TODO: Use monokai syntax highlight
-#export LESSOPEN="| /apps/infrafs2/szafar/.dotfiles/ranger/scope.sh %s"
-#export LESS=' -R '
+# export LESSOPEN="| /apps/infrafs2/szafar/.dotfiles/ranger/scope.sh %s"
+# export LESSOPEN="| /apps/infrafs2/szafar/.scripts/batter %s"
+export LESS=' -R '
+
+# export FPP_EDITOR=subl
 
 # Make vim the default editor
 export EDITOR="vim"
@@ -41,7 +48,11 @@ export LANG=en_US.UTF-8
 #export FZF_DEFAULT_COMMAND='ag -l -g ""'
 #export FZF_DEFAULT_OPTS="--extended --cycle --multi"
 
-#export NVM_DIR=~/.nvm
+# export NVM_DIR=~/.nvm
+
+# bat as man page viewer
+# https://github.com/sharkdp/bat/issues/523
+export MANPAGER="sh -c 'sed -e s/.\\\\x08//g | bat -l man -p --pager \"less -RF\"'"
 
 # Apache Hadoop & Spark
 # export SPARK_HOME=~/.apps/spark

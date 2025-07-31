@@ -40,7 +40,7 @@ function eget() {
 }
 
 # agrind - slice and dice logs
-eget https://github.com/rcoh/angle-grinder -a musl --to agrind
+# eget https://github.com/rcoh/angle-grinder -a gnu --to agrind
 
 # aria2c - fast file downloader
 # main repo: https://github.com/aria2/aria2/
@@ -51,7 +51,7 @@ eget https://github.com/rcoh/angle-grinder -a musl --to agrind
 
 # atuin
 # NOTE: Not compiled with musl but glibc, will fail on boxes with older glibc
-eget https://github.com/ellie/atuin -a musl
+eget https://github.com/ellie/atuin -a musl.tar
 
 # bat
 eget https://github.com/sharkdp/bat -a x86_64 -a musl.tar
@@ -97,7 +97,7 @@ eget https://github.com/sharkdp/bat -a x86_64 -a musl.tar
 # eget https://github.com/wfxr/csview -a musl -a x86_64
 
 # csvtk
-eget https://github.com/shenwei356/csvtk
+# eget https://github.com/shenwei356/csvtk
 
 # curlie
 # eget https://github.com/rs/curlie -a tar
@@ -148,7 +148,7 @@ eget https://github.com/muesli/duf -a linux -a x86 -a tar
 # eget https://github.com/bootandy/dust -a 86_64 -a musl
 
 # dyff - yaml / json diff
-eget https://github.com/homeport/dyff
+# eget https://github.com/homeport/dyff
 
 # espanso - text expander written in rust
 # eget https://github.com/federico-terzi/espanso
@@ -204,7 +204,7 @@ eget https://github.com/cli/cli -a tar -f gh --to gh
 # gitlab
 
 # gitui
-eget https://github.com/extrawurst/gitui -a musl
+eget https://github.com/extrawurst/gitui -a linux -a x86_64
 
 # glab
 # eget https://github.com/profclems/glab -a tar -a Linux -a x86_64
@@ -216,7 +216,10 @@ eget https://github.com/extrawurst/gitui -a musl
 # gobang
 
 # gron
-eget https://github.com/tomnomnom/gron
+# eget https://github.com/tomnomnom/gron
+
+# gum
+# eget https://github.com/charmbracelet/gum
 
 # hurl
 # eget https://github.com/Orange-OpenSource/hurl
@@ -226,6 +229,9 @@ eget https://github.com/tomnomnom/gron
 # hey
 # http load testing
 # TODO: compare with oha
+
+# hgrep - ripgrep + bat
+# eget https://github.com/rhysd/hgrep -a musl
 
 # htmlq - like jq for html
 eget https://github.com/mgdm/htmlq
@@ -240,10 +246,10 @@ eget https://github.com/mgdm/htmlq
 # icdiff
 
 # jid
-eget https://github.com/simeji/jid
+# eget https://github.com/simeji/jid
 
 # jiq
-eget https://github.com/fiatjaf/jiq
+# eget https://github.com/fiatjaf/jiq
 
 # jj
 
@@ -251,7 +257,7 @@ eget https://github.com/fiatjaf/jiq
 eget https://github.com/PaulJuliusMartinez/jless
 
 # jnv - like jid/jiq - fzf+json
-eget https://github.com/ynqa/jnv
+eget https://github.com/ynqa/jnv -a musl
 
 # jo
 # jog
@@ -264,6 +270,9 @@ eget https://github.com/casey/just
 # a calculator
 # eget https://github.com/PaddiM8/kalker
 
+# k9s - kubernetes tui
+eget https://github.com/derailed/k9s -a tar
+
 # lazygit
 eget https://github.com/jesseduffield/lazygit
 
@@ -275,7 +284,7 @@ eget https://github.com/gokcehan/lf
 
 # lnav
 # TODO: latest versions have a bug with timestamps?
-# eget https://github.com/tstack/lnav
+eget https://github.com/tstack/lnav
 
 # lolcate
 eget https://github.com/ngirard/lolcate-rs -f lolcate
@@ -315,23 +324,26 @@ eget https://github.com/noborus/ov
 # pgweb
 
 # pixi - faster than mamba/conda
-eget https://github.com/prefix-dev/pixi -a musl -a tar
+# eget https://github.com/prefix-dev/pixi -a musl -a tar
 
 # pipr - build shell pipes interactively
-eget https://github.com/elkowar/pipr
+# eget https://github.com/elkowar/pipr
 
 # pistol - viewer for file managers?
 # eget https://github.com/doronbehar/pistol -a pistol-static-x86
 
 # procs
-eget https://github.com/dalance/procs -a x86 -a lnx
+# eget https://github.com/dalance/procs -a x86 -a linux
 
 # pup
 
+# qq - like jq but for a lot of formats including html
+eget https://github.com/JFryy/qq
+
 # qsv
 eget https://github.com/jqnatividad/qsv -a x86_64 -a musl --all
-mv qsvlite qsv
-rm qsvdp
+# mv qsvlite qsv
+# rm qsvdp
 
 # rg
 eget https://github.com/BurntSushi/ripgrep
@@ -361,7 +373,7 @@ eget https://github.com/neilotoole/sq -a amd64 -a zst
 # sshpass
 
 # starship
-eget https://github.com/starship/starship -a starship-x86_64-unknown-linux-musl.tar.gz
+# eget https://github.com/starship/starship -a starship-x86_64-unknown-linux-musl.tar.gz
 
 # taskell
 # termshark
@@ -369,16 +381,16 @@ eget https://github.com/starship/starship -a starship-x86_64-unknown-linux-musl.
 # tokei
 
 # t-rec
-eget https://github.com/sassman/t-rec-rs -f t-rec
+# eget https://github.com/sassman/t-rec-rs -f t-rec
 
 # tv
-eget https://github.com/alexhallam/tv -f tidy-viewer -a tgz
+eget https://github.com/alexhallam/tv -f "**/bin/tidy-viewer" -a tgz --to tv
 
 # unison
 # eget https://github.com/bcpierce00/unison -a static
 
 # usql
-eget https://github.com/https://github.com/xo/usql
+# eget https://github.com/xo/usql
 
 # verco
 # eget https://github.com/vamolessa/verco
@@ -391,7 +403,7 @@ eget https://github.com/https://github.com/xo/usql
 
 # websocat
 # socat for websockets
-eget https://github.com/vi/websocat -a max -a musl
+# eget https://github.com/vi/websocat -a max -a musl
 
 # wkhtmltoimage
 # wkhtmltopdf
@@ -410,6 +422,7 @@ eget https://github.com/zellij-org/zellij
 # eget https://github.com/bvaisvil/zenith
 
 # zoxide
+eget https://github.com/ajeetdsouza/zoxide
 
 # fish shell - static binary
 # eget https://github.com/xxh/fish-portable --download-only
@@ -440,7 +453,6 @@ popd
 # gotz
 # goup
 # heh
-# hgrep
 # huniq
 # hwatch
 # ictree

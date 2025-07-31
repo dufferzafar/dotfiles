@@ -25,7 +25,7 @@ fzf-edit-file-or-open-dir() {
         dolphin --select "$file"
     else # enter
         if [ -f "$file" ]; then
-            code-insiders "$file"
+            vs "$file"
         elif [ -d "$file" ]; then
             cd "$file"
         fi
@@ -61,23 +61,21 @@ fzit() {
 zle     -N   fzit
 bindkey '^[g' fzit
 
-# Use locate to find files
-loki() {
-    if [ -z "$1" ]; then echo "No argument supplied"; zle accept-line; return 1; fi
+# fif() {
+#   if [ ! "$#" -gt 0 ]; then echo "Need a string to search for!"; return 1; fi
+  
+#   rg --files-with-matches --no-messages "$1" | \
+#     fzf --preview-window=right:50% --preview \
+#         "bat --style=plain,header,snip,numbers --color always {} | rg --pretty --colors 'match:bg:red' --colors 'match:fg:white' --no-line-number --ignore-case --context 10 '$1'"
+# }
 
-    out=($(locate -e -i "$@" | \
-            fzf \
-            --exit-0 \
-            --expect=ctrl-f \
-            --multi \
-            --bind "enter:accept,ctrl-e:execute(xdg-open {}),ctrl-o:execute(xdg-open (dirname {}))"))
-    key=$(head -1 <<< "$out")
-    file=$(head -2 <<< "$out" | tail -1)
-
-    if [ "$key" = ctrl-f ]; then
-        dolphin --select "$file"
-    else;
-        echo $out
-    fi
-    # zle accept-line
+# Find in files using ripgrep
+rgf()
+{
+    RG_PREFIX="rg --column --line-number --no-heading --color=always --smart-case "
+    INITIAL_QUERY="$1"
+    FZF_DEFAULT_COMMAND="$RG_PREFIX '$INITIAL_QUERY'" \
+    fzf --ansi --phony --query "$INITIAL_QUERY" \
+        --bind "change:reload:$RG_PREFIX {q} || true" \
+        --preview-window=top:30% --preview "batter -v {} | rg --pretty --colors 'match:bg:red' --colors 'match:fg:white' --no-line-number --ignore-case --context 3 {q}"
 }
